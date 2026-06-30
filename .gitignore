@@ -1,0 +1,53 @@
+# Gradle files
+.gradle/
+build/
+app/
+local.properties
+
+# Android Studio / IntelliJ files
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+
+# Log files
+*.log
+
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.pytest_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# App outputs / local builds
+app/app-debug.apk
+app-debug.apk
+app/release/
+*.apk
+*.ap_
+*.aab
+
+# Graphify / MCP files
+graphify-out/
+.agents/
