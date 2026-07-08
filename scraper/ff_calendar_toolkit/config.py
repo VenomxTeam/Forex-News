@@ -45,7 +45,7 @@ NORMALIZED_FIELDS = [
 ]
 
 DEFAULT_ALLOWED_CURRENCY_CODES = ["CAD", "EUR", "GBP", "USD"]
-DEFAULT_ALLOWED_IMPACT_COLORS = ["red", "orange", "gray"]
+DEFAULT_ALLOWED_IMPACT_COLORS = ["red", "orange", "yellow", "gray"]
 DEFAULT_TARGET_TIMEZONE = "Asia/Kolkata"
 DEFAULT_OUTPUT_DIR = Path("news")
 DEFAULT_OUTPUT_FORMAT = "both"

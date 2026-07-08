@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30T10:35:52Z",
+  "updated_at": "2026-07-07T02:27:31Z",
   "events": [
     {
       "id": "usd_fomc_member_powell_speaks_20260601",
@@ -2032,13 +2032,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_prelim_gdp_qq_20260630",
+      "id": "eur_german_prelim_gdp_qq_20260707",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Prelim GDP q/q",
       "impact": "orange",
-      "time": "2026-06-30T10:35:52Z",
+      "time": "2026-07-07T02:27:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
