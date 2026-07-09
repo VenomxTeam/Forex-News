@@ -92,8 +92,13 @@ class ForexFactoryScraper:
                     impact_elements = element.find_elements(By.TAG_NAME, "span")
                     color = None
                     for impact in impact_elements:
-                        impact_class = impact.get_attribute("class")
-                        color = ICON_COLOR_MAP.get(impact_class)
+                        impact_class = impact.get_attribute("class") or ""
+                        for map_class, mapped_color in ICON_COLOR_MAP.items():
+                            if map_class in impact_class:
+                                color = mapped_color
+                                break
+                        if color:
+                            break
                     row_data[class_name_key] = color if color else "impact"
                 elif "calendar__detail" in class_name and event_id:
                     row_data[class_name_key] = (

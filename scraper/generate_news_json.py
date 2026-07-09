@@ -76,7 +76,7 @@ def main():
     print("Processing existing scraped data from scraper/news/monthly...")
     
     # Scan the output monthly folder for generated monthly files
-    output_dir = Path("news/monthly")
+    output_dir = Path("news/last_run")
     if not output_dir.exists():
         print(f"Output directory {output_dir} does not exist.")
         return
@@ -99,7 +99,7 @@ def main():
     all_impact_events = []
     for item in events:
         impact = item.get("impact", "").lower()
-        if impact not in ["red", "orange", "yellow", "ora", "yel"]:
+        if impact not in ["red", "orange", "yellow", "ora", "yel", "low", "gray", "grey", "none"]:
             continue
             
         currency = item.get("currency", "").upper()
