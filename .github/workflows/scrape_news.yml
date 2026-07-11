@@ -45,3 +45,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated sync: Update news calendar data"
+
+      - name: Purge JSDelivr Cache
+        run: |
+          curl -s https://purge.jsdelivr.net/gh/VenomxTeam/Forex-News@main/scraper/news.json
