@@ -2,11 +2,8 @@ name: Scrape Forex News Calendar
 
 on:
   schedule:
-    # Runs at 5 and 35 minutes past the hour, Monday-Friday, during active market hours (06:00-21:00 UTC)
-    # This catches 99% of high impact news exactly 5 mins after release while keeping runs under 32/day (Account Safe!)
-    - cron: '5,35 6-21 * * 1-5'
-    # End of day sync for any remaining low/medium news
-    - cron: '0 0 * * *'
+    # Runs once a day at 11:50 PM IST (18:20 UTC)
+    - cron: '20 18 * * *'
   workflow_dispatch:
     # Allow manual runs from the GitHub Actions tab
 
@@ -41,6 +38,7 @@ jobs:
       - name: Run Scraper
         run: |
           cd scraper
+          python scraper.py scrape
           python generate_news_json.py
 
       - name: Commit and Push Changes
