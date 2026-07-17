@@ -2,8 +2,8 @@ name: Scrape Forex News Calendar
 
 on:
   schedule:
-    # Runs once a day at 11:50 PM IST (18:20 UTC)
-    - cron: '20 18 * * *'
+    # Runs every 2 hours at minute 0
+    - cron: '0 */2 * * *'
   workflow_dispatch:
     # Allow manual runs from the GitHub Actions tab
 
