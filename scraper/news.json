@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-20T22:49:10Z",
+  "updated_at": "2026-07-21T01:34:11Z",
   "events": [
     {
       "id": "eur_spanish_manufacturing_pmi_20260701",
@@ -982,13 +982,13 @@
       "category": "Economic"
     },
     {
-      "id": "usd_adp_weekly_employment_change_20260720",
+      "id": "usd_adp_weekly_employment_change_20260721",
       "currency": "USD",
       "country": "United States",
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "30.8K",
       "actual": "24.3K",
@@ -3180,13 +3180,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_import_prices_mm_20260720",
+      "id": "eur_german_import_prices_mm_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3194,13 +3194,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260720",
+      "id": "eur_german_retail_sales_mm_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3348,13 +3348,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_prelim_gdp_qq_20260720",
+      "id": "eur_german_prelim_gdp_qq_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Prelim GDP q/q",
       "impact": "orange",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3614,13 +3614,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260720",
+      "id": "gbp_nationwide_hpi_mm_20260721",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -4818,13 +4818,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_wpi_mm_20260720",
+      "id": "eur_german_wpi_mm_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German WPI m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -5224,6 +5224,20 @@
       "category": "Economic"
     },
     {
+      "id": "usd_federal_budget_balance_20260812",
+      "currency": "USD",
+      "country": "United States",
+      "flag": "us",
+      "title": "Federal Budget Balance",
+      "impact": "yellow",
+      "time": "2026-08-12T15:00:00Z",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "description": "",
+      "category": "Economic"
+    },
+    {
       "id": "gbp_rics_house_price_balance_20260811",
       "currency": "GBP",
       "country": "United Kingdom",
@@ -5462,20 +5476,6 @@
       "category": "Economic"
     },
     {
-      "id": "usd_federal_budget_balance_20260813",
-      "currency": "USD",
-      "country": "United States",
-      "flag": "us",
-      "title": "Federal Budget Balance",
-      "impact": "yellow",
-      "time": "2026-08-13T15:00:00Z",
-      "forecast": "",
-      "previous": "",
-      "actual": "",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "eur_french_final_cpi_mm_20260813",
       "currency": "EUR",
       "country": "Eurozone",
@@ -5658,13 +5658,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20260720",
+      "id": "gbp_cbi_industrial_order_expectations_20260721",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6120,20 +6120,6 @@
       "category": "Economic"
     },
     {
-      "id": "usd_prelim_benchmark_payrolls_revision_20260819",
-      "currency": "USD",
-      "country": "United States",
-      "flag": "us",
-      "title": "Prelim Benchmark Payrolls Revision",
-      "impact": "red",
-      "time": "2026-08-19T11:00:00Z",
-      "forecast": "",
-      "previous": "-911K",
-      "actual": "",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "usd_crude_oil_inventories_20260819",
       "currency": "USD",
       "country": "United States",
@@ -6330,13 +6316,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_final_gdp_qq_20260720",
+      "id": "eur_german_final_gdp_qq_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Final GDP q/q",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6526,13 +6512,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_import_prices_mm_20260720",
+      "id": "eur_german_import_prices_mm_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6540,13 +6526,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260720",
+      "id": "eur_german_retail_sales_mm_20260721",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6554,13 +6540,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_realized_sales_20260720",
+      "id": "gbp_cbi_realized_sales_20260721",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -7058,6 +7044,20 @@
       "category": "Economic"
     },
     {
+      "id": "usd_prelim_benchmark_payrolls_revision_20260828",
+      "currency": "USD",
+      "country": "United States",
+      "flag": "us",
+      "title": "Prelim Benchmark Payrolls Revision",
+      "impact": "red",
+      "time": "2026-08-28T11:00:00Z",
+      "forecast": "",
+      "previous": "-911K",
+      "actual": "",
+      "description": "",
+      "category": "Economic"
+    },
+    {
       "id": "usd_revised_uom_consumer_sentiment_20260828",
       "currency": "USD",
       "country": "United States",
@@ -7086,13 +7086,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260720",
+      "id": "gbp_nationwide_hpi_mm_20260721",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-07-20T22:49:10Z",
+      "time": "2026-07-21T01:34:11Z",
       "forecast": "",
       "previous": "",
       "actual": "",
