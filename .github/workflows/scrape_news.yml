@@ -24,6 +24,9 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
+      - name: Set Timezone to UTC
+        run: sudo timedatectl set-timezone UTC
+
       - name: Install System Dependencies (Chrome & ChromeDriver)
         run: |
           sudo apt-get update
@@ -36,8 +39,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Scraper
-        env:
-          TZ: Asia/Kolkata
         run: |
           cd scraper
           python scraper.py scrape --config config.yaml --months this next
