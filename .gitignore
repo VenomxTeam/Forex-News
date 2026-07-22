@@ -1,7 +1,6 @@
 # Gradle files
 .gradle/
 build/
-app/
 local.properties
 
 # Android Studio / IntelliJ files
