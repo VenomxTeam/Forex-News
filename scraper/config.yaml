@@ -8,7 +8,7 @@ months:
   - dec.2026
 output_format: both
 output_dir: news
-timezone: Asia/Kolkata
+
 allowed_currencies:
   - CAD
   - EUR

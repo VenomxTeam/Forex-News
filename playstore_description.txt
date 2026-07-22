@@ -1,0 +1,68 @@
+App Title (30 characters max):
+Forex News & Economic Calendar
+
+Short Description (80 characters max):
+Live Forex news, economic calendar, AI market analysis & trading calculators.
+
+Long Description:
+Dominate the Forex Market with Real-Time News, AI Analysis & Economic Calendar!
+
+Whether you are a day trader, swing trader, or long-term investor, Forex News & Economic Calendar is the ultimate all-in-one companion for your trading journey. Stay ahead of the market with live economic events, breaking financial news, AI-powered market summaries, and professional trading calculators. 
+
+Stop switching between multiple apps and websites. Get everything you need to make profitable trading decisions right in your pocket!
+
+🔥 KEY FEATURES
+
+📅 Live Economic Calendar
+Never miss a market-moving event again! Our real-time economic calendar tracks global financial events and central bank decisions.
+• Filter events by impact (High 🔴, Medium 🟠, Low 🟡).
+• Track events for major currencies: USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD.
+• See Previous, Forecast, and Actual data instantly.
+
+📰 Breaking Forex News Feed
+Get live updates from the world's most trusted financial sources (Forex Factory, Investing.com, Reuters, FXStreet).
+• Real-time feed covering currency pairs, gold, and indices.
+• Instantly gauge market sentiment (Bullish, Bearish, or Neutral).
+• Filter news by your favorite currency pairs.
+
+🤖 AI-Powered Market Summaries
+Don't have time to read long articles? Let our advanced AI do the work!
+• Generate instant, bite-sized summaries of complex financial news.
+• Get actionable insights on how the news will impact specific currency pairs.
+• Save time and make faster trading decisions.
+
+⏰ Custom Trading Alerts & Push Notifications
+Never miss a trade setup or a major news release.
+• Set custom reminders for high-impact news events (e.g., 15 minutes before NFP).
+• Receive instant push notifications right on your lock screen.
+
+🧮 Professional Trading Calculators
+Manage your risk like a pro with our built-in trading tools.
+• Risk & Position Size Calculator: Calculate exact lot sizes to protect your capital.
+• Loss Calculator: Know your exact risk exposure before entering a trade.
+• Drawdown Calculator: Keep your account safe and manage your trading psychology.
+
+📚 Forex Dictionary
+New to trading? Master the jargon with our comprehensive Forex Dictionary.
+• Learn hundreds of trading terms (Pip, Spread, Leverage, Hawkish/Dovish, etc.).
+• Understand how each term impacts the market.
+
+🌙 Beautiful & Customizable UI
+• Enjoy a stunning, modern interface with smooth animations.
+• Switch between Light Mode, Dark Mode, or AMOLED Black for battery saving.
+• Clean, ad-optimized experience that never interrupts your trading workflow.
+
+👑 GO PRO (Premium Features)
+Upgrade to Forex News PRO and take your trading to the next level:
+• Unlimited AI Summaries: Analyze as many news articles as you want.
+• Zero Ads: A 100% ad-free, distraction-free trading experience.
+• Priority Alerts: Get the fastest possible notifications for market-moving data.
+
+🎯 WHY CHOOSE US?
+Built by traders for traders. We know that in Forex, milliseconds matter. Our app is optimized for speed, reliability, and accuracy, giving you the edge you need to succeed in the world's most liquid financial market.
+
+Download Forex News & Economic Calendar today and trade smarter, not harder!
+
+---
+Keywords for Play Store Tags (Optional to add at the bottom):
+Forex, FX, Day Trading, Economic Calendar, Forex News, Trading Signals, NFP, Pip Calculator, Position Sizer, Forex Factory, Investing, MetaTrader, Gold Trading, Forex Dictionary, AI Trading, Currency Converter, Forex Alerts
