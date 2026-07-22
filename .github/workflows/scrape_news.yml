@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Scraper
         env:
-          TZ: America/New_York
+          TZ: UTC
         run: |
           cd scraper
           python scraper.py scrape --config config.yaml --months this next

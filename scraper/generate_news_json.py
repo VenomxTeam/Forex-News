@@ -62,8 +62,8 @@ def parse_to_utc_iso(date_str, time_str, tz_str):
         try:
             tz = ZoneInfo(tz_str)
         except Exception:
-            # Fallback to Asia/Kolkata or UTC
-            tz = ZoneInfo("Asia/Kolkata")
+            # Fallback to UTC
+            tz = timezone.utc
             
         dt_local = datetime(year, month, day, hour, minute, tzinfo=tz)
         dt_utc = dt_local.astimezone(timezone.utc)
