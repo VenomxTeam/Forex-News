@@ -3,7 +3,7 @@
 build/
 app/
 local.properties
-
+keystore
 # Android Studio / IntelliJ files
 .idea/
 *.iml
