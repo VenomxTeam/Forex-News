@@ -8,6 +8,7 @@ months:
   - dec.2026
 output_format: both
 output_dir: news
+timezone: UTC
 
 allowed_currencies:
   - CAD

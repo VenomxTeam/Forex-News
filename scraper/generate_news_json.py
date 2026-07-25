@@ -107,7 +107,7 @@ def main():
         title = item.get("event", "").strip()
         
         # Generate time in UTC ISO format
-        time_utc = parse_to_utc_iso(item.get("date"), item.get("time"), item.get("timezone", "Asia/Kolkata"))
+        time_utc = parse_to_utc_iso(item.get("date"), item.get("time"), item.get("timezone", "UTC"))
         if not time_utc:
             # Fallback format: use day timestamp
             time_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
