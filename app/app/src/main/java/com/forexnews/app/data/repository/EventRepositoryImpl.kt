@@ -58,7 +58,7 @@ class EventRepositoryImpl @Inject constructor(
             events
                 .filter { it.impact == "red" } // High impact only on home screen
                 .map { entity ->
-                    mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == " 24 Hour\)
+                    mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == "24 Hour")
                 }
         }
     }
@@ -95,7 +95,7 @@ class EventRepositoryImpl @Inject constructor(
 
         return combine(eventsFlow, favoriteDao.getAllFavoriteIds(), settingsRepository.getSettings()) { events, favoriteIds, settings ->
             events.map { entity ->
-                mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == " 24 Hour\)
+                mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == "24 Hour")
             }
         }
     }
@@ -106,7 +106,7 @@ class EventRepositoryImpl @Inject constructor(
             favoriteDao.isFavorite(id),
             settingsRepository.getSettings()
         ) { entity, isFav, settings ->
-            entity?.let { mapper.entityToDomain(it, settings.timeZone, isFav, settings.dateFormat == " 24 Hour\) }
+            entity?.let { mapper.entityToDomain(it, settings.timeZone, isFav, settings.dateFormat == "24 Hour") }
         }
     }
 
@@ -117,7 +117,7 @@ class EventRepositoryImpl @Inject constructor(
             settingsRepository.getSettings()
         ) { events, favoriteIds, settings ->
             events.map { entity ->
-                mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == " 24 Hour\)
+                mapper.entityToDomain(entity, settings.timeZone, favoriteIds.contains(entity.id), settings.dateFormat == "24 Hour")
             }
         }
     }
@@ -127,7 +127,7 @@ class EventRepositoryImpl @Inject constructor(
             eventDao.getEventHistory(eventTitle, currency),
             settingsRepository.getSettings()
         ) { entities, settings ->
-            entities.map { mapper.entityToDomain(it, settings.timeZone, false, settings.dateFormat == " 24 Hour\) }
+            entities.map { mapper.entityToDomain(it, settings.timeZone, false, settings.dateFormat == "24 Hour") }
         }
     }
 
