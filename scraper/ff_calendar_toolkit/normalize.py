@@ -45,7 +45,11 @@ def convert_time_zone(
     try:
         from_zone = pytz.timezone(from_zone_str)
         to_zone = pytz.timezone(to_zone_str)
-        naive_dt = datetime.strptime(f"{date_str} {time_str}", "%d/%m/%Y %I:%M%p")
+        try:
+            naive_dt = datetime.strptime(f"{date_str} {time_str}", "%d/%m/%Y %I:%M%p")
+        except ValueError:
+            naive_dt = datetime.strptime(f"{date_str} {time_str}", "%d/%m/%Y %H:%M")
+            
         localized_dt = from_zone.localize(naive_dt)
         return localized_dt.astimezone(to_zone).strftime("%H:%M")
     except Exception:

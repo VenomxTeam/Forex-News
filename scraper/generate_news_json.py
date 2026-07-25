@@ -107,7 +107,18 @@ def main():
         title = item.get("event", "").strip()
         
         # Generate time in UTC ISO format
-        time_utc = parse_to_utc_iso(item.get("date"), item.get("time"), "Asia/Kolkata")
+        # Map common timezone abbreviations to IANA timezone names
+        TZ_MAP = {
+            "UTC": "UTC",
+            "EST": "America/New_York",
+            "EDT": "America/New_York",
+            "BST": "Europe/London",
+            "GMT": "GMT",
+            "IST": "Asia/Kolkata"
+        }
+        tz_from_data = item.get("timezone", "UTC")
+        tz_iana = TZ_MAP.get(tz_from_data, "UTC")
+        time_utc = parse_to_utc_iso(item.get("date"), item.get("time"), tz_iana)
         if not time_utc:
             # Fallback format: use day timestamp
             time_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
