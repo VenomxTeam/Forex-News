@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T03:01:14Z",
+  "updated_at": "2026-07-27T07:36:29Z",
   "events": [
     {
       "id": "eur_german_retail_sales_mm_20260803",
@@ -8,9 +8,9 @@
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-08-03T00:00:00Z",
+      "time": "2026-08-03T05:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "1.1%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -24,7 +24,7 @@
       "impact": "yellow",
       "time": "2026-08-03T06:15:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "49.7",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -38,7 +38,7 @@
       "impact": "yellow",
       "time": "2026-08-03T06:45:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "52.2",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -52,7 +52,7 @@
       "impact": "yellow",
       "time": "2026-08-03T06:50:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "50.0",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -66,7 +66,7 @@
       "impact": "yellow",
       "time": "2026-08-03T06:55:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "52.2",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -80,7 +80,7 @@
       "impact": "yellow",
       "time": "2026-08-03T07:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "52.0",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -94,7 +94,7 @@
       "impact": "yellow",
       "time": "2026-08-03T07:30:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "52.8",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -122,7 +122,7 @@
       "impact": "yellow",
       "time": "2026-08-03T12:45:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "53.8",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -136,7 +136,7 @@
       "impact": "red",
       "time": "2026-08-03T13:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "53.3",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -150,7 +150,7 @@
       "impact": "orange",
       "time": "2026-08-03T13:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "73.0",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -164,7 +164,7 @@
       "impact": "yellow",
       "time": "2026-08-03T13:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "0.1%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -178,7 +178,7 @@
       "impact": "yellow",
       "time": "2026-08-03T00:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "16.5M",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -206,7 +206,7 @@
       "impact": "yellow",
       "time": "2026-08-04T05:45:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "-93.3B",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -220,7 +220,7 @@
       "impact": "yellow",
       "time": "2026-08-04T06:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "-28.7K",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -234,7 +234,7 @@
       "impact": "yellow",
       "time": "2026-08-04T07:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "0.2%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -262,7 +262,7 @@
       "impact": "yellow",
       "time": "2026-08-04T11:30:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "4.2B",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -276,7 +276,7 @@
       "impact": "yellow",
       "time": "2026-08-04T11:30:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "-77.6B",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -290,7 +290,7 @@
       "impact": "yellow",
       "time": "2026-08-04T12:30:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "53.0",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -304,7 +304,7 @@
       "impact": "orange",
       "time": "2026-08-04T13:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "7.59M",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -318,7 +318,7 @@
       "impact": "yellow",
       "time": "2026-08-04T13:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "-1.3%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -332,7 +332,7 @@
       "impact": "yellow",
       "time": "2026-08-04T00:00:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "45.5",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -764,7 +764,7 @@
       "flag": "eu",
       "title": "German WPI m/m",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1618,7 +1618,7 @@
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2276,7 +2276,7 @@
       "flag": "eu",
       "title": "German Final GDP q/q",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2472,7 +2472,7 @@
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2486,7 +2486,7 @@
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2500,7 +2500,7 @@
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3046,7 +3046,7 @@
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -4096,7 +4096,7 @@
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-07-27T03:01:14Z",
+      "time": "2026-07-27T07:36:29Z",
       "forecast": "",
       "previous": "30.8K",
       "actual": "24.3K",
