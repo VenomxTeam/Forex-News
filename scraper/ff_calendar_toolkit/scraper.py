@@ -150,6 +150,12 @@ class ForexFactoryScraper:
         self.console.step(f"Navigating to {url}")
         driver = self.init_driver()
         try:
+            # Force Forex Factory to use Eastern Time regardless of IP location
+            self.console.step("Setting timezone cookies to avoid IP geolocation shifts")
+            driver.get("https://www.forexfactory.com/")
+            driver.add_cookie({"name": "timezone", "value": "America/New_York"})
+            driver.add_cookie({"name": "ff_timezone", "value": "America/New_York"})
+            
             driver.get(url)
             self.console.step("Calendar page loaded, detecting browser timezone")
             source_timezone = driver.execute_script(
