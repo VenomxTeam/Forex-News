@@ -24,8 +24,11 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
-      - name: Set Timezone to EST
-        run: sudo timedatectl set-timezone America/New_York
+      - name: Set Timezone to Match Runner IP Location
+        run: |
+          TZ=$(curl -s ipinfo.io/timezone)
+          echo "Setting OS timezone to $TZ to match Forex Factory's IP Geolocation"
+          sudo timedatectl set-timezone $TZ
 
       - name: Install System Dependencies (Chrome & ChromeDriver)
         run: |
