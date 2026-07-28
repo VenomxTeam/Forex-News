@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 from .config import ALLOWED_ELEMENT_TYPES, ICON_COLOR_MAP
@@ -68,7 +70,11 @@ class ForexFactoryScraper:
     def parse_table(self, driver: webdriver.Chrome, month_name: str) -> list[dict]:
         data = []
         self.console.step("Parsing loaded calendar rows")
-        table = driver.find_element(By.CLASS_NAME, "calendar__table")
+        
+        # Explicitly wait up to 30 seconds for the table to appear (handles Cloudflare delay)
+        table = WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "calendar__table"))
+        )
 
         for row in table.find_elements(By.TAG_NAME, "tr"):
             row_data = {}
