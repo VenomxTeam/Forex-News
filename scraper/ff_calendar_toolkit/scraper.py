@@ -5,8 +5,6 @@ from datetime import datetime, timezone
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 from .config import ALLOWED_ELEMENT_TYPES, ICON_COLOR_MAP
@@ -70,11 +68,7 @@ class ForexFactoryScraper:
     def parse_table(self, driver: webdriver.Chrome, month_name: str) -> list[dict]:
         data = []
         self.console.step("Parsing loaded calendar rows")
-        
-        # Explicitly wait up to 30 seconds for the table to appear (handles Cloudflare delay)
-        table = WebDriverWait(driver, 30).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "calendar__table"))
-        )
+        table = driver.find_element(By.CLASS_NAME, "calendar__table")
 
         for row in table.find_elements(By.TAG_NAME, "tr"):
             row_data = {}
@@ -156,12 +150,6 @@ class ForexFactoryScraper:
         self.console.step(f"Navigating to {url}")
         driver = self.init_driver()
         try:
-            # Force Forex Factory to use Eastern Time regardless of IP location
-            self.console.step("Setting timezone cookies to avoid IP geolocation shifts")
-            driver.get("https://www.forexfactory.com/")
-            driver.add_cookie({"name": "timezone", "value": "America/New_York"})
-            driver.add_cookie({"name": "ff_timezone", "value": "America/New_York"})
-            
             driver.get(url)
             self.console.step("Calendar page loaded, detecting browser timezone")
             source_timezone = driver.execute_script(
