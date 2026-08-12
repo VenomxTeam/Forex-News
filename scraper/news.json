@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T22:45:45Z",
+  "updated_at": "2026-08-12T02:01:20Z",
   "events": [
     {
       "id": "eur_german_retail_sales_mm_20260803",
@@ -1024,13 +1024,13 @@
       "category": "Economic"
     },
     {
-      "id": "usd_adp_weekly_employment_change_20260811",
+      "id": "usd_adp_weekly_employment_change_20260812",
       "currency": "USD",
       "country": "United States",
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "14.5K",
       "actual": "11.0K",
@@ -1682,13 +1682,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20260811",
+      "id": "gbp_cbi_industrial_order_expectations_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2354,13 +2354,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_final_gdp_qq_20260811",
+      "id": "eur_german_final_gdp_qq_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Final GDP q/q",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2564,13 +2564,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_import_prices_mm_20260811",
+      "id": "eur_german_import_prices_mm_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2578,13 +2578,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260811",
+      "id": "eur_german_retail_sales_mm_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2592,13 +2592,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_realized_sales_20260811",
+      "id": "gbp_cbi_realized_sales_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3138,13 +3138,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260811",
+      "id": "gbp_nationwide_hpi_mm_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -4090,13 +4090,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_wpi_mm_20260811",
+      "id": "eur_german_wpi_mm_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German WPI m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -5000,13 +5000,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20260811",
+      "id": "gbp_cbi_industrial_order_expectations_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -5672,13 +5672,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_realized_sales_20260811",
+      "id": "gbp_cbi_realized_sales_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -5770,13 +5770,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_import_prices_mm_20260811",
+      "id": "eur_german_import_prices_mm_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -5784,13 +5784,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260811",
+      "id": "eur_german_retail_sales_mm_20260812",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6414,13 +6414,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260811",
+      "id": "gbp_nationwide_hpi_mm_20260812",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-08-11T22:45:45Z",
+      "time": "2026-08-12T02:01:20Z",
       "forecast": "",
       "previous": "",
       "actual": "",
