@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T22:25:13Z",
+  "updated_at": "2026-08-23T01:23:57Z",
   "events": [
     {
       "id": "eur_spanish_manufacturing_pmi_20260901",
@@ -912,13 +912,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_wpi_mm_20260822",
+      "id": "eur_german_wpi_mm_20260823",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German WPI m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1822,13 +1822,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20260822",
+      "id": "gbp_cbi_industrial_order_expectations_20260823",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2494,13 +2494,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_realized_sales_20260822",
+      "id": "gbp_cbi_realized_sales_20260823",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2592,13 +2592,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_import_prices_mm_20260822",
+      "id": "eur_german_import_prices_mm_20260823",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Import Prices m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -2606,13 +2606,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260822",
+      "id": "eur_german_retail_sales_mm_20260823",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -3236,13 +3236,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260822",
+      "id": "gbp_nationwide_hpi_mm_20260823",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -4496,13 +4496,13 @@
       "category": "Economic"
     },
     {
-      "id": "usd_adp_weekly_employment_change_20260822",
+      "id": "usd_adp_weekly_employment_change_20260823",
       "currency": "USD",
       "country": "United States",
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "14.5K",
       "actual": "11.0K",
@@ -6722,13 +6722,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_retail_sales_mm_20260822",
+      "id": "eur_german_retail_sales_mm_20260823",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -6736,13 +6736,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20260822",
+      "id": "gbp_nationwide_hpi_mm_20260823",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-08-22T22:25:13Z",
+      "time": "2026-08-23T01:23:57Z",
       "forecast": "",
       "previous": "",
       "actual": "",
