@@ -2,7 +2,7 @@ import json
 import os
 import re
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -117,8 +117,23 @@ def main():
             "IST": "Asia/Kolkata"
         }
         tz_from_data = item.get("timezone", "UTC")
-        tz_iana = TZ_MAP.get(tz_from_data, "UTC")
+        # If the tz_from_data is already a valid IANA zone (like "Asia/Kolkata"), use it. Otherwise map it.
+        if "/" in tz_from_data:
+            tz_iana = tz_from_data
+        else:
+            tz_iana = TZ_MAP.get(tz_from_data, "UTC")
         time_utc = parse_to_utc_iso(item.get("date"), item.get("time"), tz_iana)
+        
+        # Handle special case: API Weekly is often shifted by a day improperly due to FF UTC bug
+        if "API Weekly" in title and time_utc:
+            # Shift back by 1 day
+            dt = datetime.strptime(time_utc, "%Y-%m-%dT%H:%M:%SZ")
+            dt = dt - timedelta(days=1)
+            time_utc = dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+            # Update the date str to match the new day
+            item["date"] = dt.strftime("%d/%m/%Y")
+            item["day"] = dt.strftime("%a")
+            
         if not time_utc:
             # Fallback format: use day timestamp
             time_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
