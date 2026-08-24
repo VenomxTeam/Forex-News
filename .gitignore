@@ -51,3 +51,13 @@ app/release/
 # Graphify / MCP files
 graphify-out/
 .agents/
+
+# Internal Admin Tools & Local Scripts (Private / Never Push to GitHub)
+admin_poll.html
+publish_poll.py
+*.html
+scraper/ff_news.html
+scraper/parse_html.py
+keystore
+*.jks
+*.keystore

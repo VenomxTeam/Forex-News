@@ -172,5 +172,12 @@ def main():
         json.dump(news_payload, f, indent=2)
     print("news.json written successfully.")
 
+    # Automatically enrich any missing historical continuity
+    try:
+        from enrich_events import enrich_news_dataset
+        enrich_news_dataset("news.json", "news.json")
+    except Exception as e:
+        print(f"Automatic enrichment hook note: {e}")
+
 if __name__ == "__main__":
     main()
