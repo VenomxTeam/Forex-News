@@ -44,7 +44,7 @@ jobs:
       - name: Run Scraper
         run: |
           cd scraper
-          python scraper.py scrape --config config.yaml --months jan.2026 feb.2026 mar.2026 apr.2026 may.2026 jun.2026 jul.2026 aug.2026 sep.2026 oct.2026 nov.2026 dec.2026
+          python scraper.py scrape --config config.yaml --months this next
           python generate_news_json.py
 
       - name: Commit and Push Changes
