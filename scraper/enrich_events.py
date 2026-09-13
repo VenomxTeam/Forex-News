@@ -2,6 +2,7 @@ import json
 import re
 import random
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 
 random.seed(42)
@@ -31,7 +32,7 @@ def format_val(num, suffix, decimals=1):
     else:
         return f"{num:.1f}{suffix}"
 
-def enrich_news_dataset(input_file, output_file):
+def enrich_news_dataset(input_file, output_file, cutoff_time=None):
     with open(input_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
@@ -40,7 +41,10 @@ def enrich_news_dataset(input_file, output_file):
     events.sort(key=lambda x: x.get('time', ''))
 
     history = defaultdict(list)
-    cutoff_time = "2026-08-20T00:00:00Z"
+    if cutoff_time is None:
+        # Dynamic: always use current UTC time so any passed event immediately gets its actual release!
+        cutoff_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    print(f"Enrichment running with cutoff_time: {cutoff_time}")
 
     # Step 1: Record all established historical values from Jan-Jul 2026
     for e in events:
@@ -119,8 +123,8 @@ def enrich_news_dataset(input_file, output_file):
         fcst = e.get('forecast', '').strip()
         act = e.get('actual', '').strip()
 
-        # If already populated, update history tracker and continue
-        if prev and (act or fcst):
+        # If already populated with actual (or future event with forecast), update history tracker and continue
+        if prev and (act or (fcst and time_str and time_str > cutoff_time)):
             history[(curr, title)].append({
                 'previous': prev,
                 'forecast': fcst,
@@ -136,7 +140,20 @@ def enrich_news_dataset(input_file, output_file):
         suffix = ""
         decimals = 1
 
-        if hist_list:
+        if fcst:
+            f_num, f_sfx = extract_numeric(fcst)
+            if f_num is not None:
+                base_val = f_num
+                suffix = f_sfx
+                decimals = 2 if "." in fcst and len(fcst.split(".")[1].split("%")[0]) >= 2 else (1 if "." in fcst else 0)
+        elif prev:
+            p_num, p_sfx = extract_numeric(prev)
+            if p_num is not None:
+                base_val = p_num
+                suffix = p_sfx
+                decimals = 2 if "." in prev and len(prev.split(".")[1].split("%")[0]) >= 2 else (1 if "." in prev else 0)
+
+        if base_val is None and hist_list:
             last_item = hist_list[-1]
             last_num_str = last_item.get('actual') or last_item.get('previous') or last_item.get('forecast')
             num, sfx = extract_numeric(last_num_str)
@@ -156,17 +173,20 @@ def enrich_news_dataset(input_file, output_file):
 
         if base_val is not None:
             # Generate cohesive numbers
-            # Previous is base_val
-            new_prev = format_val(base_val, suffix, decimals)
+            new_prev = prev if prev else format_val(base_val, suffix, decimals)
             
             # Forecast has subtle variance (-2% to +2%)
-            delta_fcst = base_val * random.uniform(-0.03, 0.03) if base_val != 0 else random.uniform(0.1, 0.3)
-            fcst_val = base_val + delta_fcst
-            new_fcst = format_val(fcst_val, suffix, decimals)
+            if fcst:
+                new_fcst = fcst
+                fcst_val = base_val
+            else:
+                delta_fcst = base_val * random.uniform(-0.03, 0.03) if base_val != 0 else random.uniform(0.1, 0.3)
+                fcst_val = base_val + delta_fcst
+                new_fcst = format_val(fcst_val, suffix, decimals)
 
             # Actual: if past date <= cutoff_time, generate realistic result
-            new_act = ""
-            if time_str and time_str <= cutoff_time:
+            new_act = act
+            if (not new_act) and time_str and time_str <= cutoff_time:
                 delta_act = base_val * random.uniform(-0.04, 0.04) if base_val != 0 else random.uniform(0.1, 0.4)
                 act_val = fcst_val + delta_act
                 new_act = format_val(act_val, suffix, decimals)
@@ -184,12 +204,40 @@ def enrich_news_dataset(input_file, output_file):
 
     print(f"Enriched {updated_count} economic events with continuous data.")
 
-    # Save to output file
-    data['updated_at'] = "2026-08-20T04:30:00Z"
+    # Save to output file with current UTC timestamp
+    data['updated_at'] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
     print(f"Successfully saved to {output_file}")
 
 if __name__ == "__main__":
-    enrich_news_dataset('scraper/news.json', 'scraper/news.json')
-    enrich_news_dataset('app/app/src/main/assets/news.json', 'app/app/src/main/assets/news.json')
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+
+    # Candidate paths regardless of current working directory
+    target_candidates = [
+        script_dir / "news.json",
+        repo_root / "scraper" / "news.json",
+        repo_root / "app" / "app" / "src" / "main" / "assets" / "news.json"
+    ]
+    
+    unique_targets = []
+    seen = set()
+    for p in target_candidates:
+        p_resolved = p.resolve()
+        if p_resolved.exists() and p_resolved not in seen:
+            seen.add(p_resolved)
+            unique_targets.append(p_resolved)
+
+    for target in unique_targets:
+        print(f"Running enrichment on: {target}")
+        enrich_news_dataset(str(target), str(target))
+
+    # Always ensure app assets folder receives the latest news.json
+    scraper_news = script_dir / "news.json"
+    assets_dir = repo_root / "app" / "app" / "src" / "main" / "assets"
+    if scraper_news.exists() and assets_dir.exists():
+        import shutil
+        assets_news = assets_dir / "news.json"
+        shutil.copy2(str(scraper_news), str(assets_news))
+        print(f"Synced latest enriched news.json to {assets_news}")

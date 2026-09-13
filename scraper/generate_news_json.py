@@ -73,10 +73,11 @@ def parse_to_utc_iso(date_str, time_str, tz_str):
         return ""
 
 def main():
-    print("Processing existing scraped data from scraper/news/monthly...")
+    script_dir = Path(__file__).resolve().parent
+    print(f"Processing scraped data from {script_dir / 'news' / 'monthly'}...")
     
     # Scan the output monthly folder for generated monthly files
-    output_dir = Path("news/monthly")
+    output_dir = script_dir / "news" / "monthly"
     if not output_dir.exists():
         print(f"Output directory {output_dir} does not exist.")
         return
@@ -165,32 +166,17 @@ def main():
         "events": all_impact_events
     }
     
-    # Compare with existing news.json to implement the commit-reducing optimization
-    target_file = Path("news.json")
-    if target_file.exists():
-        try:
-            with open(target_file, "r", encoding="utf-8") as f:
-                old_data = json.load(f)
-                
-            # Compare events list (ignoring updated_at)
-            old_events = old_data.get("events", [])
-            
-            if json.dumps(old_events, sort_keys=True) == json.dumps(all_impact_events, sort_keys=True):
-                print("No changes detected in events. Skipping news.json update to prevent unnecessary commits.")
-                return
-        except Exception as e:
-            print(f"Error comparing old news.json: {e}")
-            
     # Write updated news.json
-    print("Changes detected. Writing updated news.json...")
+    target_file = script_dir / "news.json"
+    print(f"Writing updated news.json to {target_file}...")
     with open(target_file, "w", encoding="utf-8") as f:
         json.dump(news_payload, f, indent=2)
     print("news.json written successfully.")
 
-    # Automatically enrich any missing historical continuity
+    # Automatically enrich events with continuous data and live actual releases
     try:
         from enrich_events import enrich_news_dataset
-        enrich_news_dataset("news.json", "news.json")
+        enrich_news_dataset(str(target_file), str(target_file))
     except Exception as e:
         print(f"Automatic enrichment hook note: {e}")
 

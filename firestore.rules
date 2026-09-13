@@ -55,6 +55,11 @@ service cloud.firestore {
       );
     }
 
+    // User profiles
+    match /users/{userId} {
+      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+    }
+
     // Block all other unauthorized root collections by default
     match /{document=**} {
       allow read, write: if false;
