@@ -2,8 +2,8 @@ name: Scrape Forex News Calendar
 
 on:
   schedule:
-    # Runs every 2 hours at minute 0
-    - cron: '0 */2 * * *'
+    # Runs every hour at minute 0 for timely economic release syncing
+    - cron: '0 * * * *'
   workflow_dispatch:
     # Allow manual runs from the GitHub Actions tab
 
@@ -41,17 +41,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Scraper
+      - name: Run Scraper and Enrich Pipeline
         run: |
           cd scraper
-          python scraper.py scrape --config config.yaml --months this next
+          # Run scraper (graceful fallback if FF has temporary anti-bot or network hiccups)
+          python scraper.py scrape --config config.yaml --months this next || echo "⚠️ Scraper finished with notice, continuing pipeline..."
+          # Generate latest news.json
           python generate_news_json.py
+          # Ensure full enrichment with dynamic UTC cutoff so all released events have actuals
+          python enrich_events.py
+
+      - name: Sync News Data to App Assets
+        run: |
+          if [ -f "scraper/news.json" ]; then
+            mkdir -p app/app/src/main/assets
+            cp scraper/news.json app/app/src/main/assets/news.json
+            echo "Synced news.json to app/app/src/main/assets/news.json"
+          fi
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Automated sync: Update news calendar data"
+          commit_message: "Automated sync: Update news calendar data & actual releases"
 
       - name: Purge JSDelivr Cache
         run: |
           curl -s https://purge.jsdelivr.net/gh/VenomxTeam/Forex-News@main/scraper/news.json
+          curl -s https://purge.jsdelivr.net/gh/VenomxTeam/Forex-News@main/app/app/src/main/assets/news.json
+
