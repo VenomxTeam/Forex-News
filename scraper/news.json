@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T14:31:27Z",
+  "updated_at": "2026-09-20T17:58:47Z",
   "events": [
     {
       "id": "usd_api_weekly_statistical_bulletin_20260831",
@@ -3914,7 +3914,7 @@
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-09-20T14:31:27Z",
+      "time": "2026-09-20T17:58:47Z",
       "forecast": "",
       "previous": "11.8K",
       "actual": "10.0K",
@@ -3928,7 +3928,7 @@
       "flag": "eu",
       "title": "German Retail Sales m/m",
       "impact": "yellow",
-      "time": "2026-09-20T14:31:27Z",
+      "time": "2026-09-20T17:58:47Z",
       "forecast": "-3.4%",
       "previous": "-3.4%",
       "actual": "-3.3%",
@@ -3942,7 +3942,7 @@
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-09-20T14:31:27Z",
+      "time": "2026-09-20T17:58:47Z",
       "forecast": "0.2%",
       "previous": "0.2%",
       "actual": "0.2%",
@@ -3956,7 +3956,7 @@
       "flag": "eu",
       "title": "German Prelim GDP q/q",
       "impact": "orange",
-      "time": "2026-09-20T14:31:27Z",
+      "time": "2026-09-20T17:58:47Z",
       "forecast": "2.5%",
       "previous": "2.4%",
       "actual": "2.4%",
