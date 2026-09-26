@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T03:21:58Z",
+  "updated_at": "2026-09-26T09:06:43Z",
   "events": [
     {
       "id": "usd_api_weekly_statistical_bulletin_20260831",
@@ -5034,7 +5034,7 @@
       "flag": "eu",
       "title": "German Prelim GDP q/q",
       "impact": "orange",
-      "time": "2026-09-26T03:21:58Z",
+      "time": "2026-09-26T09:06:43Z",
       "forecast": "2.4%",
       "previous": "2.4%",
       "actual": "2.3%",
@@ -5048,7 +5048,7 @@
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-09-26T03:21:58Z",
+      "time": "2026-09-26T09:06:43Z",
       "forecast": "",
       "previous": "11.8K",
       "actual": "10.0K",
