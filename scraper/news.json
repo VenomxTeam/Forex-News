@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T09:22:18Z",
+  "updated_at": "2026-10-04T15:10:21Z",
   "events": [
     {
       "id": "usd_omdia_total_vehicle_sales_20261001",
@@ -820,7 +820,7 @@
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-10-04T09:22:18Z",
+      "time": "2026-10-04T15:10:21Z",
       "forecast": "20.3K",
       "previous": "20.0K",
       "actual": "20.6K",
@@ -834,7 +834,7 @@
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-10-04T09:22:18Z",
+      "time": "2026-10-04T15:10:21Z",
       "forecast": "20.5K",
       "previous": "20.0K",
       "actual": "19.8K",
@@ -848,7 +848,7 @@
       "flag": "eu",
       "title": "German Prelim GDP q/q",
       "impact": "orange",
-      "time": "2026-10-04T09:22:18Z",
+      "time": "2026-10-04T15:10:21Z",
       "forecast": "2.4%",
       "previous": "2.4%",
       "actual": "2.3%",
@@ -862,7 +862,7 @@
       "flag": "eu",
       "title": "German Final GDP q/q",
       "impact": "yellow",
-      "time": "2026-10-04T09:22:18Z",
+      "time": "2026-10-04T15:10:21Z",
       "forecast": "2.4%",
       "previous": "2.4%",
       "actual": "2.4%",
