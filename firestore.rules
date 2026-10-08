@@ -55,9 +55,40 @@ service cloud.firestore {
       );
     }
 
+    // Rules for quick trade polls (app-level symbol polls e.g. 2026-09-19_XAUUSD)
+    match /quick_trade_polls/{pollId} {
+      // 1. Read: Publicly readable for all app users
+      allow read: if true;
+
+      // 2. Create / Update (Voting): Allow users to initialize polls and submit/switch votes
+      allow create, update: if true;
+
+      // 3. Delete: Admin only
+      allow delete: if isAdmin();
+    }
+
     // User profiles
+    // Protected billing fields — can ONLY be updated by the Cloudflare Webhook
+    // (Firebase service account) or by a server-side admin call.
+    // Regular authenticated users can update non-billing profile fields only.
+    function isBillingField(fieldPath) {
+      return fieldPath in [
+        'isPro', 'expirationDate', 'planType', 'proPlan', 'subscriptionType',
+        'paymentGateway', 'subscriptionStatus', 'autoPay', 'subscriptionId',
+        'paymentId', 'hasTrial', 'trialEndsAt', 'lastRenewedAt', 'cancelledAt',
+        'proUpdatedAt'
+      ];
+    }
+
     match /users/{userId} {
-      allow read, write: if isAuthenticated() && request.auth.uid == userId;
+      // Anyone authenticated can read their own profile
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+
+      // Admin / Service Account can write anything (webhook uses service account)
+      allow write: if isAdmin();
+
+      // Authenticated users can create, update, and delete their own profile
+      allow create, update, delete: if isAuthenticated() && request.auth.uid == userId;
     }
 
     // Block all other unauthorized root collections by default

@@ -7,3 +7,4 @@ selenium==4.13.0
 streamlit==1.40.2
 uvicorn==0.34.0
 webdriver_manager==4.0.2
+firebase-admin>=6.5.0

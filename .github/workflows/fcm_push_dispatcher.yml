@@ -2,8 +2,8 @@ name: Automated FCM Push Dispatcher
 
 on:
   schedule:
-    # Runs every 15 minutes for timely economic alerts (T-15m, T+5m wrap, session opens)
-    - cron: '*/15 * * * *'
+    # Runs every 5 minutes for timely economic alerts (T-30m, T-15m, T+5m wrap, session opens)
+    - cron: '*/5 * * * *'
   workflow_dispatch:
     # Allows manual runs from GitHub Actions tab
 

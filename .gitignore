@@ -61,3 +61,11 @@ scraper/parse_html.py
 keystore
 *.jks
 *.keystore
+
+# Secret Keys & Credentials (NEVER commit to public GitHub repo)
+*service-account*.json
+*.pem
+*.key
+.env
+.env.*
+!*.example

@@ -10,3 +10,5 @@ env/
 .codex
 news/
 state/
+!state/sent_push_history.json
+*service-account*.json
