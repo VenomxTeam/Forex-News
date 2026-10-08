@@ -42,6 +42,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Scraper and Enrich Pipeline
+        env:
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
         run: |
           cd scraper
           # Run scraper (graceful fallback if FF has temporary anti-bot or network hiccups)
@@ -50,6 +52,8 @@ jobs:
           python generate_news_json.py
           # Ensure full enrichment with dynamic UTC cutoff so all released events have actuals
           python enrich_events.py
+          # Dispatch verified FCM Push Alerts (Zero Fake, Zero Spam)
+          python fcm_push_dispatcher.py || echo "⚠️ FCM Dispatch notice, continuing pipeline..."
 
       - name: Sync News Data to App Assets
         run: |
