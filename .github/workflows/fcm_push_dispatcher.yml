@@ -1,0 +1,43 @@
+name: Automated FCM Push Dispatcher
+
+on:
+  schedule:
+    # Runs every 15 minutes for timely economic alerts (T-15m, T+5m wrap, session opens)
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    # Allows manual runs from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  dispatch_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install firebase-admin requests
+
+      - name: Run FCM Push Dispatcher (Zero Fake, Zero Spam)
+        env:
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+        run: |
+          cd scraper
+          python fcm_push_dispatcher.py
+
+      - name: Commit Deduplication History
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-sync: Record sent push notification state"
+          file_pattern: "scraper/state/sent_push_history.json"
