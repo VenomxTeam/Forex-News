@@ -10,13 +10,16 @@ Triggers implemented (Pillar 1):
 2. New York Session Open (Mon-Fri 12:00 UTC) - Skips Weekends
 3. T-15m High-Impact Event Countdown (Red folder events only)
 4. T+5m Post-News Volatility Wrap (Actual prints vs Forecast)
-5. Sunday 'Week Ahead' Macro Digest (Sundays 17:00 UTC)
+5. Sunday 'Week Ahead' Macro Digest (Sundays 14:00-19:59 UTC, full week titles)
+6. Daily Morning High-Impact Digest (Mon-Fri 01:00-03:59 UTC / 06:30-09:29 AM IST with release times)
+7. Automated 2-Hour Retention & Memes (Mon-Fri 08:00 AM - 12:00 AM Midnight IST, India vs Global)
+8. Special Weekend & Calendar Retention (Saturday, Sunday, and strictly timed holiday hooks)
 
 Anti-Spam & Zero-Fake Guarantees:
 - Strict JSON & Firestore deduplication (no duplicate alerts)
 - Weekends strictly blocked for session opens
 - Red-impact events only (no low/gray noise)
-- Respects topic routing: high_impact_alerts, daily_briefing, event_{id}
+- Respects topic routing: high_impact_alerts, daily_briefing, event_{id}, india_traders, global_traders
 """
 
 import os
@@ -563,12 +566,13 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TRIGGER 4: Sunday "Week Ahead" Macro Push Digest
+# TRIGGER 4: Sunday "Week Ahead" Macro Push Digest (Full Week Titles)
 # ─────────────────────────────────────────────────────────────────────────────
 def check_sunday_macro_digest(events, now_utc, local_history, messaging_client, db_client):
     """
-    Runs STRICTLY on Sunday (weekday == 6) between 16:00 and 19:00 UTC.
-    Gathers the real top upcoming high-impact events for the coming week.
+    Runs STRICTLY on Sunday (weekday == 6) between 14:00 and 19:59 UTC.
+    Gathers all real high-impact (red) events for the entire upcoming week (Mon-Fri)
+    and formats them with their exact day, currency, and titles.
     """
     logger.info("Checking Trigger 4: Sunday 'Week Ahead' Macro Digest...")
     # 6 = Sunday
@@ -576,8 +580,8 @@ def check_sunday_macro_digest(events, now_utc, local_history, messaging_client, 
         logger.debug("Today is not Sunday. Skipping Sunday Macro Digest.")
         return 0
 
-    if not (16 <= now_utc.hour <= 19):
-        logger.debug(f"Current UTC hour ({now_utc.hour}) is outside Sunday 16:00-19:00 window.")
+    if not (14 <= now_utc.hour <= 19):
+        logger.debug(f"Current UTC hour ({now_utc.hour}) is outside Sunday 14:00-19:59 window.")
         return 0
 
     year, week_num, _ = now_utc.isocalendar()
@@ -595,16 +599,39 @@ def check_sunday_macro_digest(events, now_utc, local_history, messaging_client, 
             continue
         e_time = parse_iso_utc(e.get("time"))
         if e_time and (now_utc <= e_time <= end_window):
-            upcoming_red.append(e)
+            upcoming_red.append((e_time, e))
 
+    upcoming_red.sort(key=lambda x: x[0])
     upcoming_count = len(upcoming_red)
-    push_title = f"📅 Week Ahead: {upcoming_count} High-Impact Catalysts" if upcoming_count > 0 else "📅 Week Ahead: Macro Watchlist"
 
-    if upcoming_red:
-        catalysts = ", ".join(f"{e.get('title')} ({e.get('currency')})" for e in upcoming_red[:3])
-        push_body = f"Top releases this week: {catalysts}. Tap to review economic schedule & set alarms."
+    if upcoming_count > 0:
+        push_title = f"📅 Week Ahead: {upcoming_count} High-Impact Catalysts"
+
+        # Group titles by day of week (Mon, Tue, Wed, Thu, Fri)
+        by_day = {}
+        for e_time, e in upcoming_red:
+            day_name = e_time.strftime("%a")  # e.g., "Mon", "Tue"
+            curr = e.get("currency", "FOREX")
+            title = e.get("title", "High-Impact Event").strip()
+            item = f"{curr} {title}"
+            if day_name not in by_day:
+                by_day[day_name] = []
+            if item not in by_day[day_name]:
+                by_day[day_name].append(item)
+
+        day_lines = []
+        for day_name, items in by_day.items():
+            day_lines.append(f"• {day_name}: {', '.join(items)}")
+
+        schedule_block = "\n".join(day_lines)
+        push_body = (
+            f"🔴 High-Impact Releases This Week:\n"
+            f"{schedule_block}\n\n"
+            f"Tap to view full calendar & set alarms."
+        )
     else:
-        push_body = "Review the upcoming week's economic calendar and prepare your key pip levels. Tap to open."
+        push_title = "📅 Week Ahead: Macro Watchlist"
+        push_body = "Markets open soon. Review the upcoming week's economic calendar and prepare your key pip levels. Tap to open."
 
     success = send_fcm_message(
         messaging_client=messaging_client,
@@ -617,7 +644,7 @@ def check_sunday_macro_digest(events, now_utc, local_history, messaging_client, 
             "channelId": "fcm_daily_briefing_channel"
         },
         channel_id="fcm_daily_briefing_channel",
-        priority="normal"
+        priority="high"
     )
 
     if success:
@@ -632,7 +659,119 @@ def check_sunday_macro_digest(events, now_utc, local_history, messaging_client, 
             local_history,
             db_client
         )
-        logger.info(f"✓ Sent Sunday 'Week Ahead' Digest for Week {week_num}")
+        logger.info(f"✓ Sent Sunday 'Week Ahead' Digest for Week {week_num} ({upcoming_count} catalysts)")
+        return 1
+
+    return 0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TRIGGER 5: Daily Morning High-Impact News Digest (With Time)
+# ─────────────────────────────────────────────────────────────────────────────
+def check_daily_morning_high_impact_digest(events, now_utc, local_history, messaging_client, db_client):
+    """
+    Runs in the morning between 01:00 and 03:59 UTC (06:30 to 09:29 AM IST).
+    Checks if today has any Red (High-Impact) economic events.
+
+    Guarantees:
+    - If NO high-impact events exist today: skips entirely (Zero Fake, Zero Spam).
+    - If high-impact events exist: sends a morning notification listing all today's
+      high-impact news titles with their scheduled release times (in UTC and IST).
+    - Deduplicated per calendar day: sent strictly ONCE per day.
+    """
+    logger.info("Checking Trigger 5: Daily Morning High-Impact Digest...")
+
+    # Skip Sunday as Sunday has Trigger 4 (Week Ahead Macro Digest)
+    if now_utc.weekday() == 6:
+        logger.debug("Sunday detected. Handled by Sunday Macro Digest.")
+        return 0
+
+    # Active morning window: 01:00 to 03:59 UTC (06:30 to 09:29 AM IST)
+    if not (1 <= now_utc.hour <= 3):
+        logger.debug(f"Current UTC hour ({now_utc.hour}) is outside morning window (01:00-03:59 UTC).")
+        return 0
+
+    date_str = now_utc.strftime("%Y-%m-%d")
+    dedup_key = f"daily_morning_red_{date_str}"
+
+    if is_already_sent(dedup_key, local_history, db_client):
+        logger.debug(f"Daily Morning Digest for {date_str} already sent.")
+        return 0
+
+    # Filter today's real high-impact events
+    today_red = []
+    for e in events:
+        if str(e.get("impact", "")).lower() != "red":
+            continue
+        e_time = parse_iso_utc(e.get("time"))
+        if e_time and e_time.strftime("%Y-%m-%d") == date_str:
+            today_red.append((e_time, e))
+
+    if not today_red:
+        logger.info(f"No high-impact (red) events scheduled for today ({date_str}). Zero morning alert sent.")
+        return 0
+
+    today_red.sort(key=lambda x: x[0])
+    count = len(today_red)
+
+    # Format event lines with UTC and IST times
+    lines = []
+    for e_time, e in today_red:
+        curr = e.get("currency", "FOREX")
+        title = e.get("title", "High-Impact Event").strip()
+        time_utc_str = e_time.strftime("%H:%M UTC")
+        ist_time = e_time + timedelta(hours=5, minutes=30)
+        time_ist_str = ist_time.strftime("%I:%M %p IST").lstrip("0")
+
+        forecast = e.get("forecast", "").strip()
+        fcst_str = f" [Fcst: {forecast}]" if forecast else ""
+        lines.append(f"• {time_utc_str} ({time_ist_str}) — {curr}: {title}{fcst_str}")
+
+    if count == 1:
+        first_event = today_red[0][1]
+        push_title = f"🔴 High-Impact Today: {first_event.get('currency')} {first_event.get('title')}"
+    else:
+        push_title = f"🔴 Today's High-Impact News: {count} Major Releases"
+
+    event_list_block = "\n".join(lines)
+    push_body = (
+        f"Today's High-Impact Schedule:\n"
+        f"{event_list_block}\n\n"
+        f"Tap for live countdowns, forecasts & AI analysis."
+    )
+
+    data_payload = {
+        "type": "DAILY_BRIEFING",
+        "subType": "HIGH_IMPACT_DIGEST",
+        "date": date_str,
+        "count": str(count),
+        "route": "calendar",
+        "channelId": "fcm_daily_briefing_channel"
+    }
+
+    success = send_fcm_message(
+        messaging_client=messaging_client,
+        topic="daily_briefing",
+        title=push_title,
+        body=push_body,
+        data=data_payload,
+        channel_id="fcm_daily_briefing_channel",
+        priority="high"
+    )
+
+    if success:
+        record_sent(
+            dedup_key,
+            {
+                "sent_at": now_utc.isoformat(),
+                "date": date_str,
+                "high_impact_count": count,
+                "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+            },
+            local_history,
+            db_client
+        )
+        logger.info(f"✓ Sent Daily Morning High-Impact Digest for {date_str} ({count} events)")
         return 1
 
     return 0
@@ -666,8 +805,26 @@ def run_push_dispatcher(test_time_iso=None):
     # 3. Session Open Alerts (London & NY, Mon-Fri only)
     total_dispatched += check_session_open_alerts(events, now_utc, local_history, messaging_client, db_client)
 
-    # 4. Sunday Macro Digest (Sundays only)
+    # 4. Sunday Macro Digest (Sundays only, full week ahead high-impact titles)
     total_dispatched += check_sunday_macro_digest(events, now_utc, local_history, messaging_client, db_client)
+
+    # 5. Daily Morning High-Impact Digest (Mon-Fri morning, only if red events exist today, with time)
+    total_dispatched += check_daily_morning_high_impact_digest(events, now_utc, local_history, messaging_client, db_client)
+
+    # 6. Automated 2-Hour Retention, Memes & Special Calendar Hooks (India vs Global)
+    try:
+        from retention_campaigns import check_retention_campaign_dispatch
+        total_dispatched += check_retention_campaign_dispatch(
+            now_utc=now_utc,
+            local_history=local_history,
+            messaging_client=messaging_client,
+            db_client=db_client,
+            send_message_fn=send_fcm_message,
+            record_sent_fn=record_sent,
+            is_sent_fn=is_already_sent
+        )
+    except Exception as e:
+        logger.error(f"Error in Retention Campaign Dispatcher: {e}")
 
     logger.info(f"Cycle completed. Total notifications dispatched: {total_dispatched}")
     return total_dispatched
