@@ -1,0 +1,910 @@
+================================================================================
+  🌍 GLOBAL FOREX NEWS: HIGH-RETENTION & PRO-CONVERSION NOTIFICATIONS 🌍
+  (Universal High-Converting International English for Worldwide Traders)
+================================================================================
+  Audience: Global Forex Traders (US, UK, Europe, Asia, Middle East, LatAm, Africa)
+  Standard Language: Universal International English (Fluent, crisp, high CTR)
+  Time Standards: UTC / GMT / EST / IST (Covers London, New York & Tokyo Sessions)
+  
+  Target Objectives:
+  1. Maximum App Opens (DAU / MAU) during volatile market windows.
+  2. High-Intent PRO / VIP Conversion (AI Quant Verdict & Signals).
+  3. Feature Discovery (Trade Journal, Calculators, Home Screen Widget).
+
+--------------------------------------------------------------------------------
+📊 NOTIFICATION FREQUENCY MATRIX: 2-HOUR INTERVALS & WEEKEND LOGIC
+--------------------------------------------------------------------------------
+  CRITICAL STRATEGY:
+  - WEEKDAYS (Mon - Fri): 1 Notification every 2 Hours during active trading sessions
+    (08:00 AM to 12:00 AM Midnight IST / 02:30 to 18:30 UTC). 9 slots per day.
+    *Night Hours (12:00 AM Midnight to 08:00 AM IST): Silent DND mode to prevent uninstalls.*
+  
+  - WEEKENDS (Sat - Sun): SPECIAL WEEKEND SCHEDULE!
+    *Forex market is closed on weekends! Sending live pip alerts on weekends makes
+    the app look broken/fake. Instead, weekend notifications focus on Weekly Journal
+    Audit, Trading Psychology, 24/7 Crypto, and Sunday Market Re-Opening Prep.*
+
+--------------------------------------------------------------------------------
+💰 PLAY STORE PRICING SYNC GUIDE (100% Dynamic - ZERO Hardcoded Prices)
+--------------------------------------------------------------------------------
+  App code does NOT hardcode any subscription price!
+  The Paywall automatically queries Google Play Billing SDK in real-time and
+  displays the exact currency based on the user's Google Play country:
+  
+  Google Play Console Setup (Subscriptions):
+  
+  📦 PLAN 1: WEEKLY PLAN (Bite-sized impulsive entry - No Trial)
+  - Product ID: pro_weekly (or forexnews_pro_weekly)
+  - Billing Period: 1 Week (Auto-renewing)
+  - Pricing:
+    🇮🇳 India Price: ₹99.00 / week (INR)
+    🇺🇸 US / Global Base: $1.99 / week (USD)
+  
+  ⭐ PLAN 2: MONTHLY PLAN (With 3-Day Free Trial - High LTV)
+  - Product ID: pro_monthly (or forexnews_pro_monthly)
+  - Billing Period: 1 Month (Auto-renewing)
+  - Base Plan Pricing: Set your monthly base price (e.g., ₹299 - ₹399/mo or $4.99 - $7.99/mo)
+  - 🎁 3-DAY FREE TRIAL OFFER SETUP:
+    - Under pro_monthly -> Click "Add offer"
+    - Offer ID: monthly-free-trial-3d
+    - Eligibility: New customer acquisition (First-time subscribers only)
+    - Phase 1: Free Trial -> Duration: 3 Days
+    - Phase 2: Base plan -> Auto-renewing monthly price
+    - Status: Activate Offer!
+  
+  🔗 REVENUECAT PAYWALL SETUP:
+  - Attach the Monthly Product + 3-Day Trial Offer to the "Monthly" package in RevenueCat.
+  - In RevenueCat Paywall Editor: Make "Monthly" the Default/Featured package with badge "3 Days Free".
+  - The App's Paywall dynamically shows:
+    "Try 3 Days Free, then ₹.../mo" on the Monthly card!
+    and "₹99/week" on the Weekly card!
+================================================================================
+
+
+--------------------------------------------------------------------------------
+🔥 SECTION 1: GLOBAL WITTY & PSYCHOLOGICAL HOOKS (Daily Habit Builders)
+--------------------------------------------------------------------------------
+[Notification 1.1] - The Morning Coffee Hook
+Title: Coffee first, or pips first? ☕📈
+Body: London session is live. EUR/USD and GBP/USD volatility is picking up fast!
+Optimal Timing: 07:30 UTC / 02:30 EST / 13:00 IST (London Open)
+Deep Link: home
+
+[Notification 1.2] - The Stop Loss Reality Check
+Title: Did you set your Stop Loss? 💀
+Body: New York session opening now. High volatility spike incoming—protect your capital.
+Optimal Timing: 13:00 UTC / 08:00 EST / 18:30 IST (NY Open)
+Deep Link: home
+
+[Notification 1.3] - The "Don't Trade Blind" Warning
+Title: "Should I enter this trade?" 🛑 Wait!
+Body: Red-folder high impact catalyst in 15 mins. Check the forecast before you click buy.
+Optimal Timing: 15 mins before major economic releases
+Deep Link: calendar
+
+[Notification 1.4] - The Doom-scroller Callout
+Title: Scrolling won't grow your account 📱💸
+Body: Market moved 85 pips in the last hour. See today's dominant currency strength bias.
+Optimal Timing: 10:00 UTC / 05:00 EST / 15:30 IST
+Deep Link: market
+
+[Notification 1.5] - The Charts vs Reality Hook
+Title: Charts lie. Macro data doesn't. 📊⚡
+Body: Institutions trade fundamentals, not retail patterns. Check today's AI Macro Sentiment.
+Optimal Timing: 06:00 UTC / 01:00 EST / 11:30 IST
+Deep Link: home
+
+[Notification 1.6] - The Market Whisperer
+Title: The market just made a move... 👀
+Body: Big momentum shift on USD pairs. Check the live sessions heatmap right now.
+Optimal Timing: Mid-session volatility hours
+Deep Link: market
+
+
+--------------------------------------------------------------------------------
+🚨 SECTION 2: HIGH-VOLATILITY CATALYSTS & BREAKING NEWS (90%+ Open Rates)
+--------------------------------------------------------------------------------
+[Notification 2.1] - NFP / CPI 15-Minute Countdown
+Title: 🚨 RED ALERT: NFP / CPI in 15 Minutes!
+Body: 100+ pip moves expected. Institutional positioning and forecasts are live. Tap to see!
+Optimal Timing: 15 min prior to NFP / US CPI (13:15 UTC / 08:15 EST)
+Deep Link: calendar
+
+[Notification 2.2] - Federal Reserve / Central Bank Speech
+Title: 🎙️ Jerome Powell is about to speak!
+Body: Expect heavy USD manipulation. Live economic updates and market squawk active.
+Optimal Timing: 10 min prior to FOMC press conference
+Deep Link: news_feed
+
+[Notification 2.3] - Instant Deviation Breaking News
+Title: 💥 Breaking: Actual Data Released!
+Body: Massive forecast deviation! Gold (XAU/USD) and FX pairs are spiking right now.
+Optimal Timing: Exactly 60 seconds after high-impact data release
+Deep Link: calendar
+
+[Notification 2.4] - Gold & Commodities Surge
+Title: 🟡 Gold (XAU/USD) is breaking out! 🔥
+Body: Safe-haven demand surges following breaking geopolitical news. Read full analysis.
+Optimal Timing: During sudden Gold/Oil surges
+Deep Link: news_feed
+
+[Notification 2.5] - Tokyo / Asian Session Catalyst
+Title: 🇯🇵 Bank of Japan (BoJ) Rate Decision Live!
+Body: JPY pairs are swinging 70+ pips. Don't get trapped by retail fakeouts.
+Optimal Timing: 03:00 - 04:00 UTC (Tokyo session)
+Deep Link: calendar
+
+
+--------------------------------------------------------------------------------
+💎 SECTION 3: PRO / VIP UPGRADE CONVERSIONS (High-Value Trader Triggers)
+--------------------------------------------------------------------------------
+[Notification 3.1] - The Loss vs Investment Value Anchor
+Title: 1 bad trade = -$50. PRO = $0.99 💡
+Body: Why trade blind? Unlock Institutional AI Quant Verdicts with 70% OFF this week.
+Optimal Timing: Friday 16:00 UTC / 11:00 EST / 21:30 IST
+Deep Link: premium?reason=smart_pricing
+
+[Notification 3.2] - Institutional Whales Hook
+Title: Where are the hedge funds buying? 🐋📊
+Body: AI Quant Model just calculated institutional bias on USD. Unlock VIP analysis now.
+Optimal Timing: Tuesday 08:30 UTC / 03:30 EST / 14:00 IST
+Deep Link: premium?reason=ai_verdict
+
+[Notification 3.3] - The Elite 5% Secret
+Title: What the top 5% profitable traders do 🏆
+Body: Zero ads, instant audio squawk, and AI-predicted trade plans. Elevate to PRO.
+Optimal Timing: Monday 05:00 UTC / 00:00 EST / 10:30 IST
+Deep Link: premium?reason=profitable_secret
+
+[Notification 3.4] - The Retrospective FOMO Hook
+Title: "I wish I knew this before entering..." 🤦‍♂️
+Body: Today's AI Quant verdict nailed the news release move. Don't miss tomorrow's setup!
+Optimal Timing: Post-market (18:00 UTC / 13:00 EST)
+Deep Link: premium?reason=ai_accuracy
+
+[Notification 3.5] - Flash VIP Discount (24-Hour Scarcity)
+Title: VIP Flash Access: 24 Hours Only ⏳
+Body: Unlock AI analysis, real-time squawk & ad-free trading at the lowest rate of the month.
+Optimal Timing: Weekend flash sale (Saturday 14:00 UTC)
+Deep Link: premium?reason=limited_offer
+
+[Notification 3.6] - Modern AI vs Outdated Indicators
+Title: Still trading with 2015 indicators? 🤖
+Body: AI Quant algorithms scan 500+ news sources in milliseconds. See today's verdict.
+Optimal Timing: Wednesday 07:00 UTC / 02:00 EST / 12:30 IST
+Deep Link: premium?reason=ai_quant
+
+
+--------------------------------------------------------------------------------
+🛠️ SECTION 4: UNUSED FEATURES REVIVAL (Boosting Feature Engagement)
+--------------------------------------------------------------------------------
+[Notification 4.1] - Trade Journal Revival
+Title: How did you trade today? 📓✏️
+Body: Elite traders journal every execution. Log today's trades in your Trade Journal!
+Optimal Timing: 20:00 UTC / 15:00 EST / 01:30 IST (End of NY session)
+Deep Link: trade_journal
+
+[Notification 4.2] - Home Screen Widget Discovery
+Title: Never open the app for news again 📲⚡
+Body: Add the 1-Tap Home Screen Widget! Live countdown to the next high-impact release.
+Optimal Timing: Saturday 10:00 UTC / 05:00 EST / 15:30 IST
+Deep Link: widget
+
+[Notification 4.3] - Position Size Calculator Reminder
+Title: Wrong lot size will blow your account 🧮⚠️
+Body: Always calculate your exact pip risk before clicking execute. Use the free Calculator!
+Optimal Timing: 06:30 UTC / 01:30 EST / 12:00 IST
+Deep Link: tools
+
+[Notification 4.4] - Financial Dictionary Education
+Title: "Hawkish" vs "Dovish" made simple 📚💡
+Body: Understand Central Bank statements in 60 seconds with the Quick Dictionary.
+Optimal Timing: Sunday 11:00 UTC / 06:00 EST / 16:30 IST
+Deep Link: dictionary
+
+[Notification 4.5] - Weekly Trade Review Ritual
+Title: Time for your Weekly Trade Audit 📊
+Body: Review your win-rate, profit-factor, and mistakes in your Trade Journal.
+Optimal Timing: Sunday 17:00 UTC / 12:00 EST / 22:30 IST
+Deep Link: trade_journal
+
+
+--------------------------------------------------------------------------------
+💔 SECTION 5: INACTIVE USER WIN-BACK (Curiosity & FOMO Triggers)
+--------------------------------------------------------------------------------
+[Notification 5.1] - Inactive for 2 Days
+Title: Are you still holding that trade? 🚨
+Body: The market moved 150+ pips while you were away. Check your favorite pairs now!
+Optimal Timing: 10:00 UTC / 05:00 EST / 15:30 IST
+Deep Link: home
+
+[Notification 5.2] - Inactive for 3 Days
+Title: Everything okay? The markets missed you 🥺
+Body: Big volatility rally on Gold & USD this week. See what you missed in the news feed!
+Optimal Timing: 12:00 UTC / 07:00 EST / 17:30 IST
+Deep Link: home
+
+[Notification 5.3] - Inactive for 5 Days
+Title: A VIP Welcome-Back gift is waiting 🎁
+Body: Claim your exclusive PRO trial access + this week's High Impact Playbook before it expires!
+Optimal Timing: 14:00 UTC / 09:00 EST / 19:30 IST
+Deep Link: premium?reason=winback_gift
+
+[Notification 5.4] - Inactive for 7 Days
+Title: The market doesn't wait for anyone... ⏳
+Body: 5 major High-Impact catalysts scheduled in the next 24 hours. Check the calendar!
+Optimal Timing: Monday 06:00 UTC / 01:00 EST / 11:30 IST
+Deep Link: calendar
+
+
+================================================================================
+🇮🇳 SPECIAL INDIA PACK: DUAL-LANGUAGE (ENGLISH & HINGLISH SIDE-BY-SIDE)
+================================================================================
+Target Audience: Indian Forex, Crypto & Commodity Traders (IST Timed)
+Use: Copy either English or Hinglish depending on your target campaign!
+
+--- 1. MORNING & LONDON SESSION (1:00 PM - 1:30 PM IST) ---
+[Option A - English]
+Title: Chai & Chart setup ready? ☕📊
+Body: London session is live! High volatility expected on GBP/USD, EUR/USD & Gold.
+Deep Link: home
+
+[Option B - Hinglish]
+Title: Chai peeli? Par trade ka kya? ☕📉
+Body: London session open ho gaya hai. GBP/USD aur Gold me heavy movement shuru!
+Deep Link: home
+
+
+--- 2. PRE-NEWS DANGER ZONE (15 Mins Before News) ---
+[Option A - English]
+Title: Don't enter this trade yet! 🛑
+Body: High-impact US news dropping in 15 mins. Check forecast before you click execute!
+Deep Link: calendar
+
+[Option B - Hinglish]
+Title: "Bhai trade le lu?" 🛑 Ruuk jao!
+Body: Agle 15 minute me high-impact news aane wali hai. Pehle forecast check kar lo!
+Deep Link: calendar
+
+
+--- 3. NEW YORK OPEN (6:00 PM - 6:30 PM IST) ---
+[Option A - English]
+Title: Did you set your Stop Loss? 💀
+Body: New York session opening now. Volatility spike incoming—protect your capital.
+Deep Link: home
+
+[Option B - Hinglish]
+Title: Stop Loss lagaya tha ya bhool gaye? 💀
+Body: New York session shuru ho chuka hai. Account safe rakhna hai toh SL verify kar lo!
+Deep Link: home
+
+
+--- 4. PRO / VIP SUBSCRIPTION CONVERSION (Value & 3-Day Free Trial) ---
+[Hook 4.1 - Weekly Impulse Plan (₹99)]
+  - English Title: 1 bad trade = ₹4,000 loss. PRO = Just ₹99 💡
+    English Body: Why trade blind? Unlock Institutional AI Quant Verdicts & Trade Plans with 70% OFF!
+  - Hinglish Title: 1 pizza se bhi sasta hai VIP access 🍕💸
+    Hinglish Body: Blind trade karke loss mat karo. AI Quant Verdict aur signals unlock karo sirf ₹99 me!
+  - Deep Link: premium?reason=smart_pricing
+
+[Hook 4.2 - Monthly Plan (3-Day Free Trial)]
+  - English Title: 🎁 3 Days of Institutional VIP Access on Us!
+    English Body: Start your 3-Day Free Trial on PRO Monthly. Get real-time AI Quant Verdicts with ₹0 charged today!
+  - Hinglish Title: 🎁 3 din VIP access bilkul FREE me try karo!
+    Hinglish Body: Monthly PRO par 3-Day Free Trial shuru karo. Aaj ₹0 katega, kabhi bhi cancel karein!
+  - Deep Link: premium?reason=free_trial_3d
+
+
+--- 5. INSTITUTIONAL WHALE MOVES (Curiosity & Edge) ---
+[Option A - English]
+Title: Where are the hedge funds buying? 🐋📊
+Body: AI Quant Model just flagged massive institutional bias on USD. Check VIP analysis.
+Deep Link: premium?reason=ai_verdict
+
+[Option B - Hinglish]
+Title: Whales kahan buy kar rahi hain? 🐋📊
+Body: AI Quant ne USD par institutional buying detect ki hai. Check the VIP trade setup now!
+Deep Link: premium?reason=ai_verdict
+
+
+--- 6. POST-MARKET TRADE JOURNAL (8:30 PM - 9:30 PM IST) ---
+[Option A - English]
+Title: How did you trade today? 📓✏️
+Body: Elite traders journal every trade. Log today's wins and losses in your Trade Journal!
+Deep Link: trade_journal
+
+[Option B - Hinglish]
+Title: Aaj kitna profit ya loss hua? 📓✏️
+Body: Apne trades ko track kiye bina trader nahi ban sakte. Add today's trades to Journal!
+Deep Link: trade_journal
+
+
+--- 7. HOME SCREEN WIDGET DISCOVERY ---
+[Option A - English]
+Title: Track news without opening the app! 📲⚡
+Body: Add the 1-Tap Home Screen Widget for live countdown to upcoming high-impact events.
+Deep Link: widget
+
+[Option B - Hinglish]
+Title: App khole bina live event countdown dekho 📲⚡
+Body: Home screen par 1-Tap Widget lagao aur agle high-impact event ka timer dekho!
+Deep Link: widget
+
+
+--- 8. INACTIVE USER WIN-BACK (2 to 3 Days Inactive) ---
+[Option A - English]
+Title: Did you leave a trade running? 🚨
+Body: Massive 150+ pip swings on Gold & USD while you were away. Tap to check your charts!
+Deep Link: home
+
+[Option B - Hinglish]
+Title: Kahin aapka trade open toh nahi reh gaya? 🚨
+Body: Market me 150+ pips ki rally aayi hai. Apne favorite currency pairs abhi check karein!
+Deep Link: home
+
+
+================================================================================
+🌶️ VIRAL SAVAGE HOOKS [🇮🇳 INDIA ONLY - HINGLISH]: MEMES, BREAKUP & FESTIVALS
+================================================================================
+  🎯 TARGET AUDIENCE: India Only
+  ⚙️ FCM FILTER: Country == 'IN' OR Device Language == 'hi-IN' / 'en-IN'
+  🚫 CRITICAL RULE: DO NOT SEND THIS HINGLISH PACK TO ANY OTHER COUNTRY!
+     (Non-Indian users should ONLY receive the Global English pack below).
+
+  Why High-Impact Emotional & Meme Notifications Go Viral:
+  1. The "Emotional Damage" Hook: Never sell boring features directly. Roast the user's
+     awkward singlehood, late-night heartbreak, or empty bank balance with empathy & wit.
+  2. The Unexpected Twist: Starts like an emotional WhatsApp text from an Ex or
+     a festive guilt-trip, then twists into charts, pips, and free trials.
+  3. Screenshot Bait (Free PR): People laugh, take a screenshot, post on X/Reddit/
+     Instagram stories, giving your app massive free viral acquisition!
+
+  ⚠️ CRITICAL FESTIVAL RULE (NEVER SEND AFTER FESTIVAL ENDS):
+  - In FCM (Firebase Cloud Messaging) & Backend Crons, ALWAYS set:
+    * Campaign Expiry Date (Firebase Console)
+    * `time_to_live` (TTL): 4 to 8 hours max (so offline phones don't receive late alerts)
+    * Strict Active Date Windows (as defined below for each festival)
+  - DO NOT send Navratri/Dandiya notifications once Dussehra arrives.
+  - DO NOT send Diwali notifications after Bhai Dooj.
+  - DO NOT send Holi notifications after Rangwali Holi.
+
+
+--------------------------------------------------------------------------------
+🪘 CATEGORY 1: NAVRATRI, DANDIYA & GARBA NIGHTS (FESTIVE SINGLEHOOD)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: Only during the 9 days of Sharad Navratri (September / October)
+  ⛔ STRICT STOP DATE: Day 10 (Dussehra morning 06:00 AM IST) - DO NOT SEND AFTER DUSSEHRA!
+  ⏳ FCM TTL: 4 Hours (Prevents delayed delivery)
+
+[Navratri Hook 1 - Dandiya Partner Missing]
+Title: Dandiya partner nahi mila? 💔🪘
+Body: Koi baat nahi, market me red candle ke saath nach lo. Dono me dard barabar hai! Check live charts.
+Active Window: Navratri Days 1 to 9 (08:30 PM - 10:30 PM IST)
+Stop After: Dussehra 06:00 AM IST
+Deep Link: home
+
+[Navratri Hook 2 - Dhol Beat vs Heartbeat]
+Title: Ground pe Dhol baj raha hai ya dil ki dhadkan? 🥁📈
+Body: Sab log Garba ground par hain aur aap EUR/USD me entry dhoondh rahe ho. London session live hai!
+Active Window: Navratri Days 1 to 9 (08:00 PM IST)
+Stop After: Dussehra 06:00 AM IST
+Deep Link: home
+
+[Navratri Hook 3 - 9 Din Ka Upvaas (Fasting Reality)]
+Title: Vrat khane ka rakha tha ya profit ka? 🥺🥀
+Body: 9 din ke upvaas me account starve mat hone do bhai! Check high-impact news before placing a trade.
+Active Window: Navratri Days 1 to 9 (12:30 PM - 01:30 PM IST)
+Stop After: Dussehra 06:00 AM IST
+Deep Link: news_list
+
+[Navratri Hook 4 - Dandiya Sticks Clash]
+Title: Dandiya sticks takra rahi hain, aapka SL nahi! 🪘📉
+Body: Usne kisi aur ke saath Garba step match kar liya, par Gold 200 pips bhaag gaya. Tap to check breakout!
+Active Window: Navratri Days 1 to 9 (09:30 PM IST)
+Stop After: Dussehra 06:00 AM IST
+Deep Link: home
+
+[Navratri Hook 5 - Post-Garba 1 AM Midnight Roast]
+Title: Rami lidhu? Have profit kari lo! 🪘🌙
+Body: Dandiya khelke thak gaye? Asian session open hone wala hai. Check USD/JPY pre-market setup!
+Active Window: Navratri Days 1 to 9 (11:30 PM - 12:00 AM Midnight IST)
+Stop After: Dussehra 06:00 AM IST
+Deep Link: home
+
+
+--------------------------------------------------------------------------------
+💔 CATEGORY 2: BREAKUP, EX & GHOSTING ("EMOTIONAL DAMAGE" MASTERPIECES)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: All year round (Best during evening & late-night loneliness hours)
+  ⏳ FCM TTL: 6 Hours
+
+[Breakup Hook 1 - The Ghosting Classic]
+Title: Usne ghost kar diya? 👻💔
+Body: At least Gold ka 100-pip spike ghost nahi karega! Real-time economic forecast abhi check karo.
+Timing: 06:30 PM - 07:30 PM IST (Evening loneliness hours)
+Deep Link: home
+
+[Breakup Hook 2 - Crying Over A Text Message]
+Title: Crying over a 2-word text? 🥺📱
+Body: Ro mat mere bhai, USD/JPY ka green breakout dekh kar aansu sukh jayenge. Tap to see VIP analysis!
+Timing: 10:00 PM - 11:00 PM IST
+Deep Link: home
+
+[Breakup Hook 3 - The "We Need To Talk" Horror]
+Title: "We need to talk..." 💀🥀
+Body: Ex ke is text se bhi zyada khatarnak Jerome Powell ki speech hai aaj raat! Protect your positions now.
+Timing: 30 mins before Powell speech or US CPI release
+Deep Link: news_detail
+
+[Breakup Hook 4 - Cheating vs Candlestick]
+Title: Dhokha toh har koi deta hai... 🥀
+Body: Par hamara AI Quant Verdict kabhi jhooth nahi bolta! Check institutional bias before trading.
+Timing: 02:00 PM - 03:00 PM IST
+Deep Link: premium?reason=ai_verdict
+
+[Breakup Hook 5 - Ex's Engagement / Wedding Photo]
+Title: Ex ki shaadi ki photo dekh li? 💍😭
+Body: Revenge lene ka best tareeqa: Green PnL screenshot. Chart pe dhyan do, story par nahi!
+Timing: 09:00 PM - 10:00 PM IST
+Deep Link: home
+
+[Breakup Hook 6 - "Seen at 11:42 PM"]
+Title: Blue tick aaya par reply nahi? ⏱️🔵
+Body: Ignore hone ki aadat daal lo, ya fir Trade Journal me apni mistakes analyze karo. Tap to journal!
+Timing: 10:30 PM IST
+Deep Link: trade_journal
+
+
+--------------------------------------------------------------------------------
+🩸 CATEGORY 3: "KAT GAYA" & STOP LOSS SAVAGE REALITY CHECKS
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: All year round (Active trading weekdays)
+  ⏳ FCM TTL: 4 Hours
+
+[Savage Hook 1 - The Universal "Kat Gaya"]
+Title: Kat gaya na? 💔✂️
+Body: Dil bhi aur Stop Loss bhi! Revenge trading mat kar, pehle AI News Impact analysis padh le.
+Timing: 07:00 PM IST (After US session initial whip-saw)
+Deep Link: home
+
+[Savage Hook 2 - Mummy's Innocent Hope]
+Title: Mummy: "Mera beta raat bhar padhta hai" 📚🥺
+Body: Beta raat ke 1 baje Gold ke 1-minute chart par drawdown ginke ro raha hai. Take a break bhai!
+Timing: 11:15 PM IST
+Deep Link: trade_journal
+
+[Savage Hook 3 - Emotional Damage vs Lot Size]
+Title: Emotional damage free me deliver ho raha hai? 📉🩸
+Body: Overleveraged trade lene se pehle Lot Size Calculator open kiya tha? Tap to calculate risk!
+Timing: 03:30 PM IST (London Session Open)
+Deep Link: calculator_pip
+
+[Savage Hook 4 - Chai-Sutta Reality]
+Title: Chai-sutta ka kharcha nikal gaya? ☕🚬
+Body: Ya wo bhi market sweep kar gaya? Blind trade mat lo, PRO AI Verdict check karo!
+Timing: 05:00 PM IST (Evening tea break)
+Deep Link: premium?reason=ai_verdict
+
+[Savage Hook 5 - Tera Bhai Sab Sambhal Lega]
+Title: "Bhai, market yahan se pakka reverse hoga!" 🤡
+Body: Ye bolke kitne account uda chuke ho? Stop guessing, check hedge-fund retail sentiment data!
+Timing: 04:00 PM IST
+Deep Link: news_list
+
+
+--------------------------------------------------------------------------------
+🎆 CATEGORY 4: INDIAN FESTIVALS & SPECIAL DATES (STRICT CALENDAR WINDOWS)
+--------------------------------------------------------------------------------
+  ⚠️ IMPORTANT: Every festival item has an explicit Stop Date. Do NOT schedule outside this window!
+
+[Diwali Hook 1 - Rocket vs Account Burst]
+Title: Patakhe phootne the, account phoot gaya? 💥🪔
+Body: Is Diwali par Rocket rocket na bane toh Green candles se ghar roshan karo! Check Diwali VIP setups.
+Active Window: 2 Days before Diwali to Diwali Night only
+Stop After: Bhai Dooj 10:00 AM IST (DO NOT SEND POST-DIWALI)
+Deep Link: home
+
+[Diwali Hook 2 - Laxmi Pujan & Muhurat Trading]
+Title: Kaju Katli khao, loss mat khao! 🍬🪔
+Body: Diwali bonus ko blind trades me mat udao. AI Quant Verdict 70% OFF ke sath unlock karo.
+Active Window: Dhanteras to Diwali Day only (11:00 AM IST)
+Stop After: Diwali 11:59 PM IST
+Deep Link: premium?reason=diwali_special
+
+[Holi Hook 1 - Red Portfolio vs Colors]
+Title: Holi me laal rang sabse pehle kahan laga? 🎨🔴
+Body: Aapke portfolio pe! Portfolio ko Green karne ka formula: PRO AI Quant Verdict unlock karo!
+Active Window: Chhoti Holi & Rangwali Holi only (09:30 AM IST)
+Stop After: Day after Holi 08:00 AM IST (DO NOT SEND POST-HOLI)
+Deep Link: home
+
+[Holi Hook 2 - Bura Na Mano, SL Hai!]
+Title: Bura na mano, Stop Loss hai! 💦🔫
+Body: Rang chhoot jayega, par FOMO loss nahi chhootega. London session volatility is live, trade safe!
+Active Window: Holi Day only (02:30 PM IST)
+Stop After: Holi 10:00 PM IST
+Deep Link: home
+
+[Wedding Season Hook - Single & Broke]
+Title: Dost ki baraat me naachna hai ya charts me? 🕺🎺
+Body: Sherwani pehno aur stop loss lagao, warna baraat ke beech margin call aa jayegi!
+Active Window: Wedding Season (Nov - Feb only) 07:00 PM IST
+Stop After: February end
+Deep Link: home
+
+[Valentine's Day Hook - Singlehood Flex]
+Title: Valentine pe single ho? 🌹🚫
+Body: Teddy bear aur phoolon ke paise bach gaye! Ab 3-Day Free Trial leke chart study karo.
+Active Window: 13th & 14th February only (08:30 AM & 08:30 PM IST)
+Stop After: 15th February 12:00 AM Midnight (DO NOT SEND AFTER FEB 14)
+Deep Link: premium?reason=valentine_single
+
+[New Year Resolution Hook]
+Title: 31st Dec: "Is saal disciplined rahunga" 🥂
+Body: 2nd Jan: 100x leverage pe revenge buy! Check economic calendar before blowing another account.
+Active Window: 31st December to 3rd January only (09:00 AM IST)
+Stop After: 4th January 12:00 AM Midnight (DO NOT SEND AFTER JAN 3)
+Deep Link: economic_calendar
+
+
+--------------------------------------------------------------------------------
+💸 CATEGORY 5: PAYDAY & MIDDLE-CLASS REALITY (Salary In, Salary Out)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: 1st - 5th (Salary credited) and 25th - 30th (Month-end struggle)
+  ⏳ FCM TTL: 6 Hours
+
+[Payday Hook 1 - Salary vs Trade Lifespan]
+Title: Salary credited: 10:00 AM 🤑 | Balance: 10:30 AM 😭
+Body: Mahine ki mehnat ko 30 minute me market ko daan mat do bhai! Risk calculator use karo.
+Active Window: 1st, 2nd, or 3rd of month (Paydays) 11:00 AM IST
+Deep Link: calculator_pip
+
+[Payday Hook 2 - Bank Account Begging]
+Title: Bank Account: "Mujhe chhod do mere haal pe" 🏦💀
+Body: Ek galat trade = 1 mahine ki EMI chali gayi. PRO AI verdict dekhe bina market me mat koodo!
+Active Window: 27th - 31st of month (Month-end) 08:00 PM IST
+Deep Link: premium?reason=ai_verdict
+
+[Payday Hook 3 - Month-End Maggi Days]
+Title: 1st ko Biryani, 25th ko Maggi? 🍲🍜
+Body: Life me consistency chahiye toh emotional revenge trading chhod do. Journal today's trades!
+Active Window: 24th - 28th of month 08:30 PM IST
+Deep Link: trade_journal
+
+
+--------------------------------------------------------------------------------
+🍕 CATEGORY 6: VIRAL META-HUMOR, RELATABLE MEMES & UNEXPECTED PLOT TWISTS
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: All year round (Weekdays)
+  ⏳ FCM TTL: 4 Hours
+
+[Meta Hook 1 - Bhook Lagi Hai?]
+Title: Khana order karne aaye the? 🍕📈
+Body: Bhook pet me nahi, pips ki honi chahiye! London breakout 60 pips bhaag chuka hai, tap to check.
+Timing: 01:30 PM IST (Lunch hour)
+Deep Link: home
+
+[Meta Hook 2 - "Priya is on Leave"]
+Title: Priya leave par hai, market nahi! 💼📊
+Body: US & London session overlap me massive volume aa raha hai. Don't miss the USD spike!
+Timing: 06:30 PM IST
+Deep Link: home
+
+[Meta Hook 3 - 2 AM Existential Overthinking]
+Title: Raat ke 2:30 baje overthinking? 🌙🦉
+Body: Neend waise bhi nahi aa rahi, toh Asian session ka pre-market setup dekh lo. Neendein aur udd jayengi!
+Timing: 11:45 PM IST (Late night hook before silent hours)
+Deep Link: home
+
+[Meta Hook 4 - Order Status: Delivery in 10 mins]
+Title: ❌ Order Cancelled: Regret.
+Body: ✅ Order Placed: 3-Day Free Trial. Unlock all VIP signals for ₹0 today!
+Timing: 12:00 PM IST
+Deep Link: premium?reason=viral_trial_offer
+
+
+================================================================================
+🌍 GLOBAL ENGLISH SAVAGE HOOKS: MEMES, BREAKUP & HOLIDAY "EMOTIONAL DAMAGE" PACK
+(For US, UK, Europe, Canada, Australia & Rest of World - Non-Indian Users)
+================================================================================
+  🎯 TARGET AUDIENCE: Global Non-India Traders
+  ⚙️ FCM FILTER: Country != 'IN'
+  🗣️ LANGUAGE: Universal Fluent Conversational English (Witty, Savage, High CTR)
+
+  ⚠️ CRITICAL HOLIDAY RULES:
+  - Every seasonal/holiday hook has an explicit Cut-off Date.
+  - Set FCM `time_to_live` (TTL) = 4 to 6 hours max so offline phones never get late alerts.
+
+
+--------------------------------------------------------------------------------
+💔 CATEGORY 1: BREAKUP, EX & GHOSTING (GLOBAL ENGLISH "EMOTIONAL DAMAGE")
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: All year round (Best during evening 6:00 PM - 11:00 PM Local Time)
+  ⏳ FCM TTL: 6 Hours
+
+[Global Breakup Hook 1 - The Ghosting Classic]
+Title: She ghosted you? 👻💔
+Body: At least Gold's 100-pip breakout won't leave you on read! Check real-time institutional forecasts.
+Timing: 07:00 PM Local Time
+Deep Link: home
+
+[Global Breakup Hook 2 - Crying Over A 2-Word Text]
+Title: Crying over a 2-word text? 🥺📱
+Body: Dry your eyes—EUR/USD just printed a massive green breakout candle. Tap to see VIP analysis!
+Timing: 10:30 PM Local Time
+Deep Link: home
+
+[Global Breakup Hook 3 - The "We Need To Talk" Horror]
+Title: "We need to talk..." 💀🥀
+Body: Scarier than that text? Jerome Powell speaks in 30 minutes. Check your open positions now!
+Timing: 30 mins before Powell speech or US CPI release
+Deep Link: news_detail
+
+[Global Breakup Hook 4 - She's Engaged to a Dentist]
+Title: She's engaged to a dentist. 💍😭
+Body: The best revenge? A green PnL screenshot. Focus on the charts, not her Instagram!
+Timing: 09:30 PM Local Time
+Deep Link: home
+
+[Global Breakup Hook 5 - Left on Delivered]
+Title: Left on "Delivered" at 11:42 PM? ⏱️🔵
+Body: Get used to the rejection, or audit your trade setups in your Trade Journal. Tap to review!
+Timing: 10:45 PM Local Time
+Deep Link: trade_journal
+
+
+--------------------------------------------------------------------------------
+🩸 CATEGORY 2: STOP LOSS & SAVAGE REALITY CHECKS (GLOBAL ENGLISH)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: Active trading weekdays (London & NY session)
+  ⏳ FCM TTL: 4 Hours
+
+[Global Savage Hook 1 - Got Caught Again]
+Title: Got caught again? 💔✂️
+Body: Hit your Stop Loss AND your feelings. Stop revenge trading—read the AI News Impact first!
+Timing: 02:00 PM EST / 19:00 UTC (US Session initial chop)
+Deep Link: home
+
+[Global Savage Hook 2 - Mom Thinks You're Studying]
+Title: Mom: "He's working hard on his career" 📚🥺
+Body: You're 200 pips in drawdown on a 1-minute chart at 2:00 AM. Close the app and go to sleep!
+Timing: 11:30 PM Local Time
+Deep Link: trade_journal
+
+[Global Savage Hook 3 - Free Emotional Damage]
+Title: Free emotional damage delivered to your screen 📉🩸
+Body: Did you even open the Lot Size Calculator before using 50x leverage? Tap to fix your risk!
+Timing: 08:30 AM EST (US Pre-Market Open)
+Deep Link: calculator_pip
+
+[Global Savage Hook 4 - "Bro Trust Me, It's About to Reverse"]
+Title: "Bro trust me, it's about to reverse!" 🤡
+Body: How many accounts have you blown with that line? Stop guessing, check institutional whale bias!
+Timing: 10:00 AM EST (NY Session Peak)
+Deep Link: news_list
+
+[Global Savage Hook 5 - Expensive Therapy]
+Title: Your therapist is getting expensive 🛋️
+Body: Bad impulsive trade = -$200. Forex News PRO = $1.99. Protect your peace of mind with AI verdicts!
+Timing: 04:30 PM EST
+Deep Link: premium?reason=ai_verdict
+
+
+--------------------------------------------------------------------------------
+🎆 CATEGORY 3: GLOBAL HOLIDAYS & SPECIAL DATES (STRICT CALENDAR WINDOWS)
+--------------------------------------------------------------------------------
+  ⚠️ IMPORTANT: Every holiday has an explicit Stop Date. Do NOT schedule outside this window!
+
+[Halloween Hook - Nightmare on Wall Street]
+Title: Nightmare on Wall Street? 🎃👻
+Body: Spooky 150-pip whipsaws on Gold. Don't let your account turn into a ghost town—check live signals!
+Active Window: October 29th - 31st only
+Stop After: November 1st 12:00 AM Midnight (DO NOT SEND POST-HALLOWEEN)
+Deep Link: home
+
+[Black Friday / Cyber Monday Hook]
+Title: Shopping for dips, not flat screens! 🛍️📉
+Body: The market just gave you a 50% discount on USD pairs. Check the high-probability setups!
+Active Window: Black Friday to Cyber Monday only
+Stop After: December 1st 12:00 AM Midnight
+Deep Link: premium?reason=black_friday
+
+[Christmas Holiday Hook - Thin Liquidity Alert]
+Title: Santa didn't bring you green pips? 🎅🎄
+Body: Holiday volume is thin and spreads are wild! Protect your balance with real-time volatility forecasts.
+Active Window: December 23rd - 26th only
+Stop After: December 27th 12:00 AM Midnight (DO NOT SEND POST-CHRISTMAS)
+Deep Link: home
+
+[New Year Resolution Hook]
+Title: Dec 31: "I'll stick to 1% risk this year" 🥂
+Body: Jan 2: 100x leverage revenge trade on Gold! Check the calendar before blowing another account.
+Active Window: December 31st - January 3rd only
+Stop After: January 4th 12:00 AM Midnight
+Deep Link: economic_calendar
+
+[Valentine's Day Singlehood Hook]
+Title: Single this Valentine's Day? 🌹🚫
+Body: Saved $200 on overpriced flowers and fixed menus! Claim your 3-Day Free Trial and study the charts.
+Active Window: February 13th & 14th only
+Stop After: February 15th 12:00 AM Midnight (DO NOT SEND AFTER FEB 14)
+Deep Link: premium?reason=valentine_global
+
+
+--------------------------------------------------------------------------------
+💸 CATEGORY 4: PAYCHECK & COST-OF-LIVING REALITIES (GLOBAL ENGLISH)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: 1st - 3rd (Payday) and 25th - 30th (End-of-month crunch)
+  ⏳ FCM TTL: 6 Hours
+
+[Payday Hook 1 - Paycheck Lifespan]
+Title: Paycheck hit: 09:00 AM 🤑 | Gone: 09:30 AM 😭
+Body: Don't donate two weeks of hard work to the market in 30 minutes! Use the Position Size Calculator.
+Active Window: 1st - 3rd or 15th (Payday cycles) 10:00 AM Local Time
+Deep Link: calculator_pip
+
+[Payday Hook 2 - Bank Account Begging]
+Title: Bank Account: "Please, have mercy on me" 🏦💀
+Body: One reckless trade just wiped out rent. Never trade high-impact releases without the AI Quant Verdict!
+Active Window: 26th - 31st of month (Rent due window) 07:30 PM Local Time
+Deep Link: premium?reason=ai_verdict
+
+[Payday Hook 3 - Steak vs Instant Ramen]
+Title: Steak on Monday, instant ramen by Friday? 🥩🍜
+Body: If you want consistency in trading, kill emotional revenge bets. Log today's trades in your Journal!
+Active Window: 24th - 28th of month 08:30 PM Local Time
+Deep Link: trade_journal
+
+
+--------------------------------------------------------------------------------
+🍕 CATEGORY 5: META-HUMOR & MIDNIGHT PLOT TWISTS (GLOBAL ENGLISH)
+--------------------------------------------------------------------------------
+  📅 ACTIVE WINDOW: All year round (Weekdays)
+  ⏳ FCM TTL: 4 Hours
+
+[Meta Hook 1 - Hungry for Takeout?]
+Title: Hungry for takeout? 🍕📈
+Body: No, you're hungry for pips! London breakout just ran 65 pips—tap to see the live charts.
+Timing: 12:30 PM - 01:30 PM Local Time (Lunch break)
+Deep Link: home
+
+[Meta Hook 2 - 2:30 AM Existential Dread]
+Title: Overthinking at 2:30 AM? 🌙🦉
+Body: Can't sleep anyway? Check the Asian session pre-market setups. Much more thrilling than TikTok!
+Timing: 11:45 PM - 02:00 AM Local Time
+Deep Link: home
+
+[Meta Hook 3 - Order Status: Regret]
+Title: ❌ Order Cancelled: Regret.
+Body: ✅ Order Placed: 3-Day Free Trial. Unlock all VIP institutional signals for $0 today!
+Timing: 12:00 PM Local Time
+Deep Link: premium?reason=viral_trial_offer
+
+
+================================================================================
+⏰ 2-HOUR INTERVAL WEEKDAY SCHEDULE (MONDAY - FRIDAY)
+================================================================================
+Active Trading Window: 08:00 AM to 12:00 AM Midnight IST (02:30 to 18:30 UTC) - Total 9 Slots
+Night DND Window: 12:00 AM Midnight to 08:00 AM IST (Silent to prevent uninstalls)
+
+[SLOT 1] - 08:00 AM IST (02:30 UTC): TOKYO / ASIAN SESSION WRAP
+  - English Title: Asian markets made their move 🇯🇵⚡
+    English Body: Tokyo session just wrapped. See the dominant currency momentum before Europe opens!
+  - Hinglish Title: Asian market ka move dekha? 🇯🇵⚡
+    Hinglish Body: Tokyo session close hone ko hai. Europe session se pehle currency bias check kar lo!
+  - Deep Link: market
+
+[SLOT 2] - 10:00 AM IST (04:30 UTC): PRE-LONDON RADAR & BIAS
+  - English Title: Scrolling won't grow your account 📱💸
+    English Body: London traders are waking up. Major order blocks forming on GBP and EUR pairs!
+  - Hinglish Title: Insta scroll karne se pips nahi aate 📱💸
+    Hinglish Body: London traders active ho rahe hain. GBP aur EUR pairs me order blocks ban rahe hain!
+  - Deep Link: home
+
+[SLOT 3] - 12:00 PM IST (06:30 UTC): FRANKFURT & PRE-LONDON OPEN BELL
+  - English Title: London Open in 30 mins! 🔔🇬🇧
+    English Body: Heavy liquidity influx incoming. Check EUR/USD & GBP/USD key breakout levels!
+  - Hinglish Title: London session open hone me 30 min! 🔔🇬🇧
+    Hinglish Body: Market me heavy liquidity aane wali hai. EUR/USD aur GBP/USD ke breakout levels dekh lo!
+  - Deep Link: home
+
+[SLOT 4] - 02:00 PM IST (08:30 UTC): LONDON PEAK VOLUME & PRO SETUPS
+  - English Title: Where are the hedge funds buying? 🐋📊
+    English Body: Institutional volume spike detected by AI Quant. Unlock institutional order flow with PRO!
+  - Hinglish Title: Whales kahan buy kar rahi hain? 🐋📊
+    Hinglish Body: AI Quant ne institutional buying detect ki hai. Weekly VIP pass sirf ₹99 se unlock karo!
+  - Deep Link: premium?reason=ai_verdict
+
+[SLOT 5] - 04:00 PM IST (10:30 UTC): MID-DAY CONSOLIDATION & RISK CHECK
+  - English Title: Wrong lot size will blow your account 🧮⚠️
+    English Body: Pre-US news volatility can wipe out accounts in seconds. Calculate your risk now!
+  - Hinglish Title: Overleveraging se account blow ho jayega 🧮⚠️
+    Hinglish Body: New York session se pehle risk calculate karo. 1-Tap Lot Size Calculator use karo!
+  - Deep Link: calculator
+
+[SLOT 6] - 06:00 PM IST (12:30 UTC): NEW YORK OPEN & HIGH-IMPACT NEWS DROP
+  - English Title: Did you set your Stop Loss? 💀🇺🇸
+    English Body: New York session opening now + Red-Folder US economic data dropping. Protect your capital!
+  - Hinglish Title: Stop Loss lagaya tha ya bhool gaye? 💀🇺🇸
+    Hinglish Body: New York session open + US Red-Folder news aane wali hai. SL check karo turant!
+  - Deep Link: calendar
+
+[SLOT 7] - 08:00 PM IST (14:30 UTC): LONDON-NY OVERLAP (PEAK VOLATILITY OF THE DAY)
+  - English Title: ⚡ Overlap Frenzy: 100+ pip swings live!
+    English Body: London & New York are both trading right now. Gold (XAU/USD) & US Dollar are exploding!
+  - Hinglish Title: ⚡ Market ka sabse bada move abhi ho raha hai!
+    Hinglish Body: London aur New York dono open hain. Gold aur USD me massive volatility chal rahi hai!
+  - Deep Link: home
+
+[SLOT 8] - 10:00 PM IST (16:30 UTC): DAY WRAP-UP & TRADE JOURNAL
+  - English Title: How did you trade today? 📓✏️
+    English Body: Don't sleep without logging today's trades. Top traders audit their journal every night!
+  - Hinglish Title: Aaj kitna profit ya loss hua? 📓✏️
+    Hinglish Body: Bina journal banaye trader nahi banoge! Aaj ke wins aur mistakes journal me add karo.
+  - Deep Link: trade_journal
+
+[SLOT 9] - 12:00 AM MIDNIGHT IST (18:30 UTC): NIGHT OWL CHECK & DAILY CANDLE CLOSE
+  - English Title: Late-night trading? Don't leave trades unhedged 🌙🕯️
+    English Body: Daily candle close is in! Protect open trades from overnight swap rates or secure your profits.
+  - Hinglish Title: Raat ke 12 baje bhi trade open hai? 🌙🕯️
+    Hinglish Body: Daily candle close ho chuki hai! Open trades me Stop Loss lock karo ya profit book karke so jao.
+  - Deep Link: home
+
+
+================================================================================
+🏖️ SPECIAL WEEKEND SCHEDULE (SATURDAY & SUNDAY - MARKET CLOSED)
+================================================================================
+Since Forex markets are closed on weekends, live trade alerts look fake/annoying.
+Weekend notifications focus strictly on:
+1. Weekly Journal Audit & Performance Review
+2. Risk Management & Trading Psychology
+3. 24/7 Weekend Crypto Volatility
+4. Next Week High-Impact Economic Preview & Sunday Market Re-Opening
+
+--- SATURDAY (RELAX, AUDIT & WEEKEND CRYPTO) ---
+
+[SATURDAY SLOT 1] - 11:30 AM IST (06:00 UTC): WEEKLY P&L AUDIT
+  - English Title: Did you beat the market this week? 📓🏆
+    English Body: Week is closed! Review your wins, cut recurring mistakes, and analyze your win-rate in Trade Journal.
+  - Hinglish Title: Is hafte ka hisab-kitab kya raha? 📓🏆
+    Hinglish Body: Forex market band hai! Apne is hafte ke trades ka analysis karo Trade Journal me.
+  - Deep Link: trade_journal
+
+[SATURDAY SLOT 2] - 03:30 PM IST (10:00 UTC): TRADING PSYCHOLOGY & WIDGET
+  - English Title: 90% of traders fail here... 🧠💡
+    English Body: Revenge trading and lack of discipline blow more accounts than bad indicators. Read today's guide.
+  - Hinglish Title: 90% traders ye galti karke fail hote hain... 🧠💡
+    Hinglish Body: Revenge trading se bachna hai? Home screen widget lagao aur bina screen dekhe disciplined raho!
+  - Deep Link: widget
+
+[SATURDAY SLOT 3] - 07:30 PM IST (14:00 UTC): 24/7 CRYPTO VOLATILITY & PRO PASS
+  - English Title: Forex sleeps, Crypto doesn't 🪙🔥
+    English Body: Bitcoin & Ethereum moving while Forex is closed! Unlock Weekly PRO for AI sentiment insights.
+  - Hinglish Title: Forex band hai, par Crypto live hai! 🪙🔥
+    Hinglish Body: Weekend me Bitcoin & Ethereum charts par action shuru hai. PRO subscription sirf ₹99 se start karo!
+  - Deep Link: premium?reason=weekend_crypto
+
+
+--- SUNDAY (WEEK AHEAD PREP & MARKET RE-OPENING) ---
+
+[SUNDAY SLOT 1] - 12:00 PM IST (06:30 UTC): UPCOMING WEEK HIGH-IMPACT CALENDAR
+  - English Title: 🗓️ Next Week's Economic Minefield is Ready!
+    English Body: Fed Interest Rate decision, US CPI & ECB rate meet scheduled this week. See the dates & forecasts!
+  - Hinglish Title: 🗓️ Agle hafte ka economic calendar ready hai!
+    Hinglish Body: Fed interest rate aur US inflation news aane wali hai. Poore hafte ki high-impact list check karo!
+  - Deep Link: calendar
+
+[SUNDAY SLOT 2] - 05:00 PM IST (11:30 UTC): SUNDAY GAP FORECAST & AI BIAS
+  - English Title: Sunday Market Opening Gaps incoming? 📊⚠️
+    English Body: Geopolitical developments over the weekend may cause big opening gaps on Gold & USD pairs. See AI bias!
+  - Hinglish Title: Sunday night market gap up ya gap down? 📊⚠️
+    Hinglish Body: Weekend ki major news se Gold aur USD me bada gap expected hai. AI Macro Bias check karo!
+  - Deep Link: home
+
+[SUNDAY SLOT 3] - 09:30 PM IST (16:00 UTC): SYDNEY / TOKYO OPEN - MARKETS ARE LIVE!
+  - English Title: 🚨 The Forex Markets are OPEN! 🌏📈
+    English Body: Sydney & Tokyo trading sessions have kicked off. New trading week is live—catch the opening moves!
+  - Hinglish Title: 🚨 Forex market khul chuka hai! 🌏📈
+    Hinglish Body: Sydney aur Tokyo session shuru ho gaya hai. Naye week ke pehle moves track karo abhi!
+  - Deep Link: home
+================================================================================
