@@ -695,12 +695,14 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
     # ── CHECK 2: WEEKENDS (SATURDAY & SUNDAY) ──
     if weekday == 5: # Saturday
         for slot in SATURDAY_SLOTS:
-            if slot["ist_hour"] == ist_hour and slot["ist_minute_min"] <= ist_minute <= slot["ist_minute_max"]:
+            slot_h = slot["ist_hour"]
+            # Active window: allows trigger anytime within a 3-hour window from slot start
+            if slot_h <= ist_hour < slot_h + 3:
                 dedup_key = f"retention_sat_{slot['slot_id']}_{date_str}"
                 if is_sent_fn(dedup_key, local_history, db_client):
                     continue
 
-                ch_id = slot["channel_id"]
+                ch_id = CHANNEL_BREAKING_NEWS
                 send_message_fn(
                     messaging_client=messaging_client,
                     topic=TOPIC_INDIA,
@@ -708,7 +710,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                     body=slot["india"]["body"],
                     data={"type": "RETENTION_WEEKEND", "route": slot["india"]["route"], "channelId": ch_id},
                     channel_id=ch_id,
-                    priority="normal"
+                    priority="high"
                 )
                 send_message_fn(
                     messaging_client=messaging_client,
@@ -717,7 +719,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                     body=slot["global"]["body"],
                     data={"type": "RETENTION_WEEKEND", "route": slot["global"]["route"], "channelId": ch_id},
                     channel_id=ch_id,
-                    priority="normal"
+                    priority="high"
                 )
 
                 record_sent_fn(
@@ -733,12 +735,14 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
 
     elif weekday == 6: # Sunday
         for slot in SUNDAY_SLOTS:
-            if slot["ist_hour"] == ist_hour and slot["ist_minute_min"] <= ist_minute <= slot["ist_minute_max"]:
+            slot_h = slot["ist_hour"]
+            # Active window: allows trigger anytime within a 3-hour window from slot start
+            if slot_h <= ist_hour < slot_h + 3:
                 dedup_key = f"retention_sun_{slot['slot_id']}_{date_str}"
                 if is_sent_fn(dedup_key, local_history, db_client):
                     continue
 
-                ch_id = slot["channel_id"]
+                ch_id = CHANNEL_BREAKING_NEWS
                 send_message_fn(
                     messaging_client=messaging_client,
                     topic=TOPIC_INDIA,
@@ -746,7 +750,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                     body=slot["india"]["body"],
                     data={"type": "RETENTION_WEEKEND", "route": slot["india"]["route"], "channelId": ch_id},
                     channel_id=ch_id,
-                    priority="high" if "930" in slot["slot_id"] else "normal"
+                    priority="high"
                 )
                 send_message_fn(
                     messaging_client=messaging_client,
@@ -755,7 +759,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                     body=slot["global"]["body"],
                     data={"type": "RETENTION_WEEKEND", "route": slot["global"]["route"], "channelId": ch_id},
                     channel_id=ch_id,
-                    priority="high" if "930" in slot["slot_id"] else "normal"
+                    priority="high"
                 )
 
                 record_sent_fn(
@@ -771,10 +775,14 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
 
     # ── CHECK 3: WEEKDAY 2-HOUR INTERVAL SLOTS (MON - FRI) ──
     for slot in WEEKDAY_2HOUR_SLOTS:
-        # Match slot hour and 0 to 29 minute window (since cron runs every 5 mins)
-        if slot["ist_hour"] == ist_hour and 0 <= ist_minute <= 29:
+        # Match slot's full 2-hour window (e.g. 16:00 to 17:59 IST for slot_04pm, 18:00 to 19:59 for slot_06pm)
+        # Allows cron (which runs every 5 to 60 mins) to dispatch at ANY minute during the window without missing.
+        # Deduplication key strictly prevents any double dispatch for the same day.
+        slot_h = slot["ist_hour"]
+        if slot_h <= ist_hour < slot_h + 2:
             dedup_key = f"retention_weekday_{slot['slot_id']}_{date_str}"
             if is_sent_fn(dedup_key, local_history, db_client):
+                logger.debug(f"Retention slot {slot['slot_id']} already sent for {date_str}.")
                 continue
 
             pool = slot["pool"]
@@ -782,7 +790,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
             day_of_year = now_ist.timetuple().tm_yday
             chosen = pool[day_of_year % len(pool)]
 
-            ch_id = slot["channel_id"]
+            ch_id = CHANNEL_BREAKING_NEWS
 
             # 1. Send India (Hinglish)
             send_message_fn(
@@ -792,7 +800,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                 body=chosen["india"]["body"],
                 data={"type": "RETENTION_2HOUR", "route": chosen["india"]["route"], "channelId": ch_id},
                 channel_id=ch_id,
-                priority="high" if "breaking" in ch_id else "normal"
+                priority="high"
             )
 
             # 2. Send Global (Universal English)
@@ -803,7 +811,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                 body=chosen["global"]["body"],
                 data={"type": "RETENTION_2HOUR", "route": chosen["global"]["route"], "channelId": ch_id},
                 channel_id=ch_id,
-                priority="high" if "breaking" in ch_id else "normal"
+                priority="high"
             )
 
             record_sent_fn(

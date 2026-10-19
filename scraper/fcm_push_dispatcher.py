@@ -812,9 +812,10 @@ def run_push_dispatcher(test_time_iso=None):
     total_dispatched += check_daily_morning_high_impact_digest(events, now_utc, local_history, messaging_client, db_client)
 
     # 6. Automated 2-Hour Retention, Memes & Special Calendar Hooks (India vs Global)
+    logger.info("Checking Trigger 6: Automated 2-Hour Retention & Memes...")
     try:
         from retention_campaigns import check_retention_campaign_dispatch
-        total_dispatched += check_retention_campaign_dispatch(
+        retention_count = check_retention_campaign_dispatch(
             now_utc=now_utc,
             local_history=local_history,
             messaging_client=messaging_client,
@@ -823,6 +824,8 @@ def run_push_dispatcher(test_time_iso=None):
             record_sent_fn=record_sent,
             is_sent_fn=is_already_sent
         )
+        total_dispatched += retention_count
+        logger.info(f"Trigger 6 completed: {retention_count} retention notification(s) dispatched.")
     except Exception as e:
         logger.error(f"Error in Retention Campaign Dispatcher: {e}")
 
@@ -832,4 +835,23 @@ def run_push_dispatcher(test_time_iso=None):
 
 if __name__ == "__main__":
     test_arg = sys.argv[1] if len(sys.argv) > 1 else None
-    run_push_dispatcher(test_arg)
+    if test_arg in ("--force-retention", "-r", "retention"):
+        # Force dispatch current retention slot ignoring deduplication for instant test
+        logger.info("Manual flag triggered: Running Retention Campaign directly...")
+        from retention_campaigns import check_retention_campaign_dispatch
+        now_utc = datetime.now(timezone.utc)
+        messaging_client, db_client = get_firebase_clients()
+        local_history = load_dedup_history()
+        
+        # Override is_sent_fn to return False so it forcefully sends
+        check_retention_campaign_dispatch(
+            now_utc=now_utc,
+            local_history={},
+            messaging_client=messaging_client,
+            db_client=db_client,
+            send_message_fn=send_fcm_message,
+            record_sent_fn=record_sent,
+            is_sent_fn=lambda k, h, db: False
+        )
+    else:
+        run_push_dispatcher(test_arg)
