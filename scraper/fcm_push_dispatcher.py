@@ -175,20 +175,24 @@ def send_fcm_message(messaging_client, topic, title, body, data, channel_id, pri
     try:
         from firebase_admin import messaging
 
+        full_data = {
+            "title": str(title),
+            "body": str(body),
+            "message": str(body),
+            "channelId": str(channel_id),
+            **(data or {})
+        }
+
+        # Data-only high-priority message:
+        # Ensures ForexFirebaseMessagingService.onMessageReceived() is ALWAYS invoked across all
+        # device states (foreground, background, screen locked).
+        # This enables the app's NotificationCompat.Builder to attach the Jio-styled circular largeIcon
+        # on the right side of the notification, play custom notification sounds, and update history.
         message = messaging.Message(
             topic=topic,
-            notification=messaging.Notification(
-                title=title,
-                body=body
-            ),
-            data=data,
+            data=full_data,
             android=messaging.AndroidConfig(
-                priority="high" if priority == "high" else "normal",
-                notification=messaging.AndroidNotification(
-                    channel_id=channel_id,
-                    sound="default" if priority == "high" else None,
-                    priority="high" if priority == "high" else "default"
-                )
+                priority="high"
             )
         )
         response = messaging_client.send(message)
