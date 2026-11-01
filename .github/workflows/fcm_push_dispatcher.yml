@@ -5,7 +5,12 @@ on:
     # Runs every 5 minutes for timely economic alerts (T-30m, T-15m, T+5m wrap, session opens)
     - cron: '*/5 * * * *'
   workflow_dispatch:
-    # Allows manual runs from GitHub Actions tab
+    inputs:
+      force_test:
+        description: 'Force immediate retention test alert'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,7 +39,11 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
         run: |
           cd scraper
-          python fcm_push_dispatcher.py
+          if [ "${{ inputs.force_test }}" = "true" ]; then
+            python fcm_push_dispatcher.py --force-retention
+          else
+            python fcm_push_dispatcher.py
+          fi
 
       - name: Commit Deduplication History
         uses: stefanzweifel/git-auto-commit-action@v5
