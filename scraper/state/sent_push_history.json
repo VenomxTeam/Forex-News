@@ -180,5 +180,59 @@
     "india_title": "Raat ke 12 baje uski DP dekh kar ro rahe ho? \ud83d\udcf1\ud83d\udc94",
     "global_title": "Staring at your ex's profile at midnight? \ud83d\udcf1\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_gbp_10_y_bond_auction_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "gbp_10_y_bond_auction_20261103",
+    "currency": "GBP",
+    "title": "10-y Bond Auction",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_usd_rcmtipp_economic_optimism_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "usd_rcmtipp_economic_optimism_20261103",
+    "currency": "USD",
+    "title": "RCM/TIPP Economic Optimism",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_usd_omdia_total_vehicle_sales_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "usd_omdia_total_vehicle_sales_20261103",
+    "currency": "USD",
+    "title": "Omdia Total Vehicle Sales",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_usd_congressional_elections_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "usd_congressional_elections_20261103",
+    "currency": "USD",
+    "title": "Congressional Elections",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_nzd_gdt_price_index_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "nzd_gdt_price_index_20261103",
+    "currency": "NZD",
+    "title": "GDT Price Index",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_nzd_anz_commodity_prices_mm_20261103": {
+    "sent_at": "2026-11-02T23:40:31.150223+00:00",
+    "event_id": "nzd_anz_commodity_prices_mm_20261103",
+    "currency": "NZD",
+    "title": "ANZ Commodity Prices m/m",
+    "scheduled_time": "2026-11-03T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
