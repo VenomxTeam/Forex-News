@@ -65,5 +65,13 @@
     "india_title": "Overleveraging se account blow ho jayega \ud83e\uddee\u26a0\ufe0f",
     "global_title": "Wrong lot size will blow your account \ud83e\uddee\u26a0\ufe0f",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-02": {
+    "sent_at": "2026-11-02T16:37:49.213996+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-02",
+    "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
+    "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
