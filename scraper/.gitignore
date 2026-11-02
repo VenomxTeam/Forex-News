@@ -9,6 +9,6 @@ env/
 .conda-env/
 .codex
 news/
-state/
+state/*
 !state/sent_push_history.json
 *service-account*.json

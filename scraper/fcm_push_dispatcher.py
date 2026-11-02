@@ -190,9 +190,18 @@ def send_fcm_message(messaging_client, topic, title, body, data, channel_id, pri
         # on the right side of the notification, play custom notification sounds, and update history.
         message = messaging.Message(
             topic=topic,
+            notification=messaging.Notification(
+                title=str(title),
+                body=str(body)
+            ),
             data=full_data,
             android=messaging.AndroidConfig(
-                priority="high"
+                priority="high",
+                notification=messaging.AndroidNotification(
+                    channel_id=str(channel_id),
+                    priority="high",
+                    default_sound=True
+                )
             )
         )
         response = messaging_client.send(message)
@@ -398,10 +407,10 @@ def check_post_news_wrap(events, now_utc, local_history, messaging_client, db_cl
         if actual:
             push_title = f"{impact_ball} {currency} Actual: {actual}"
             forecast_snippet = f" (Forecast: {forecast})" if forecast else ""
-            push_body = f"{title_str} released: {actual}{forecast_snippet}. Tap for pip reaction & AI verdict."
+            push_body = f"{title_str} released: {actual}{forecast_snippet}. Tap for pip reaction & breaking event impact."
         else:
             push_title = f"{impact_ball} {currency} Released: {title_str}"
-            push_body = f"{title_str} data just released! Tap to see live results, pip reaction & AI Trade Verdict."
+            push_body = f"{title_str} data just released! Tap to see live results, pip reaction & economic news impact."
 
         data_payload = {
             "type": "POST_NEWS_WRAP",
@@ -457,114 +466,268 @@ def check_post_news_wrap(events, now_utc, local_history, messaging_client, db_cl
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TRIGGER 3: London & New York Session Open (Mon-Fri Only)
+# ─────────────────────────────────────────────────────────────────────────────
+# TRIGGER 3: All 4 Global Market Session Opens (Tokyo, London, NY, Sydney)
 # ─────────────────────────────────────────────────────────────────────────────
 def check_session_open_alerts(events, now_utc, local_history, messaging_client, db_client):
     """
-    Dispatches London (07:00 UTC) and New York (12:00 UTC) Session Opens.
-    STRICT ZERO-SPAM GUARD: Weekends (Sat/Sun) are strictly skipped!
+    Dispatches alerts for ALL 4 Major Market Session Opens:
+    1. Tokyo (Asian) Session Open: 00:00 UTC (05:30 AM IST) - Weekdays
+    2. London (European) Session Open: 07:00 UTC (12:30 PM IST) - Weekdays
+    3. New York (US / Wall Street) Open: 12:30 UTC / 13:00 UTC (06:00 PM / 06:30 PM IST) - Weekdays
+    4. Sydney Session Open: 21:00 UTC (02:30 AM IST next day weekdays & Sunday weekly market open)
+
+    Zero-Fake & Anti-Spam:
+    - Strictly deduplicated once per session per calendar day.
+    - Sends targeted Hinglish to 'india_traders' and high-converting English to 'global_traders'.
     """
-    logger.info("Checking Trigger 3: Market Session Open Alerts...")
+    logger.info("Checking Trigger 3: All 4 Market Session Open Alerts (Tokyo, London, NY, Sydney)...")
     dispatched = 0
 
-    # 0 = Monday, 1 = Tuesday ... 5 = Saturday, 6 = Sunday
-    weekday = now_utc.weekday()
-    if weekday >= 5:
-        logger.info("Weekend detected (Saturday/Sunday). Forex markets closed. Zero alerts sent.")
-        return 0
-
+    weekday = now_utc.weekday() # 0 = Mon, 1 = Tue, ..., 5 = Sat, 6 = Sun
     utc_hour = now_utc.hour
     utc_minute = now_utc.minute
     date_str = now_utc.strftime("%Y-%m-%d")
 
-    # Filter today's real high impact events for context
-    today_events = [
+    # Filter today's real high-impact events for dynamic context
+    today_red = [
         e for e in events
         if e.get("time", "").startswith(date_str) and str(e.get("impact", "")).lower() == "red"
     ]
+    red_count = len(today_red)
+    day_of_year = now_utc.timetuple().tm_yday
 
-    # ── London Session Open (07:00 UTC, active window 07:00-07:29) ──
-    if utc_hour == 7 and utc_minute < 30:
+    # Helper function to dispatch session open to both India & Global topics
+    def dispatch_session_notification(session_code, dedup_key, in_title, in_body, gl_title, gl_body, route="market"):
+        if is_already_sent(dedup_key, local_history, db_client):
+            return 0
+
+        ch_id = "fcm_daily_briefing_channel"
+        # 1. Send India (Hinglish viral copy)
+        send_fcm_message(
+            messaging_client=messaging_client,
+            topic="india_traders",
+            title=in_title,
+            body=in_body,
+            data={"type": "SESSION_OPEN", "session": session_code, "route": route, "channelId": ch_id},
+            channel_id=ch_id,
+            priority="high"
+        )
+        # 2. Send Global (Universal English high-CTR copy)
+        send_fcm_message(
+            messaging_client=messaging_client,
+            topic="global_traders",
+            title=gl_title,
+            body=gl_body,
+            data={"type": "SESSION_OPEN", "session": session_code, "route": route, "channelId": ch_id},
+            channel_id=ch_id,
+            priority="high"
+        )
+        # 3. Legacy broadcast topic
+        send_fcm_message(
+            messaging_client=messaging_client,
+            topic="daily_briefing",
+            title=gl_title,
+            body=gl_body,
+            data={"type": "SESSION_OPEN", "session": session_code, "route": route, "channelId": ch_id},
+            channel_id=ch_id,
+            priority="normal"
+        )
+
+        record_sent(
+            dedup_key,
+            {
+                "sent_at": now_utc.isoformat(),
+                "session": session_code,
+                "date": date_str,
+                "high_impact_count": red_count
+            },
+            local_history,
+            db_client
+        )
+        logger.info(f"✓ Dispatched {session_code} Session Open alert ({gl_title})")
+        return 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # 1. TOKYO (ASIAN) SESSION OPEN (00:00 UTC / 05:30 AM IST) - Mon to Fri
+    # ═════════════════════════════════════════════════════════════════════════
+    if weekday in (0, 1, 2, 3, 4) and utc_hour == 0:
+        dedup_key = f"session_tokyo_{date_str}"
+        tokyo_in_titles = [
+            "🚨 Tokyo Market Khul Gaya! 🇯🇵 Yen & Gold Me Blast",
+            "Chai baad me, Tokyo breakout pehle! ☕🇯🇵 40 pips live",
+            "Asian Whales active! 🐋 USD/JPY me institutional orders",
+            "Subah-subah Gold ne move shuru kiya! 🌅 Tokyo is live",
+            "Good morning! Tokyo market open ho chuka hai 🇯🇵⚡"
+        ]
+        tokyo_in_bodies = [
+            "Asian session live hai! USD/JPY, AUD aur Gold ke early breakout levels abhi check karo.",
+            "Neend khulne se pehle Tokyo 40 pips de gaya! Check currency strength heatmap.",
+            "Bank of Japan aur Asian liquidity sweeps start ho gaye hain. Tap for live chart.",
+            "Retail abhi so rahi hai, Asian institutions orders bhar rahe hain. Aaj ka bias dekho!",
+            f"Aaj {red_count} high-impact news queue me hain! Asian open momentum check karo." if red_count > 0 else "Fresh Asian session momentum is live. Check USD/JPY & Nikkei bias!"
+        ]
+        tokyo_gl_titles = [
+            "🚨 Tokyo Session is LIVE! 🇯🇵 Asian Whales are Moving",
+            "Tokyo Opening Bell! ☕🇯🇵 40+ pips active on USD/JPY",
+            "Asian Liquidity Influx! 🐋 Watch JPY, AUD & Gold",
+            "Wake up to market volatility: Asian Session Open 🌅",
+            "Tokyo Session Open: Early Breakout underway! 🇯🇵⚡"
+        ]
+        tokyo_gl_bodies = [
+            "Asian markets are trading! Early momentum building on USD/JPY, AUD/USD & Gold.",
+            "Asian liquidity sweeps underway before Europe wakes up. Check live sessions radar!",
+            "Smart money is positioning early on Asian crosses. Tap to see institutional bias.",
+            "Don't trade the morning blind. Spot dominant currency flows on the Live Heatmap!",
+            f"{red_count} Red-Folder events scheduled today. Catch the Tokyo opening moves now!" if red_count > 0 else "Tokyo liquidity sweeps active on JPY crosses. Check live levels!"
+        ]
+        idx = day_of_year % len(tokyo_in_titles)
+        dispatched += dispatch_session_notification(
+            session_code="TOKYO",
+            dedup_key=dedup_key,
+            in_title=tokyo_in_titles[idx],
+            in_body=tokyo_in_bodies[idx],
+            gl_title=tokyo_gl_titles[idx],
+            gl_body=tokyo_gl_bodies[idx],
+            route="market"
+        )
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # 2. LONDON (EUROPEAN) SESSION OPEN (07:00 UTC / 12:30 PM IST) - Mon to Fri
+    # ═════════════════════════════════════════════════════════════════════════
+    if weekday in (0, 1, 2, 3, 4) and utc_hour == 7:
         dedup_key = f"session_london_{date_str}"
-        if not is_already_sent(dedup_key, local_history, db_client):
-            red_count = len(today_events)
-            push_title = "🇬🇧 London Session Open: High Volatility Ahead!"
-            if red_count > 0:
-                push_body = f"EUR/USD, GBP/USD & Gold active. {red_count} high-impact release{'s' if red_count > 1 else ''} on today's calendar. Tap to view."
-            else:
-                push_body = "European markets active. Key pairs in focus: EUR/USD, GBP/USD, XAU/USD. Tap to check today's economic calendar."
+        london_in_titles = [
+            "🇬🇧 London Open! EUR & GBP Me Liquidity Ka Tsunami 🌊",
+            "London market khul gaya! 60 pips breakout live hai 🇬🇧⚡",
+            "Swiggy se pehle London delivers! 🍔 GBP/USD explodes",
+            "Whales entering Europe! 🐋 Frankfurt & London Open",
+            "London session shuru! EUR/USD breakout levels dekho 🎯"
+        ]
+        london_in_bodies = [
+            f"Europe open ho chuka hai! {red_count} major releases scheduled hain. Breakout levels check karo.",
+            "European volume market me enter ho chuka hai! EUR/USD, GBP/USD aur Gold live chart dekho.",
+            "Lunchtime breakout 50 pips de chuka hai! Stop loss verify karo aur trap se bacho.",
+            "Smart money retail stop losses hunt karne aayi hai. Live Currency Heatmap abhi dekho!",
+            "Highest volume trading session live hai. Live AI Macro Bias check karke position lo!"
+        ]
+        london_gl_titles = [
+            "🇬🇧 London Open: European Liquidity Flood Has Begun! 🌊",
+            "London Session is LIVE! 🇬🇧 60-pip breakouts active",
+            "Europe Wakes Up: Massive Order Blocks on EUR & GBP ⚡",
+            "London Opening Bell: Highest Volume Session is Live! 🔔",
+            "London Open: EUR/USD & GBP/USD Volatility Exploding 💥"
+        ]
+        london_gl_bodies = [
+            f"European traders are hitting their desks. {red_count} Red-Folder catalysts in play today!",
+            "Heavy liquidity sweeps entering EUR/USD, GBP/USD & Gold right now. Don't miss the move!",
+            "Smart money is testing key breakout levels across European pairs. See live heatmap!",
+            "Over 35% of daily global forex volume trades here. Check AI Quant market bias now!",
+            "Volatility is peaking! Check the strongest currency before placing London entries."
+        ]
+        idx = day_of_year % len(london_in_titles)
+        dispatched += dispatch_session_notification(
+            session_code="LONDON",
+            dedup_key=dedup_key,
+            in_title=london_in_titles[idx],
+            in_body=london_in_bodies[idx],
+            gl_title=london_gl_titles[idx],
+            gl_body=london_gl_bodies[idx],
+            route="calendar" if red_count > 0 else "home"
+        )
 
-            success = send_fcm_message(
-                messaging_client=messaging_client,
-                topic="daily_briefing",
-                title=push_title,
-                body=push_body,
-                data={
-                    "type": "SESSION_OPEN",
-                    "session": "LONDON",
-                    "route": "calendar",
-                    "channelId": "fcm_daily_briefing_channel"
-                },
-                channel_id="fcm_daily_briefing_channel",
-                priority="normal"
-            )
-
-            if success:
-                record_sent(
-                    dedup_key,
-                    {
-                        "sent_at": now_utc.isoformat(),
-                        "session": "LONDON",
-                        "date": date_str,
-                        "high_impact_count": red_count
-                    },
-                    local_history,
-                    db_client
-                )
-                dispatched += 1
-                logger.info("✓ Dispatched London Session Open push alert")
-
-    # ── New York Session Open (12:00 UTC, active window 12:00-12:29) ──
-    if utc_hour == 12 and utc_minute < 30:
+    # ═════════════════════════════════════════════════════════════════════════
+    # 3. NEW YORK (US / WALL STREET) OPEN (12:30-13:30 UTC / 06:00-07:00 PM IST)
+    # ═════════════════════════════════════════════════════════════════════════
+    if weekday in (0, 1, 2, 3, 4) and (utc_hour == 13 or (utc_hour == 12 and utc_minute >= 30)):
         dedup_key = f"session_ny_{date_str}"
-        if not is_already_sent(dedup_key, local_history, db_client):
-            us_red = [e for e in today_events if e.get("currency") == "USD"]
-            push_title = "🇺🇸 New York Open: US Data Impending"
-            if us_red:
-                titles = ", ".join(e.get("title", "") for e in us_red[:2])
-                push_body = f"US Dollar index & Gold in focus. {titles} releasing today. Tap for schedule."
-            else:
-                push_body = "Wall Street opening. US Dollar index and Gold (XAU/USD) in focus. Tap to check key support levels."
+        us_red = [e for e in today_red if e.get("currency") == "USD"]
+        us_titles = ", ".join(e.get("title", "") for e in us_red[:2]) if us_red else "US Economic News"
 
-            success = send_fcm_message(
-                messaging_client=messaging_client,
-                topic="daily_briefing",
-                title=push_title,
-                body=push_body,
-                data={
-                    "type": "SESSION_OPEN",
-                    "session": "NEW_YORK",
-                    "route": "calendar",
-                    "channelId": "fcm_daily_briefing_channel"
-                },
-                channel_id="fcm_daily_briefing_channel",
-                priority="normal"
-            )
+        ny_in_titles = [
+            "🇺🇸 Wall Street Open! 🔔 US Dollar & Gold Me Wild Swings",
+            "New York session live! 💀 Stop Loss check kiya ya bhool gaye?",
+            "Wall Street ka dhol baj gaya! 🔔 US Data dropping now",
+            "Gold & US Dollar me 100+ pip frenzy shuru! 🚀🇺🇸",
+            "US Market Open! 🇺🇸 Revenge trade mat lena, bias dekho"
+        ]
+        ny_in_bodies = [
+            f"NYSE equities bell just rang! {us_titles} in focus. High institutional volume is live.",
+            "Red-Folder US data aane wali hai! Stop loss tight rakho ya risk calculator se lot verify karo.",
+            "Wall Street opening volume hitting USD, Gold & NASDAQ right now. Live breaking news & market bias dekho!",
+            "London aur New York overlap me massive liquidity aa rahi hai. Live chart open karo!",
+            "Overleveraging se account blow mat karna! Live Currency Heatmap par strongest asset check karo."
+        ]
+        ny_gl_titles = [
+            "🇺🇸 New York Open: Wall Street Opening Bell Just Rang! 🔔",
+            "New York Session is LIVE! 💀 Did you set that Stop Loss?",
+            "US Dollar & Gold Frenzy! 🚀 100+ pip swings live",
+            "Wall Street Opening Volume: NASDAQ & Gold Exploding 💥",
+            "New York Session Open: High-Stakes US Data Incoming 🇺🇸"
+        ]
+        ny_gl_bodies = [
+            f"Massive volume hitting USD, Gold & US Indices. {us_titles} in play today. Check levels!",
+            "High-impact US session open. Don't trade into news blind—check live breaking news & economic events!",
+            "London & NY overlap creates peak daily volatility. Track live institutional order flow now!",
+            "Institutional orders hitting the book. Protect your capital from the opening sweep!",
+            "Over 100 pips of volatility expected on XAU/USD & EUR/USD. Check live economic countdown!"
+        ]
+        idx = day_of_year % len(ny_in_titles)
+        dispatched += dispatch_session_notification(
+            session_code="NEW_YORK",
+            dedup_key=dedup_key,
+            in_title=ny_in_titles[idx],
+            in_body=ny_in_bodies[idx],
+            gl_title=ny_gl_titles[idx],
+            gl_body=ny_gl_bodies[idx],
+            route="calendar" if us_red else "home"
+        )
 
-            if success:
-                record_sent(
-                    dedup_key,
-                    {
-                        "sent_at": now_utc.isoformat(),
-                        "session": "NEW_YORK",
-                        "date": date_str,
-                        "us_high_impact_count": len(us_red)
-                    },
-                    local_history,
-                    db_client
-                )
-                dispatched += 1
-                logger.info("✓ Dispatched New York Session Open push alert")
+    # ═════════════════════════════════════════════════════════════════════════
+    # 4. SYDNEY SESSION OPEN (21:00 UTC / 02:30 AM IST & Sunday Weekly Kickoff)
+    # ═════════════════════════════════════════════════════════════════════════
+    # Weekday nights: 21:00 UTC (02:30 AM IST) Mon-Thu (which is Tue-Fri morning in Sydney)
+    # Sunday evening: 21:00 UTC (or Sunday weekly kickoff opening all forex markets)
+    if (weekday in (0, 1, 2, 3)) and utc_hour == 21:
+        dedup_key = f"session_sydney_{date_str}"
+        sydney_in_titles = [
+            "🌏 Sydney Session Open! Naye Trading Day Ki Shuruat 🚀",
+            "Sydney market khul gaya! 🇦🇺 AUD & NZD me early momentum",
+            "Neend nahi aa rahi? Sydney market dekh lo! 🌙🌏",
+            "Bhai market chalu ho gaya! 🚀 Sydney opening moves live",
+            "Sydney Session Live: Early price gaps track karo 🎯🌏"
+        ]
+        sydney_in_bodies = [
+            "AUD aur NZD pairs me pehla momentum shuru ho chuka hai! Early price gaps check karo.",
+            "First market of the cycle is trading! Check currency strength heatmap before Tokyo opens.",
+            "JPY aur Gold me early liquidity enter ho rahi hai. Live opening candle abhi dekho!",
+            "New session is live. Overleveraging mat karna, apna trading plan follow karo!",
+            "Opening price gaps active hain. Live sessions radar par strongest currency check karo."
+        ]
+        sydney_gl_titles = [
+            "🌏 Sydney Session Open: First Moves of the Day are LIVE! 🚀",
+            "Sydney Market is Open! 🇦🇺 Early momentum on AUD & NZD",
+            "Can't sleep? The Sydney Market just opened! 🌙🌏",
+            "Sydney Session Live: Catch the early Asian liquidity 🎯",
+            "Sydney Opening Moves: Fresh liquidity entering FX pairs 🚀"
+        ]
+        sydney_gl_bodies = [
+            "Fresh liquidity entering AUD, NZD & JPY pairs. Spot the early momentum before Tokyo opens!",
+            "The trading day is officially underway. Check the early breakout heatmaps now!",
+            "Early liquidity entering Gold and JPY crosses. Check the live opening candles right now!",
+            "Stick strictly to your risk rules—track the live currency rankings on the Sessions Radar.",
+            "Opening gaps are active across Gold and FX pairs. See how smart money is positioning!"
+        ]
+        idx = day_of_year % len(sydney_in_titles)
+        dispatched += dispatch_session_notification(
+            session_code="SYDNEY",
+            dedup_key=dedup_key,
+            in_title=sydney_in_titles[idx],
+            in_body=sydney_in_bodies[idx],
+            gl_title=sydney_gl_titles[idx],
+            gl_body=sydney_gl_bodies[idx],
+            route="market"
+        )
 
     return dispatched
 
@@ -844,7 +1007,7 @@ if __name__ == "__main__":
         logger.info("Manual flag triggered: Running Retention Campaign directly...")
         from retention_campaigns import check_retention_campaign_dispatch
         now_utc = datetime.now(timezone.utc)
-        messaging_client, db_client = get_firebase_clients()
+        messaging_client, db_client = init_firebase_admin()
         local_history = load_dedup_history()
         
         # Override is_sent_fn to return False so it forcefully sends

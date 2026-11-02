@@ -1,0 +1,69 @@
+{
+  "retention_weekday_slot_02pm_2026-10-19": {
+    "sent_at": "2026-10-19T08:36:36.699032+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-10-19",
+    "india_title": "Dhokha toh har koi deta hai... \ud83e\udd40",
+    "global_title": "People lie. Candlesticks don't. \ud83e\udd40",
+    "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_cad_cpi_mm_20261019": {
+    "sent_at": "2026-10-19T12:14:13.928555+00:00",
+    "event_id": "cad_cpi_mm_20261019",
+    "currency": "CAD",
+    "title": "CPI m/m",
+    "scheduled_time": "2026-10-19T12:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_cad_median_cpi_yy_20261019": {
+    "sent_at": "2026-10-19T12:14:13.928555+00:00",
+    "event_id": "cad_median_cpi_yy_20261019",
+    "currency": "CAD",
+    "title": "Median CPI y/y",
+    "scheduled_time": "2026-10-19T12:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_cad_trimmed_cpi_yy_20261019": {
+    "sent_at": "2026-10-19T12:14:13.928555+00:00",
+    "event_id": "cad_trimmed_cpi_yy_20261019",
+    "currency": "CAD",
+    "title": "Trimmed CPI y/y",
+    "scheduled_time": "2026-10-19T12:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_cad_common_cpi_yy_20261019": {
+    "sent_at": "2026-10-19T12:14:13.928555+00:00",
+    "event_id": "cad_common_cpi_yy_20261019",
+    "currency": "CAD",
+    "title": "Common CPI y/y",
+    "scheduled_time": "2026-10-19T12:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_cad_core_cpi_mm_20261019": {
+    "sent_at": "2026-10-19T12:14:13.928555+00:00",
+    "event_id": "cad_core_cpi_mm_20261019",
+    "currency": "CAD",
+    "title": "Core CPI m/m",
+    "scheduled_time": "2026-10-19T12:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "session_ny_2026-10-19": {
+    "session": "NEW_YORK",
+    "sent_at": "2026-10-19T12:03:35.223503+00:00",
+    "us_high_impact_count": 0,
+    "date": "2026-10-19"
+  },
+  "retention_weekday_slot_04pm_2026-10-19": {
+    "sent_at": "2026-10-19T12:19:00.314547+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-10-19",
+    "india_title": "Overleveraging se account blow ho jayega \ud83e\uddee\u26a0\ufe0f",
+    "global_title": "Wrong lot size will blow your account \ud83e\uddee\u26a0\ufe0f",
+    "type": "WEEKDAY_2HOUR_RETENTION"
+  }
+}
