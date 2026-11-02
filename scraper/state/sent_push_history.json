@@ -73,5 +73,112 @@
     "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
     "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_gbp_cbi_industrial_order_expectations_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "GBP",
+    "title": "CBI Industrial Order Expectations",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "gbp_cbi_industrial_order_expectations_20261102"
+  },
+  "0m_eur_german_final_gdp_qq_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "EUR",
+    "title": "German Final GDP q/q",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "eur_german_final_gdp_qq_20261102"
+  },
+  "0m_gbp_cbi_realized_sales_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "GBP",
+    "title": "CBI Realized Sales",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "gbp_cbi_realized_sales_20261102"
+  },
+  "0m_gbp_nationwide_hpi_mm_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "GBP",
+    "title": "Nationwide HPI m/m",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "gbp_nationwide_hpi_mm_20261102"
+  },
+  "0m_chf_retail_sales_yy_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "CHF",
+    "title": "Retail Sales y/y",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "chf_retail_sales_yy_20261102"
+  },
+  "0m_aud_anz_job_advertisements_mm_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "AUD",
+    "title": "ANZ Job Advertisements m/m",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "aud_anz_job_advertisements_mm_20261102"
+  },
+  "0m_jpy_prelim_machine_tool_orders_yy_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "JPY",
+    "title": "Prelim Machine Tool Orders y/y",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "jpy_prelim_machine_tool_orders_yy_20261102"
+  },
+  "0m_nzd_westpac_consumer_sentiment_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "NZD",
+    "title": "Westpac Consumer Sentiment",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "nzd_westpac_consumer_sentiment_20261102"
+  },
+  "0m_gbp_rightmove_hpi_mm_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261102"
+  },
+  "0m_eur_eu_economic_summit_20261102": {
+    "type": "EVENT_COUNTDOWN",
+    "window": "0m",
+    "scheduled_time": "2026-11-02T01:16:23Z",
+    "currency": "EUR",
+    "title": "EU Economic Summit",
+    "sent_at": "2026-11-02T01:16:23.685370+00:00",
+    "event_id": "eur_eu_economic_summit_20261102"
+  },
+  "wrap_usd_loan_officer_survey_20261102": {
+    "sent_at": "2026-11-02T19:10:51.122047+00:00",
+    "event_id": "usd_loan_officer_survey_20261102",
+    "currency": "USD",
+    "title": "Loan Officer Survey",
+    "actual": "",
+    "scheduled_time": "2026-11-02T19:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_12am_2026-11-03": {
+    "sent_at": "2026-11-02T19:10:51.122047+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-03",
+    "india_title": "Raat ke 12 baje uski DP dekh kar ro rahe ho? \ud83d\udcf1\ud83d\udc94",
+    "global_title": "Staring at your ex's profile at midnight? \ud83d\udcf1\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
