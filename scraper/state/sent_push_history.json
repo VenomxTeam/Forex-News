@@ -347,5 +347,13 @@
     "india_title": "Alarm baja ya open trades ne neend uda di? \u23f0\ud83d\udc40",
     "global_title": "Woke up checking open trades at 6 AM? \u23f0\ud83d\udc40",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_02pm_2026-11-03": {
+    "sent_at": "2026-11-03T09:13:54.815289+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-03",
+    "india_title": "'Bhai, market yahan se pakka reverse hoga!' \ud83e\udd21",
+    "global_title": "'Trust me bro, it HAS to bounce here!' \ud83e\udd21",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
