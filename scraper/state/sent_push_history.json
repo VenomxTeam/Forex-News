@@ -355,5 +355,13 @@
     "india_title": "'Bhai, market yahan se pakka reverse hoga!' \ud83e\udd21",
     "global_title": "'Trust me bro, it HAS to bounce here!' \ud83e\udd21",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_04pm_2026-11-03": {
+    "sent_at": "2026-11-03T11:49:12.391002+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-03",
+    "india_title": "Breakup ke baad gym, loss ke baad kahan? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
+    "global_title": "Gym after a breakup, but where after a loss? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
