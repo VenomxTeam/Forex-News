@@ -363,5 +363,13 @@
     "india_title": "Breakup ke baad gym, loss ke baad kahan? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
     "global_title": "Gym after a breakup, but where after a loss? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-03": {
+    "sent_at": "2026-11-03T17:33:55.097395+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-03",
+    "india_title": "Kal subah market me kya blast hone wala hai? \ud83d\udd2e\u26a1",
+    "global_title": "What is the market cooking for tomorrow? \ud83d\udd2e\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
