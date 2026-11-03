@@ -371,5 +371,13 @@
     "india_title": "Kal subah market me kya blast hone wala hai? \ud83d\udd2e\u26a1",
     "global_title": "What is the market cooking for tomorrow? \ud83d\udd2e\u26a1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_12am_2026-11-04": {
+    "sent_at": "2026-11-03T18:40:47.352490+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-04",
+    "india_title": "Screen ki neeli roshni me aankhein jali? \ud83d\udcf1\ud83e\udd71",
+    "global_title": "Blue light burning your eyes at 1 AM? \ud83d\udcf1\ud83e\udd71",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
