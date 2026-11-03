@@ -379,5 +379,14 @@
     "india_title": "Screen ki neeli roshni me aankhein jali? \ud83d\udcf1\ud83e\udd71",
     "global_title": "Blue light burning your eyes at 1 AM? \ud83d\udcf1\ud83e\udd71",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_jpy_monetary_base_yy_20261103": {
+    "sent_at": "2026-11-03T23:40:44.877690+00:00",
+    "event_id": "jpy_monetary_base_yy_20261103",
+    "currency": "JPY",
+    "title": "Monetary Base y/y",
+    "scheduled_time": "2026-11-03T23:50:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
