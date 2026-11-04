@@ -494,5 +494,13 @@
     "india_title": "Salary aayi: 10:00 AM | Margin call: 02:00 PM \ud83d\udc80",
     "global_title": "Paycheck lifespan: Under 4 hours? \ud83d\udcb8\ud83d\udc80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_04pm_2026-11-04": {
+    "sent_at": "2026-11-04T11:03:05.643006+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-04",
+    "india_title": "'Bhai trade le lu?' \ud83d\uded1 Ruuk jao!",
+    "global_title": "'Should I take this trade?' \ud83d\uded1 Hold on!",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
