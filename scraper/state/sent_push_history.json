@@ -608,5 +608,32 @@
     "india_title": "Overnight swap charges account kha jayenge \ud83d\udcb8\ud83c\udf19",
     "global_title": "Overnight swap fees eating your profits? \ud83d\udcb8\ud83c\udf19",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_eur_spanish_10_y_bond_auction_20261105": {
+    "sent_at": "2026-11-04T23:54:06.441786+00:00",
+    "event_id": "eur_spanish_10_y_bond_auction_20261105",
+    "currency": "EUR",
+    "title": "Spanish 10-y Bond Auction",
+    "scheduled_time": "2026-11-05T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_eur_french_10_y_bond_auction_20261105": {
+    "sent_at": "2026-11-04T23:54:06.441786+00:00",
+    "event_id": "eur_french_10_y_bond_auction_20261105",
+    "currency": "EUR",
+    "title": "French 10-y Bond Auction",
+    "scheduled_time": "2026-11-05T00:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "wrap_jpy_monetary_policy_meeting_minutes_20261104": {
+    "sent_at": "2026-11-04T23:54:06.441786+00:00",
+    "event_id": "jpy_monetary_policy_meeting_minutes_20261104",
+    "currency": "JPY",
+    "title": "Monetary Policy Meeting Minutes",
+    "actual": "",
+    "scheduled_time": "2026-11-04T23:50:00Z",
+    "type": "POST_NEWS_WRAP"
   }
 }
