@@ -510,5 +510,103 @@
     "india_title": "PnL laal hai par sabak bada mila? \ud83e\udde0\ud83d\udca1",
     "global_title": "Red day? Treat it as tuition, not defeat \ud83e\udde0\ud83d\udca1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "wrap_gbp_cbi_industrial_order_expectations_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "gbp_cbi_industrial_order_expectations_20261104",
+    "currency": "GBP",
+    "title": "CBI Industrial Order Expectations",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_eur_german_final_gdp_qq_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "eur_german_final_gdp_qq_20261104",
+    "currency": "EUR",
+    "title": "German Final GDP q/q",
+    "actual": "2.4%",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_cbi_realized_sales_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "gbp_cbi_realized_sales_20261104",
+    "currency": "GBP",
+    "title": "CBI Realized Sales",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_nationwide_hpi_mm_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "gbp_nationwide_hpi_mm_20261104",
+    "currency": "GBP",
+    "title": "Nationwide HPI m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_chf_retail_sales_yy_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "chf_retail_sales_yy_20261104",
+    "currency": "CHF",
+    "title": "Retail Sales y/y",
+    "actual": "1.7%",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_aud_anz_job_advertisements_mm_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "aud_anz_job_advertisements_mm_20261104",
+    "currency": "AUD",
+    "title": "ANZ Job Advertisements m/m",
+    "actual": "2.1%",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_jpy_prelim_machine_tool_orders_yy_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "jpy_prelim_machine_tool_orders_yy_20261104",
+    "currency": "JPY",
+    "title": "Prelim Machine Tool Orders y/y",
+    "actual": "57.3%",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_nzd_westpac_consumer_sentiment_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "nzd_westpac_consumer_sentiment_20261104",
+    "currency": "NZD",
+    "title": "Westpac Consumer Sentiment",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_rightmove_hpi_mm_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261104",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_eur_eu_economic_summit_20261104": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "event_id": "eur_eu_economic_summit_20261104",
+    "currency": "EUR",
+    "title": "EU Economic Summit",
+    "actual": "",
+    "scheduled_time": "2026-11-04T18:28:07Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_12am_2026-11-05": {
+    "sent_at": "2026-11-04T18:34:42.590868+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-05",
+    "india_title": "Overnight swap charges account kha jayenge \ud83d\udcb8\ud83c\udf19",
+    "global_title": "Overnight swap fees eating your profits? \ud83d\udcb8\ud83c\udf19",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
