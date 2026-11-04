@@ -502,5 +502,13 @@
     "india_title": "'Bhai trade le lu?' \ud83d\uded1 Ruuk jao!",
     "global_title": "'Should I take this trade?' \ud83d\uded1 Hold on!",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-04": {
+    "sent_at": "2026-11-04T18:28:07.567203+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-04",
+    "india_title": "PnL laal hai par sabak bada mila? \ud83e\udde0\ud83d\udca1",
+    "global_title": "Red day? Treat it as tuition, not defeat \ud83e\udde0\ud83d\udca1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
