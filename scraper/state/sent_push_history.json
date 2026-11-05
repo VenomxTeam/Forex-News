@@ -635,5 +635,119 @@
     "actual": "",
     "scheduled_time": "2026-11-04T23:50:00Z",
     "type": "POST_NEWS_WRAP"
+  },
+  "0m_gbp_cbi_industrial_order_expectations_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "gbp_cbi_industrial_order_expectations_20261105",
+    "currency": "GBP",
+    "title": "CBI Industrial Order Expectations",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_eur_german_final_gdp_qq_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "eur_german_final_gdp_qq_20261105",
+    "currency": "EUR",
+    "title": "German Final GDP q/q",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_cbi_realized_sales_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "gbp_cbi_realized_sales_20261105",
+    "currency": "GBP",
+    "title": "CBI Realized Sales",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_nationwide_hpi_mm_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "gbp_nationwide_hpi_mm_20261105",
+    "currency": "GBP",
+    "title": "Nationwide HPI m/m",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_chf_retail_sales_yy_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "chf_retail_sales_yy_20261105",
+    "currency": "CHF",
+    "title": "Retail Sales y/y",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_aud_anz_job_advertisements_mm_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "aud_anz_job_advertisements_mm_20261105",
+    "currency": "AUD",
+    "title": "ANZ Job Advertisements m/m",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_jpy_prelim_machine_tool_orders_yy_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "jpy_prelim_machine_tool_orders_yy_20261105",
+    "currency": "JPY",
+    "title": "Prelim Machine Tool Orders y/y",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_nzd_westpac_consumer_sentiment_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "nzd_westpac_consumer_sentiment_20261105",
+    "currency": "NZD",
+    "title": "Westpac Consumer Sentiment",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_rightmove_hpi_mm_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261105",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_eur_eu_economic_summit_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "eur_eu_economic_summit_20261105",
+    "currency": "EUR",
+    "title": "EU Economic Summit",
+    "scheduled_time": "2026-11-05T00:09:42Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "wrap_eur_spanish_10_y_bond_auction_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "eur_spanish_10_y_bond_auction_20261105",
+    "currency": "EUR",
+    "title": "Spanish 10-y Bond Auction",
+    "actual": "4.2|1.6",
+    "scheduled_time": "2026-11-05T00:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_eur_french_10_y_bond_auction_20261105": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "event_id": "eur_french_10_y_bond_auction_20261105",
+    "currency": "EUR",
+    "title": "French 10-y Bond Auction",
+    "actual": "5.1|2.0",
+    "scheduled_time": "2026-11-05T00:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "session_tokyo_2026-11-05": {
+    "sent_at": "2026-11-05T00:09:42.693346+00:00",
+    "session": "TOKYO",
+    "date": "2026-11-05",
+    "high_impact_count": 5
   }
 }
