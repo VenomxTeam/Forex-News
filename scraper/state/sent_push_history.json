@@ -749,5 +749,19 @@
     "session": "TOKYO",
     "date": "2026-11-05",
     "high_impact_count": 5
+  },
+  "daily_morning_red_2026-11-05": {
+    "sent_at": "2026-11-05T03:59:23.358667+00:00",
+    "date": "2026-11-05",
+    "high_impact_count": 5,
+    "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "retention_weekday_slot_08am_2026-11-05": {
+    "sent_at": "2026-11-05T03:59:23.358667+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-05",
+    "india_title": "Neend khulte hi portfolio dekh kar heart attack? \ud83d\udd34\ud83d\udc80",
+    "global_title": "Waking up to a red screen reality check? \ud83d\udd34\ud83d\udc80",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
