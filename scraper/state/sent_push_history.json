@@ -763,5 +763,37 @@
     "india_title": "Neend khulte hi portfolio dekh kar heart attack? \ud83d\udd34\ud83d\udc80",
     "global_title": "Waking up to a red screen reality check? \ud83d\udd34\ud83d\udc80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_eur_french_industrial_production_mm_20261105": {
+    "sent_at": "2026-11-05T07:42:53.179246+00:00",
+    "event_id": "eur_french_industrial_production_mm_20261105",
+    "currency": "EUR",
+    "title": "French Industrial Production m/m",
+    "scheduled_time": "2026-11-05T07:45:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_chf_unemployment_rate_20261105": {
+    "sent_at": "2026-11-05T07:42:53.179246+00:00",
+    "event_id": "chf_unemployment_rate_20261105",
+    "currency": "CHF",
+    "title": "Unemployment Rate",
+    "scheduled_time": "2026-11-05T08:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "session_london_2026-11-05": {
+    "sent_at": "2026-11-05T07:42:53.179246+00:00",
+    "session": "LONDON",
+    "date": "2026-11-05",
+    "high_impact_count": 5
+  },
+  "retention_weekday_slot_12pm_2026-11-05": {
+    "sent_at": "2026-11-05T07:42:53.179246+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-05",
+    "india_title": "Thali me biryani, chart pe breakdown? \ud83c\udf5b\ud83d\udcc9",
+    "global_title": "Eating lunch while your open trade breaks support? \ud83c\udf55\ud83d\udcc9",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
