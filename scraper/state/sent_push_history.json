@@ -795,5 +795,58 @@
     "india_title": "Thali me biryani, chart pe breakdown? \ud83c\udf5b\ud83d\udcc9",
     "global_title": "Eating lunch while your open trade breaks support? \ud83c\udf55\ud83d\udcc9",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_gbp_boe_monetary_policy_report_20261105": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "event_id": "gbp_boe_monetary_policy_report_20261105",
+    "currency": "GBP",
+    "title": "BOE Monetary Policy Report",
+    "scheduled_time": "2026-11-05T12:00:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_monetary_policy_summary_20261105": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "event_id": "gbp_monetary_policy_summary_20261105",
+    "currency": "GBP",
+    "title": "Monetary Policy Summary",
+    "scheduled_time": "2026-11-05T12:00:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_mpc_official_bank_rate_votes_20261105": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "event_id": "gbp_mpc_official_bank_rate_votes_20261105",
+    "currency": "GBP",
+    "title": "MPC Official Bank Rate Votes",
+    "scheduled_time": "2026-11-05T12:00:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_official_bank_rate_20261105": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "event_id": "gbp_official_bank_rate_20261105",
+    "currency": "GBP",
+    "title": "Official Bank Rate",
+    "scheduled_time": "2026-11-05T12:00:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_gbp_boe_gov_bailey_speaks_20261105": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "event_id": "gbp_boe_gov_bailey_speaks_20261105",
+    "currency": "GBP",
+    "title": "BOE Gov Bailey Speaks",
+    "scheduled_time": "2026-11-05T12:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_04pm_2026-11-05": {
+    "sent_at": "2026-11-05T11:58:56.027126+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-05",
+    "india_title": "Margin call aane se pehle sambhal jao \ud83d\udea8\ud83d\udcca",
+    "global_title": "Don't let a margin call end your week \ud83d\udea8\ud83d\udcca",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
