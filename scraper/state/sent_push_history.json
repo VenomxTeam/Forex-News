@@ -1096,5 +1096,40 @@
     "india_title": "Overleveraging se account 30 sec me udd jayega \ud83e\uddee\u26a0\ufe0f",
     "global_title": "Wrong lot size will blow your account in 30s \ud83e\uddee\u26a0\ufe0f",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "wrap_cad_ivey_pmi_20261106": {
+    "sent_at": "2026-11-06T15:09:23.711518+00:00",
+    "event_id": "cad_ivey_pmi_20261106",
+    "currency": "CAD",
+    "title": "Ivey PMI",
+    "actual": "",
+    "scheduled_time": "2026-11-06T15:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_usd_prelim_uom_consumer_sentiment_20261106": {
+    "sent_at": "2026-11-06T15:09:23.711518+00:00",
+    "event_id": "usd_prelim_uom_consumer_sentiment_20261106",
+    "currency": "USD",
+    "title": "Prelim UoM Consumer Sentiment",
+    "actual": "",
+    "scheduled_time": "2026-11-06T15:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_usd_prelim_uom_inflation_expectations_20261106": {
+    "sent_at": "2026-11-06T15:09:23.711518+00:00",
+    "event_id": "usd_prelim_uom_inflation_expectations_20261106",
+    "currency": "USD",
+    "title": "Prelim UoM Inflation Expectations",
+    "actual": "",
+    "scheduled_time": "2026-11-06T15:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_08pm_2026-11-06": {
+    "sent_at": "2026-11-06T15:09:23.711518+00:00",
+    "slot": "slot_08pm",
+    "date": "2026-11-06",
+    "india_title": "\u26a1 Market ka sabse bada move abhi ho raha hai!",
+    "global_title": "\u26a1 Overlap Frenzy: 100+ pip swings live!",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
