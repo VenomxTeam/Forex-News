@@ -1079,5 +1079,22 @@
     "india_title": "Swiggy se pehle 50 pips deliver! \ud83c\udf54\u26a1",
     "global_title": "DoorDash won't deliver pips to your account \ud83c\udf54\u26a1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_gbp_mpc_member_pill_speaks_20261106": {
+    "sent_at": "2026-11-06T11:49:01.187191+00:00",
+    "event_id": "gbp_mpc_member_pill_speaks_20261106",
+    "currency": "GBP",
+    "title": "MPC Member Pill Speaks",
+    "scheduled_time": "2026-11-06T12:15:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_04pm_2026-11-06": {
+    "sent_at": "2026-11-06T11:49:01.187191+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-06",
+    "india_title": "Overleveraging se account 30 sec me udd jayega \ud83e\uddee\u26a0\ufe0f",
+    "global_title": "Wrong lot size will blow your account in 30s \ud83e\uddee\u26a0\ufe0f",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
