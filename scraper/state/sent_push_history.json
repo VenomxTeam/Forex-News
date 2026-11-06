@@ -1038,5 +1038,46 @@
     "india_title": "Bhai ne kaha tha pakka profit hoga... \ud83e\udd21",
     "global_title": "Your buddy said 'It's a guaranteed win'... \ud83e\udd21",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_eur_french_trade_balance_20261106": {
+    "sent_at": "2026-11-06T07:18:26.423150+00:00",
+    "event_id": "eur_french_trade_balance_20261106",
+    "currency": "EUR",
+    "title": "French Trade Balance",
+    "scheduled_time": "2026-11-06T07:45:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "wrap_eur_german_industrial_production_mm_20261106": {
+    "sent_at": "2026-11-06T07:18:26.423150+00:00",
+    "event_id": "eur_german_industrial_production_mm_20261106",
+    "currency": "EUR",
+    "title": "German Industrial Production m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-06T07:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_lloyds_hpi_mm_20261106": {
+    "sent_at": "2026-11-06T07:18:26.423150+00:00",
+    "event_id": "gbp_lloyds_hpi_mm_20261106",
+    "currency": "GBP",
+    "title": "Lloyds HPI m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-06T07:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "session_london_2026-11-06": {
+    "sent_at": "2026-11-06T07:18:26.423150+00:00",
+    "session": "LONDON",
+    "date": "2026-11-06",
+    "high_impact_count": 7
+  },
+  "retention_weekday_slot_12pm_2026-11-06": {
+    "sent_at": "2026-11-06T07:18:26.423150+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-06",
+    "india_title": "Swiggy se pehle 50 pips deliver! \ud83c\udf54\u26a1",
+    "global_title": "DoorDash won't deliver pips to your account \ud83c\udf54\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
