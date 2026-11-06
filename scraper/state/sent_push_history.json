@@ -892,5 +892,11 @@
     "india_title": "Gold ne 15 minute me 120 pips uda diye! \ud83c\udfc6\ud83d\ude80",
     "global_title": "Gold just ripped 120 pips in 15 mins! \ud83c\udfc6\ud83d\ude80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "session_tokyo_2026-11-06": {
+    "sent_at": "2026-11-06T00:33:18.942075+00:00",
+    "session": "TOKYO",
+    "date": "2026-11-06",
+    "high_impact_count": 7
   }
 }
