@@ -898,5 +898,145 @@
     "session": "TOKYO",
     "date": "2026-11-06",
     "high_impact_count": 7
+  },
+  "0m_aud_anz_job_advertisements_mm_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "aud_anz_job_advertisements_mm_20261106",
+    "currency": "AUD",
+    "title": "ANZ Job Advertisements m/m",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_jpy_prelim_machine_tool_orders_yy_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "jpy_prelim_machine_tool_orders_yy_20261106",
+    "currency": "JPY",
+    "title": "Prelim Machine Tool Orders y/y",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_nzd_westpac_consumer_sentiment_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "nzd_westpac_consumer_sentiment_20261106",
+    "currency": "NZD",
+    "title": "Westpac Consumer Sentiment",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_rightmove_hpi_mm_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261106",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_eur_eu_economic_summit_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "eur_eu_economic_summit_20261106",
+    "currency": "EUR",
+    "title": "EU Economic Summit",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_cbi_industrial_order_expectations_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "gbp_cbi_industrial_order_expectations_20261106",
+    "currency": "GBP",
+    "title": "CBI Industrial Order Expectations",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_nationwide_hpi_mm_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "gbp_nationwide_hpi_mm_20261106",
+    "currency": "GBP",
+    "title": "Nationwide HPI m/m",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_cny_m2_money_supply_yy_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "cny_m2_money_supply_yy_20261106",
+    "currency": "CNY",
+    "title": "M2 Money Supply y/y",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_cny_new_loans_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "cny_new_loans_20261106",
+    "currency": "CNY",
+    "title": "New Loans",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_eur_german_wpi_mm_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "eur_german_wpi_mm_20261106",
+    "currency": "EUR",
+    "title": "German WPI m/m",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_usd_adp_weekly_employment_change_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "usd_adp_weekly_employment_change_20261106",
+    "currency": "USD",
+    "title": "ADP Weekly Employment Change",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_eur_german_final_gdp_qq_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "eur_german_final_gdp_qq_20261106",
+    "currency": "EUR",
+    "title": "German Final GDP q/q",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_gbp_cbi_realized_sales_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "gbp_cbi_realized_sales_20261106",
+    "currency": "GBP",
+    "title": "CBI Realized Sales",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_chf_retail_sales_yy_20261106": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "event_id": "chf_retail_sales_yy_20261106",
+    "currency": "CHF",
+    "title": "Retail Sales y/y",
+    "scheduled_time": "2026-11-06T03:09:19Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "daily_morning_red_2026-11-06": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "date": "2026-11-06",
+    "high_impact_count": 7,
+    "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "retention_weekday_slot_08am_2026-11-06": {
+    "sent_at": "2026-11-06T03:09:20.035462+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-06",
+    "india_title": "Bhai ne kaha tha pakka profit hoga... \ud83e\udd21",
+    "global_title": "Your buddy said 'It's a guaranteed win'... \ud83e\udd21",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
