@@ -1254,5 +1254,11 @@
     "slot": "sat_1130am",
     "date": "2026-11-07",
     "type": "SATURDAY_RETENTION"
+  },
+  "retention_sat_sat_0330pm_2026-11-07": {
+    "sent_at": "2026-11-07T11:31:47.191639+00:00",
+    "slot": "sat_0330pm",
+    "date": "2026-11-07",
+    "type": "SATURDAY_RETENTION"
   }
 }
