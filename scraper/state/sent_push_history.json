@@ -1248,5 +1248,11 @@
     "scheduled_time": "2026-11-07T04:30:31Z",
     "window": "0m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "retention_sat_sat_1130am_2026-11-07": {
+    "sent_at": "2026-11-07T06:20:10.890636+00:00",
+    "slot": "sat_1130am",
+    "date": "2026-11-07",
+    "type": "SATURDAY_RETENTION"
   }
 }
