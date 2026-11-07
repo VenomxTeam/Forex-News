@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T23:41:20Z",
+  "updated_at": "2026-11-07T04:30:32Z",
   "events": [
     {
       "id": "aud_mi_inflation_gauge_mm_20261101",
@@ -1626,13 +1626,13 @@
       "category": "Economic"
     },
     {
-      "id": "aud_anz_job_advertisements_mm_20261106",
+      "id": "aud_anz_job_advertisements_mm_20261107",
       "currency": "AUD",
       "country": "Australia",
       "flag": "au",
       "title": "ANZ Job Advertisements m/m",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "2.2%",
       "previous": "2.2%",
       "actual": "2.1%",
@@ -1640,13 +1640,13 @@
       "category": "Economic"
     },
     {
-      "id": "jpy_prelim_machine_tool_orders_yy_20261106",
+      "id": "jpy_prelim_machine_tool_orders_yy_20261107",
       "currency": "JPY",
       "country": "Japan",
       "flag": "jp",
       "title": "Prelim Machine Tool Orders y/y",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "59.6%",
       "previous": "60.4%",
       "actual": "58.2%",
@@ -1654,13 +1654,13 @@
       "category": "Economic"
     },
     {
-      "id": "nzd_westpac_consumer_sentiment_20261106",
+      "id": "nzd_westpac_consumer_sentiment_20261107",
       "currency": "NZD",
       "country": "New Zealand",
       "flag": "nz",
       "title": "Westpac Consumer Sentiment",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1668,13 +1668,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_rightmove_hpi_mm_20261106",
+      "id": "gbp_rightmove_hpi_mm_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Rightmove HPI m/m",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1682,13 +1682,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_eu_economic_summit_20261106",
+      "id": "eur_eu_economic_summit_20261107",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "EU Economic Summit",
       "impact": "orange",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1696,13 +1696,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20261106",
+      "id": "gbp_cbi_industrial_order_expectations_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1710,13 +1710,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_eu_economic_summit_20261106",
+      "id": "eur_eu_economic_summit_20261107",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "EU Economic Summit",
       "impact": "orange",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1724,13 +1724,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20261106",
+      "id": "gbp_nationwide_hpi_mm_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1738,13 +1738,13 @@
       "category": "Economic"
     },
     {
-      "id": "cny_m2_money_supply_yy_20261106",
+      "id": "cny_m2_money_supply_yy_20261107",
       "currency": "CNY",
       "country": "China",
       "flag": "cn",
       "title": "M2 Money Supply y/y",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "7.3%",
       "previous": "7.2%",
       "actual": "7.4%",
@@ -1752,13 +1752,13 @@
       "category": "Economic"
     },
     {
-      "id": "cny_new_loans_20261106",
+      "id": "cny_new_loans_20261107",
       "currency": "CNY",
       "country": "China",
       "flag": "cn",
       "title": "New Loans",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "80B",
       "previous": "1080B",
       "actual": "81.1B",
@@ -1766,13 +1766,13 @@
       "category": "Economic"
     },
     {
-      "id": "usd_adp_weekly_employment_change_20261106",
+      "id": "usd_adp_weekly_employment_change_20261107",
       "currency": "USD",
       "country": "United States",
       "flag": "us",
       "title": "ADP Weekly Employment Change",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "17.2K",
       "previous": "16.8K",
       "actual": "16.6K",
@@ -1780,13 +1780,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_industrial_order_expectations_20261106",
+      "id": "gbp_cbi_industrial_order_expectations_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Industrial Order Expectations",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1794,13 +1794,13 @@
       "category": "Economic"
     },
     {
-      "id": "eur_german_final_gdp_qq_20261106",
+      "id": "eur_german_final_gdp_qq_20261107",
       "currency": "EUR",
       "country": "Eurozone",
       "flag": "eu",
       "title": "German Final GDP q/q",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "2.4%",
       "previous": "2.4%",
       "actual": "2.3%",
@@ -1808,13 +1808,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_cbi_realized_sales_20261106",
+      "id": "gbp_cbi_realized_sales_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "CBI Realized Sales",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1822,13 +1822,13 @@
       "category": "Economic"
     },
     {
-      "id": "gbp_nationwide_hpi_mm_20261106",
+      "id": "gbp_nationwide_hpi_mm_20261107",
       "currency": "GBP",
       "country": "United Kingdom",
       "flag": "gb",
       "title": "Nationwide HPI m/m",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1836,13 +1836,13 @@
       "category": "Economic"
     },
     {
-      "id": "chf_retail_sales_yy_20261106",
+      "id": "chf_retail_sales_yy_20261107",
       "currency": "CHF",
       "country": "Switzerland",
       "flag": "ch",
       "title": "Retail Sales y/y",
       "impact": "yellow",
-      "time": "2026-11-06T23:41:20Z",
+      "time": "2026-11-07T04:30:31Z",
       "forecast": "1.6%",
       "previous": "1.6%",
       "actual": "1.6%",
