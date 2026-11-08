@@ -1518,5 +1518,11 @@
     "slot": "sun_1200pm",
     "date": "2026-11-08",
     "type": "SUNDAY_RETENTION"
+  },
+  "retention_sun_sun_0500pm_2026-11-08": {
+    "sent_at": "2026-11-08T13:54:53.762128+00:00",
+    "slot": "sun_0500pm",
+    "date": "2026-11-08",
+    "type": "SUNDAY_RETENTION"
   }
 }
