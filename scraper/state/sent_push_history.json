@@ -1536,5 +1536,13 @@
     "slot": "sun_0930pm",
     "date": "2026-11-08",
     "type": "SUNDAY_RETENTION"
+  },
+  "retention_weekday_slot_12am_2026-11-09": {
+    "sent_at": "2026-11-08T18:35:31.172924+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-09",
+    "india_title": "Screen ki neeli roshni me aankhein jali? \ud83d\udcf1\ud83e\udd71",
+    "global_title": "Blue light burning your eyes at 1 AM? \ud83d\udcf1\ud83e\udd71",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
