@@ -1377,5 +1377,23 @@
     "actual": "1.6%",
     "scheduled_time": "2026-11-07T21:27:32Z",
     "type": "POST_NEWS_WRAP"
+  },
+  "30m_cny_cpi_yy_20261108": {
+    "sent_at": "2026-11-08T00:54:48.376170+00:00",
+    "event_id": "cny_cpi_yy_20261108",
+    "currency": "CNY",
+    "title": "CPI y/y",
+    "scheduled_time": "2026-11-08T01:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_cny_ppi_yy_20261108": {
+    "sent_at": "2026-11-08T00:54:48.376170+00:00",
+    "event_id": "cny_ppi_yy_20261108",
+    "currency": "CNY",
+    "title": "PPI y/y",
+    "scheduled_time": "2026-11-08T01:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
