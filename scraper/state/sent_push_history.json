@@ -1544,5 +1544,14 @@
     "india_title": "Screen ki neeli roshni me aankhein jali? \ud83d\udcf1\ud83e\udd71",
     "global_title": "Blue light burning your eyes at 1 AM? \ud83d\udcf1\ud83e\udd71",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_aud_rba_assist_gov_hunter_speaks_20261108": {
+    "sent_at": "2026-11-08T22:26:07.942996+00:00",
+    "event_id": "aud_rba_assist_gov_hunter_speaks_20261108",
+    "currency": "AUD",
+    "title": "RBA Assist Gov Hunter Speaks",
+    "scheduled_time": "2026-11-08T22:30:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
