@@ -1706,5 +1706,13 @@
     "india_title": "PnL laal hai par sabak bada mila? \ud83e\udde0\ud83d\udca1",
     "global_title": "Red day? Treat it as tuition, not defeat \ud83e\udde0\ud83d\udca1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_12am_2026-11-10": {
+    "sent_at": "2026-11-09T19:09:41.837062+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-10",
+    "india_title": "Overnight swap charges account kha jayenge \ud83d\udcb8\ud83c\udf19",
+    "global_title": "Overnight swap fees eating your profits? \ud83d\udcb8\ud83c\udf19",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
