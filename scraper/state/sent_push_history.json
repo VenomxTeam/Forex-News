@@ -1698,5 +1698,13 @@
     "india_title": "Salary aayi: 10:00 AM | Margin call: 02:00 PM \ud83d\udc80",
     "global_title": "Paycheck lifespan: Under 4 hours? \ud83d\udcb8\ud83d\udc80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-09": {
+    "sent_at": "2026-11-09T18:17:40.653848+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-09",
+    "india_title": "PnL laal hai par sabak bada mila? \ud83e\udde0\ud83d\udca1",
+    "global_title": "Red day? Treat it as tuition, not defeat \ud83e\udde0\ud83d\udca1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
