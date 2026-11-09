@@ -52,6 +52,8 @@ jobs:
           python generate_news_json.py
           # Ensure full enrichment with dynamic UTC cutoff so all released events have actuals
           python enrich_events.py
+          # Sync real-time central bank interest rates & decision calendars to Firestore
+          python sync_central_bank_rates.py || echo "⚠️ Central bank rates sync notice, continuing pipeline..."
           # Dispatch verified FCM Push Alerts (Zero Fake, Zero Spam)
           python fcm_push_dispatcher.py || echo "⚠️ FCM Dispatch notice, continuing pipeline..."
 
