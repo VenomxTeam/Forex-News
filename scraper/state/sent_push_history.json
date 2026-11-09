@@ -1690,5 +1690,13 @@
     "india_title": "London session open hone me 15 min! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
     "global_title": "London Open in 15 mins! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_02pm_2026-11-09": {
+    "sent_at": "2026-11-09T08:42:36.601986+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-09",
+    "india_title": "Salary aayi: 10:00 AM | Margin call: 02:00 PM \ud83d\udc80",
+    "global_title": "Paycheck lifespan: Under 4 hours? \ud83d\udcb8\ud83d\udc80",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
