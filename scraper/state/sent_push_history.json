@@ -1676,5 +1676,19 @@
     "session": "TOKYO",
     "date": "2026-11-09",
     "high_impact_count": 0
+  },
+  "session_london_2026-11-09": {
+    "sent_at": "2026-11-09T07:39:17.632286+00:00",
+    "session": "LONDON",
+    "date": "2026-11-09",
+    "high_impact_count": 0
+  },
+  "retention_weekday_slot_12pm_2026-11-09": {
+    "sent_at": "2026-11-09T07:39:17.632286+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-09",
+    "india_title": "London session open hone me 15 min! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
+    "global_title": "London Open in 15 mins! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
