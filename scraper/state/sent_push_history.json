@@ -1918,5 +1918,22 @@
     "actual": "1.6%",
     "scheduled_time": "2026-11-10T01:55:30Z",
     "type": "POST_NEWS_WRAP"
+  },
+  "wrap_usd_fomc_member_waller_speaks_20261110": {
+    "sent_at": "2026-11-10T09:13:25.989720+00:00",
+    "event_id": "usd_fomc_member_waller_speaks_20261110",
+    "currency": "USD",
+    "title": "FOMC Member Waller Speaks",
+    "actual": "",
+    "scheduled_time": "2026-11-10T09:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_02pm_2026-11-10": {
+    "sent_at": "2026-11-10T09:13:25.989720+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-10",
+    "india_title": "Retail trap alert: EUR pairs par fakeout! \ud83e\udea4\u26a1",
+    "global_title": "Retail liquidity trap forming right now! \ud83e\udea4\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
