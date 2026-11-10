@@ -1935,5 +1935,13 @@
     "india_title": "Retail trap alert: EUR pairs par fakeout! \ud83e\udea4\u26a1",
     "global_title": "Retail liquidity trap forming right now! \ud83e\udea4\u26a1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-10": {
+    "sent_at": "2026-11-10T17:16:37.361900+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-10",
+    "india_title": "Ex ne bola tha 'Tumse na ho payega' \ud83e\udd40\ud83d\ude80",
+    "global_title": "Ex said 'You could never do it' \ud83e\udd40\ud83d\ude80",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
