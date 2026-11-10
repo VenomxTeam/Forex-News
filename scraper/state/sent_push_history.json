@@ -1819,5 +1819,104 @@
     "date": "2026-11-10",
     "high_impact_count": 2,
     "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "wrap_aud_anz_job_advertisements_mm_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "aud_anz_job_advertisements_mm_20261110",
+    "currency": "AUD",
+    "title": "ANZ Job Advertisements m/m",
+    "actual": "2.1%",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_jpy_prelim_machine_tool_orders_yy_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "jpy_prelim_machine_tool_orders_yy_20261110",
+    "currency": "JPY",
+    "title": "Prelim Machine Tool Orders y/y",
+    "actual": "58.1%",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_nzd_westpac_consumer_sentiment_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "nzd_westpac_consumer_sentiment_20261110",
+    "currency": "NZD",
+    "title": "Westpac Consumer Sentiment",
+    "actual": "",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_rightmove_hpi_mm_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261110",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "actual": "1.0%",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_eur_eu_economic_summit_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "eur_eu_economic_summit_20261110",
+    "currency": "EUR",
+    "title": "EU Economic Summit",
+    "actual": "",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_cbi_industrial_order_expectations_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "gbp_cbi_industrial_order_expectations_20261110",
+    "currency": "GBP",
+    "title": "CBI Industrial Order Expectations",
+    "actual": "-31.4",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_nationwide_hpi_mm_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "gbp_nationwide_hpi_mm_20261110",
+    "currency": "GBP",
+    "title": "Nationwide HPI m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_usd_adp_weekly_employment_change_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "usd_adp_weekly_employment_change_20261110",
+    "currency": "USD",
+    "title": "ADP Weekly Employment Change",
+    "actual": "17.3K",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_eur_german_final_gdp_qq_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "eur_german_final_gdp_qq_20261110",
+    "currency": "EUR",
+    "title": "German Final GDP q/q",
+    "actual": "2.4%",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_gbp_cbi_realized_sales_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "gbp_cbi_realized_sales_20261110",
+    "currency": "GBP",
+    "title": "CBI Realized Sales",
+    "actual": "",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "wrap_chf_retail_sales_yy_20261110": {
+    "sent_at": "2026-11-10T02:02:06.004601+00:00",
+    "event_id": "chf_retail_sales_yy_20261110",
+    "currency": "CHF",
+    "title": "Retail Sales y/y",
+    "actual": "1.6%",
+    "scheduled_time": "2026-11-10T01:55:30Z",
+    "type": "POST_NEWS_WRAP"
   }
 }
