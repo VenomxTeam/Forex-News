@@ -1943,5 +1943,14 @@
     "india_title": "Ex ne bola tha 'Tumse na ho payega' \ud83e\udd40\ud83d\ude80",
     "global_title": "Ex said 'You could never do it' \ud83e\udd40\ud83d\ude80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_usd_10_y_bond_auction_20261110": {
+    "sent_at": "2026-11-10T17:31:31.158238+00:00",
+    "event_id": "usd_10_y_bond_auction_20261110",
+    "currency": "USD",
+    "title": "10-y Bond Auction",
+    "scheduled_time": "2026-11-10T18:01:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
