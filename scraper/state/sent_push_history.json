@@ -2091,5 +2091,13 @@
     "india_title": "Whales ne chupke se Gold me $2.4B daale hain \ud83d\udc0b\ud83d\udcca",
     "global_title": "Hedge funds just poured $2.4B into Gold \ud83d\udc0b\ud83d\udcca",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-11": {
+    "sent_at": "2026-11-11T17:07:08.093621+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-11",
+    "india_title": "Aaj kitna profit ya loss hua? \ud83d\udcd3\u270f\ufe0f",
+    "global_title": "How did you trade today? \ud83d\udcd3\u270f\ufe0f",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
