@@ -2065,5 +2065,31 @@
     "india_title": "Bhai ne kaha tha pakka profit hoga... \ud83e\udd21",
     "global_title": "Your buddy said 'It's a guaranteed win'... \ud83e\udd21",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_eur_ecb_president_lagarde_speaks_20261111": {
+    "sent_at": "2026-11-11T09:12:47.688807+00:00",
+    "event_id": "eur_ecb_president_lagarde_speaks_20261111",
+    "currency": "EUR",
+    "title": "ECB President Lagarde Speaks",
+    "scheduled_time": "2026-11-11T09:45:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "wrap_eur_italian_industrial_production_mm_20261111": {
+    "sent_at": "2026-11-11T09:12:47.688807+00:00",
+    "event_id": "eur_italian_industrial_production_mm_20261111",
+    "currency": "EUR",
+    "title": "Italian Industrial Production m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-11T09:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_02pm_2026-11-11": {
+    "sent_at": "2026-11-11T09:12:47.688807+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-11",
+    "india_title": "Whales ne chupke se Gold me $2.4B daale hain \ud83d\udc0b\ud83d\udcca",
+    "global_title": "Hedge funds just poured $2.4B into Gold \ud83d\udc0b\ud83d\udcca",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
