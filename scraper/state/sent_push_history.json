@@ -2099,5 +2099,41 @@
     "india_title": "Aaj kitna profit ya loss hua? \ud83d\udcd3\u270f\ufe0f",
     "global_title": "How did you trade today? \ud83d\udcd3\u270f\ufe0f",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_jpy_ppi_yy_20261111": {
+    "sent_at": "2026-11-11T23:26:19.778172+00:00",
+    "event_id": "jpy_ppi_yy_20261111",
+    "currency": "JPY",
+    "title": "PPI y/y",
+    "scheduled_time": "2026-11-11T23:50:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_cny_m2_money_supply_yy_20261112": {
+    "sent_at": "2026-11-11T23:26:19.778172+00:00",
+    "event_id": "cny_m2_money_supply_yy_20261112",
+    "currency": "CNY",
+    "title": "M2 Money Supply y/y",
+    "scheduled_time": "2026-11-12T00:00:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_cny_new_loans_20261112": {
+    "sent_at": "2026-11-11T23:26:19.778172+00:00",
+    "event_id": "cny_new_loans_20261112",
+    "currency": "CNY",
+    "title": "New Loans",
+    "scheduled_time": "2026-11-12T00:00:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_usd_mortgage_delinquencies_20261112": {
+    "sent_at": "2026-11-11T23:26:19.778172+00:00",
+    "event_id": "usd_mortgage_delinquencies_20261112",
+    "currency": "USD",
+    "title": "Mortgage Delinquencies",
+    "scheduled_time": "2026-11-12T00:00:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
