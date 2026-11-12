@@ -2259,5 +2259,13 @@
     "india_title": "Ex bolti thi 'Tum change ho gaye ho...' \ud83e\udd40\ud83d\udc94",
     "global_title": "My ex said 'You've changed...' \ud83e\udd40\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_04pm_2026-11-12": {
+    "sent_at": "2026-11-12T12:21:03.845848+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-12",
+    "india_title": "Chai-sutta ka kharcha nikal gaya? \u2615\ud83d\udeac",
+    "global_title": "Did you just donate your coffee money to the market? \u2615\ud83d\udcb8",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
