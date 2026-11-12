@@ -2267,5 +2267,40 @@
     "india_title": "Chai-sutta ka kharcha nikal gaya? \u2615\ud83d\udeac",
     "global_title": "Did you just donate your coffee money to the market? \u2615\ud83d\udcb8",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_usd_30_y_bond_auction_20261112": {
+    "sent_at": "2026-11-12T17:57:08.899478+00:00",
+    "event_id": "usd_30_y_bond_auction_20261112",
+    "currency": "USD",
+    "title": "30-y Bond Auction",
+    "scheduled_time": "2026-11-12T18:01:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_usd_fomc_member_daly_speaks_20261112": {
+    "sent_at": "2026-11-12T17:57:08.899478+00:00",
+    "event_id": "usd_fomc_member_daly_speaks_20261112",
+    "currency": "USD",
+    "title": "FOMC Member Daly Speaks",
+    "scheduled_time": "2026-11-12T18:10:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_usd_fomc_member_schmid_speaks_20261112": {
+    "sent_at": "2026-11-12T17:57:08.899478+00:00",
+    "event_id": "usd_fomc_member_schmid_speaks_20261112",
+    "currency": "USD",
+    "title": "FOMC Member Schmid Speaks",
+    "scheduled_time": "2026-11-12T18:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_10pm_2026-11-12": {
+    "sent_at": "2026-11-12T17:57:08.899478+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-12",
+    "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
+    "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
