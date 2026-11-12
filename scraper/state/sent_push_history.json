@@ -2302,5 +2302,14 @@
     "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
     "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_usd_fomc_member_williams_speaks_20261112": {
+    "sent_at": "2026-11-12T23:13:32.611183+00:00",
+    "event_id": "usd_fomc_member_williams_speaks_20261112",
+    "currency": "USD",
+    "title": "FOMC Member Williams Speaks",
+    "scheduled_time": "2026-11-12T23:30:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
