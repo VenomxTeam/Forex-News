@@ -2242,5 +2242,22 @@
     "india_title": "Chai peeli? Par portfolio abhi bhi laal hai? \u2615\ud83d\udcc9",
     "global_title": "Coffee first, or stop the bleeding? \u2615\ud83d\udcc9",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "wrap_eur_ecb_economic_bulletin_20261112": {
+    "sent_at": "2026-11-12T09:16:33.223624+00:00",
+    "event_id": "eur_ecb_economic_bulletin_20261112",
+    "currency": "EUR",
+    "title": "ECB Economic Bulletin",
+    "actual": "",
+    "scheduled_time": "2026-11-12T09:00:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_02pm_2026-11-12": {
+    "sent_at": "2026-11-12T09:16:33.223624+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-12",
+    "india_title": "Ex bolti thi 'Tum change ho gaye ho...' \ud83e\udd40\ud83d\udc94",
+    "global_title": "My ex said 'You've changed...' \ud83e\udd40\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
