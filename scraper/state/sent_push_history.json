@@ -2234,5 +2234,13 @@
     "scheduled_time": "2026-11-12T01:19:45Z",
     "window": "0m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_08am_2026-11-12": {
+    "sent_at": "2026-11-12T03:59:30.477045+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-12",
+    "india_title": "Chai peeli? Par portfolio abhi bhi laal hai? \u2615\ud83d\udcc9",
+    "global_title": "Coffee first, or stop the bleeding? \u2615\ud83d\udcc9",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
