@@ -2447,5 +2447,55 @@
     "india_title": "1 pizza se bhi sasta hai VIP access \ud83c\udf55\ud83d\udcb8",
     "global_title": "Cheaper than a single lunch: PRO Trading Edge \ud83e\udd57\ud83d\udca1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_cad_manufacturing_sales_mm_20261113": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "event_id": "cad_manufacturing_sales_mm_20261113",
+    "currency": "CAD",
+    "title": "Manufacturing Sales m/m",
+    "scheduled_time": "2026-11-13T13:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_cad_wholesale_sales_mm_20261113": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "event_id": "cad_wholesale_sales_mm_20261113",
+    "currency": "CAD",
+    "title": "Wholesale Sales m/m",
+    "scheduled_time": "2026-11-13T13:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_usd_core_ppi_mm_20261113": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "event_id": "usd_core_ppi_mm_20261113",
+    "currency": "USD",
+    "title": "Core PPI m/m",
+    "scheduled_time": "2026-11-13T13:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_usd_ppi_mm_20261113": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "event_id": "usd_ppi_mm_20261113",
+    "currency": "USD",
+    "title": "PPI m/m",
+    "scheduled_time": "2026-11-13T13:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "session_ny_2026-11-13": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "session": "NEW_YORK",
+    "date": "2026-11-13",
+    "high_impact_count": 2
+  },
+  "retention_weekday_slot_06pm_2026-11-13": {
+    "sent_at": "2026-11-13T12:54:17.175151+00:00",
+    "slot": "slot_06pm",
+    "date": "2026-11-13",
+    "india_title": "Usne ghost kar diya? \ud83d\udc7b\ud83d\udc94",
+    "global_title": "She ghosted you? \ud83d\udc7b\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
