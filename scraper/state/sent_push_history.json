@@ -2424,5 +2424,28 @@
     "india_title": "Breaking News aate hi chart par candles kyu bhaagi? \ud83d\udcf0\u26a1",
     "global_title": "Why did charts go wild after that release? \ud83d\udcf0\u26a1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "wrap_chf_ppi_mm_20261113": {
+    "sent_at": "2026-11-13T07:47:07.273586+00:00",
+    "event_id": "chf_ppi_mm_20261113",
+    "currency": "CHF",
+    "title": "PPI m/m",
+    "actual": "",
+    "scheduled_time": "2026-11-13T07:30:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "session_london_2026-11-13": {
+    "sent_at": "2026-11-13T07:47:07.273586+00:00",
+    "session": "LONDON",
+    "date": "2026-11-13",
+    "high_impact_count": 2
+  },
+  "retention_weekday_slot_12pm_2026-11-13": {
+    "sent_at": "2026-11-13T07:47:07.273586+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-13",
+    "india_title": "1 pizza se bhi sasta hai VIP access \ud83c\udf55\ud83d\udcb8",
+    "global_title": "Cheaper than a single lunch: PRO Trading Edge \ud83e\udd57\ud83d\udca1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
