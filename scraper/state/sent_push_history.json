@@ -2497,5 +2497,40 @@
     "india_title": "Usne ghost kar diya? \ud83d\udc7b\ud83d\udc94",
     "global_title": "She ghosted you? \ud83d\udc7b\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_usd_fomc_member_bowman_speaks_20261113": {
+    "sent_at": "2026-11-13T15:42:30.425026+00:00",
+    "event_id": "usd_fomc_member_bowman_speaks_20261113",
+    "currency": "USD",
+    "title": "FOMC Member Bowman Speaks",
+    "scheduled_time": "2026-11-13T15:50:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "15m_eur_german_buba_president_nagel_speaks_20261113": {
+    "sent_at": "2026-11-13T15:42:30.425026+00:00",
+    "event_id": "eur_german_buba_president_nagel_speaks_20261113",
+    "currency": "EUR",
+    "title": "German Buba President Nagel Speaks",
+    "scheduled_time": "2026-11-13T16:00:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "wrap_usd_natural_gas_storage_20261113": {
+    "sent_at": "2026-11-13T15:42:30.425026+00:00",
+    "event_id": "usd_natural_gas_storage_20261113",
+    "currency": "USD",
+    "title": "Natural Gas Storage",
+    "actual": "",
+    "scheduled_time": "2026-11-13T15:30:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_08pm_2026-11-13": {
+    "sent_at": "2026-11-13T15:42:30.425026+00:00",
+    "slot": "slot_08pm",
+    "date": "2026-11-13",
+    "india_title": "Ex ki shaadi ki photo dekh li? \ud83d\udc8d\ud83d\ude2d",
+    "global_title": "Saw your ex's wedding announcement? \ud83d\udc8d\ud83d\ude2d",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
