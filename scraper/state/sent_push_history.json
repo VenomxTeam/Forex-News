@@ -2643,5 +2643,14 @@
     "slot": "sat_0730pm",
     "date": "2026-11-14",
     "type": "SATURDAY_RETENTION"
+  },
+  "30m_gbp_rightmove_hpi_mm_20261115": {
+    "sent_at": "2026-11-14T23:23:38.619972+00:00",
+    "event_id": "gbp_rightmove_hpi_mm_20261115",
+    "currency": "GBP",
+    "title": "Rightmove HPI m/m",
+    "scheduled_time": "2026-11-15T00:01:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
