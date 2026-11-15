@@ -2751,5 +2751,11 @@
     "scheduled_time": "2026-11-15T00:46:01Z",
     "window": "0m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "retention_sun_sun_1200pm_2026-11-15": {
+    "sent_at": "2026-11-15T07:33:43.747896+00:00",
+    "slot": "sun_1200pm",
+    "date": "2026-11-15",
+    "type": "SUNDAY_RETENTION"
   }
 }
