@@ -2763,5 +2763,11 @@
     "year": 2026,
     "week_num": 46,
     "upcoming_count": 14
+  },
+  "retention_sun_sun_0930pm_2026-11-15": {
+    "sent_at": "2026-11-15T16:52:32.441485+00:00",
+    "slot": "sun_0930pm",
+    "date": "2026-11-15",
+    "type": "SUNDAY_RETENTION"
   }
 }
