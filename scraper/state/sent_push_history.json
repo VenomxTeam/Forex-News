@@ -2889,5 +2889,19 @@
     "date": "2026-11-16",
     "high_impact_count": 6,
     "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "session_london_2026-11-16": {
+    "sent_at": "2026-11-16T07:40:06.576656+00:00",
+    "session": "LONDON",
+    "date": "2026-11-16",
+    "high_impact_count": 6
+  },
+  "retention_weekday_slot_12pm_2026-11-16": {
+    "sent_at": "2026-11-16T07:40:06.576656+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-16",
+    "india_title": "Swiggy se pehle 50 pips deliver! \ud83c\udf54\u26a1",
+    "global_title": "DoorDash won't deliver pips to your account \ud83c\udf54\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
