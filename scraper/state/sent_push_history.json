@@ -2993,5 +2993,13 @@
     "actual": "1.6%",
     "scheduled_time": "2026-11-16T07:40:06Z",
     "type": "POST_NEWS_WRAP"
+  },
+  "retention_weekday_slot_10pm_2026-11-16": {
+    "sent_at": "2026-11-16T17:52:13.970314+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-16",
+    "india_title": "Aaj kitna profit ya loss hua? \ud83d\udcd3\u270f\ufe0f",
+    "global_title": "How did you trade today? \ud83d\udcd3\u270f\ufe0f",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
