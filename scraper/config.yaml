@@ -6,6 +6,18 @@ months:
   - oct.2026
   - nov.2026
   - dec.2026
+  - jan.2027
+  - feb.2027
+  - mar.2027
+  - apr.2027
+  - may.2027
+  - jun.2027
+  - jul.2027
+  - aug.2027
+  - sep.2027
+  - oct.2027
+  - nov.2027
+  - dec.2027
 output_format: both
 output_dir: news
 timezone: UTC

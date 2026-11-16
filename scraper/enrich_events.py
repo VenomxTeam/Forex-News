@@ -172,24 +172,10 @@ def enrich_news_dataset(input_file, output_file, cutoff_time=None):
                     break
 
         if base_val is not None:
-            # Generate cohesive numbers
-            new_prev = prev if prev else format_val(base_val, suffix, decimals)
-            
-            # Forecast has subtle variance (-2% to +2%)
-            if fcst:
-                new_fcst = fcst
-                fcst_val = base_val
-            else:
-                delta_fcst = base_val * random.uniform(-0.03, 0.03) if base_val != 0 else random.uniform(0.1, 0.3)
-                fcst_val = base_val + delta_fcst
-                new_fcst = format_val(fcst_val, suffix, decimals)
-
-            # Actual: if past date <= cutoff_time, generate realistic result
-            new_act = act
-            if (not new_act) and time_str and time_str <= cutoff_time:
-                delta_act = base_val * random.uniform(-0.04, 0.04) if base_val != 0 else random.uniform(0.1, 0.4)
-                act_val = fcst_val + delta_act
-                new_act = format_val(act_val, suffix, decimals)
+            new_prev = prev if prev else (format_val(base_val, suffix, decimals) if hist_list else "")
+            new_fcst = fcst.strip()
+            # Do NOT synthesize fake random prints; preserve authentic actual data
+            new_act = act.strip()
 
             e['previous'] = new_prev
             e['forecast'] = new_fcst
@@ -198,7 +184,7 @@ def enrich_news_dataset(input_file, output_file, cutoff_time=None):
             history[key].append({
                 'previous': new_prev,
                 'forecast': new_fcst,
-                'actual': new_act if new_act else new_fcst
+                'actual': new_act
             })
             updated_count += 1
 

@@ -32,7 +32,7 @@ def parse_to_utc_iso(date_str, time_str, tz_str):
     
     # Clean time string
     time_str = time_str.strip().lower()
-    if time_str in ["all day", "tentative"]:
+    if time_str in ["all day", "tentative"] or not any(c.isdigit() for c in time_str):
         time_str = "00:00"
     
     # Handle AM/PM formats
@@ -47,10 +47,13 @@ def parse_to_utc_iso(date_str, time_str, tz_str):
         # Parse time components
         if ":" in time_str:
             parts = time_str.split(":")
-            hour = int(parts[0])
-            minute = int(parts[1])
-        else:
+            hour = int(parts[0]) if parts[0].isdigit() else 0
+            minute = int(parts[1]) if parts[1].isdigit() else 0
+        elif time_str.isdigit():
             hour = int(time_str)
+            minute = 0
+        else:
+            hour = 0
             minute = 0
             
         if is_pm and hour < 12:
@@ -85,7 +88,7 @@ def main():
     events = []
     
     # Read and merge all monthly JSON files
-    for file_path in output_dir.glob("*.json"):
+    for file_path in sorted(output_dir.glob("*.json")):
         print(f"Parsing monthly file: {file_path.name}")
         try:
             with open(file_path, "r", encoding="utf-8") as f:
@@ -98,6 +101,7 @@ def main():
     
     # Filter for high, medium, low impact and map fields
     all_impact_events = []
+    seen_ids = set()
     for item in events:
         impact = item.get("impact", "").lower()
         if impact not in ["red", "orange", "yellow", "ora", "yel", "low", "gray", "grey", "none"]:
@@ -135,12 +139,30 @@ def main():
             item["date"] = dt.strftime("%d/%m/%Y")
             item["day"] = dt.strftime("%a")
             
+        if not time_utc and item.get("date"):
+            try:
+                d, m, y = map(int, item.get("date").split("/"))
+                time_utc = f"{y:04d}-{m:02d}-{d:02d}T00:00:00Z"
+            except Exception:
+                pass
+
         if not time_utc:
-            # Fallback format: use day timestamp
-            time_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            print(f"Skipping unparseable event date: {item.get('event')} on {item.get('date')}")
+            continue
             
         date_slug = time_utc.split("T")[0].replace("-", "")
-        event_id = f"{currency.lower()}_{slugify(title)}_{date_slug}"
+        base_id = f"{currency.lower()}_{slugify(title)}_{date_slug}"
+        if base_id not in seen_ids:
+            event_id = base_id
+        else:
+            time_slug = time_utc.split("T")[1].replace(":", "")[:4] if "T" in time_utc else ""
+            candidate_id = f"{base_id}_{time_slug}" if time_slug and time_slug != "0000" else base_id
+            idx = 1
+            while candidate_id in seen_ids:
+                candidate_id = f"{base_id}_{idx}"
+                idx += 1
+            event_id = candidate_id
+        seen_ids.add(event_id)
         
         mapped_event = {
             "id": event_id,
@@ -158,6 +180,7 @@ def main():
         }
         all_impact_events.append(mapped_event)
         
+    all_impact_events.sort(key=lambda x: x.get("time", ""))
     print(f"Filtered to {len(all_impact_events)} valid events.")
     
     # Prepare the news.json payload

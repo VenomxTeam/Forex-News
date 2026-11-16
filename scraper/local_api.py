@@ -81,6 +81,7 @@ def build_app(config_value: str | None = None) -> FastAPI:
         keyword: str | None = None,
         day: str | None = None,
         month: str | None = None,
+        exact: bool = False,
         limit: int = Query(default=100, ge=1, le=5000),
     ):
         filtered = _upcoming_events(context["view_options"].output_dir, 5000)
@@ -99,9 +100,15 @@ def build_app(config_value: str | None = None) -> FastAPI:
                 event for event in filtered if event.get("impact", "").lower() == impact.lower()
             ]
         if keyword:
-            filtered = [
-                event for event in filtered if keyword.lower() in event.get("event", "").lower()
-            ]
+            kw = keyword.strip().lower()
+            if exact:
+                filtered = [
+                    event for event in filtered if event.get("event", "").strip().lower() == kw
+                ]
+            else:
+                filtered = [
+                    event for event in filtered if kw in event.get("event", "").lower()
+                ]
         if day:
             filtered = [event for event in filtered if event.get("day", "").lower() == day[:3].lower()]
         return filtered[:limit]
