@@ -184,24 +184,21 @@ def send_fcm_message(messaging_client, topic, title, body, data, channel_id, pri
         }
 
         # Data-only high-priority message:
-        # Ensures ForexFirebaseMessagingService.onMessageReceived() is ALWAYS invoked across all
-        # device states (foreground, background, screen locked).
-        # This enables the app's NotificationCompat.Builder to attach the Jio-styled circular largeIcon
-        # on the right side of the notification, play custom notification sounds, and update history.
+        # Crucial Android FCM architectural rule:
+        # When an FCM message contains a top-level 'notification' block, Android OS / Play Services
+        # intercepts it in background/killed states and bypasses onMessageReceived().
+        # This prevented notificationHistoryDao.insert() from running until the user clicked the notification.
+        # By sending a pure data payload with priority="high", ForexFirebaseMessagingService.onMessageReceived()
+        # is GUARANTEED to be invoked in foreground, background, and killed states.
+        # This ensures:
+        # 1. Immediate insertion into Room notification_history so in-app Notifications Screen
+        #    shows the notification immediately even if the app was launched without tapping the push.
+        # 2. Complete deduplication and deterministic system notification display with large icon & sound.
         message = messaging.Message(
             topic=topic,
-            notification=messaging.Notification(
-                title=str(title),
-                body=str(body)
-            ),
             data=full_data,
             android=messaging.AndroidConfig(
-                priority="high",
-                notification=messaging.AndroidNotification(
-                    channel_id=str(channel_id),
-                    priority="high",
-                    default_sound=True
-                )
+                priority="high"
             )
         )
         response = messaging_client.send(message)
