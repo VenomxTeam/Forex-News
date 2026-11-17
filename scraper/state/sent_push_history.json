@@ -3007,5 +3007,13 @@
     "date": "2026-11-17",
     "high_impact_count": 2,
     "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "retention_weekday_slot_02pm_2026-11-17": {
+    "sent_at": "2026-11-17T09:08:32.647396+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-17",
+    "india_title": "Ex bolti thi 'Tum change ho gaye ho...' \ud83e\udd40\ud83d\udc94",
+    "global_title": "My ex said 'You've changed...' \ud83e\udd40\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
