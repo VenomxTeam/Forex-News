@@ -3001,5 +3001,11 @@
     "india_title": "Aaj kitna profit ya loss hua? \ud83d\udcd3\u270f\ufe0f",
     "global_title": "How did you trade today? \ud83d\udcd3\u270f\ufe0f",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "daily_morning_red_2026-11-17": {
+    "sent_at": "2026-11-17T01:07:37.821769+00:00",
+    "date": "2026-11-17",
+    "high_impact_count": 2,
+    "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
   }
 }
