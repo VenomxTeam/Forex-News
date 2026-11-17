@@ -2,8 +2,8 @@ name: Scrape Forex News Calendar
 
 on:
   schedule:
-    # Runs every hour at minute 0 for timely economic release syncing
-    - cron: '0 * * * *'
+    # Runs every 30 minutes for ultra-timely economic release syncing
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     # Allow manual runs from the GitHub Actions tab
 
@@ -48,6 +48,8 @@ jobs:
           cd scraper
           # Run scraper (graceful fallback if FF has temporary anti-bot or network hiccups)
           python scraper.py scrape --config config.yaml --months this next || echo "⚠️ Scraper finished with notice, continuing pipeline..."
+          # Sync real-time live actuals from TradingView (zero anti-bot, instant releases)
+          python sync_live_actuals.py news.json || echo "⚠️ Live actuals sync notice, continuing pipeline..."
           # Generate latest news.json
           python generate_news_json.py
           # Ensure full enrichment with dynamic UTC cutoff so all released events have actuals
