@@ -3015,5 +3015,13 @@
     "india_title": "Ex bolti thi 'Tum change ho gaye ho...' \ud83e\udd40\ud83d\udc94",
     "global_title": "My ex said 'You've changed...' \ud83e\udd40\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10pm_2026-11-17": {
+    "sent_at": "2026-11-17T17:48:49.536973+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-17",
+    "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
+    "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
