@@ -3146,5 +3146,23 @@
     "scheduled_time": "2026-11-18T23:50:00Z",
     "window": "30m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "30m_usd_mortgage_delinquencies_20261119": {
+    "sent_at": "2026-11-18T23:29:40.476232+00:00",
+    "event_id": "usd_mortgage_delinquencies_20261119",
+    "currency": "USD",
+    "title": "Mortgage Delinquencies",
+    "scheduled_time": "2026-11-19T00:00:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_gbp_gfk_consumer_confidence_20261119": {
+    "sent_at": "2026-11-18T23:29:40.476232+00:00",
+    "event_id": "gbp_gfk_consumer_confidence_20261119",
+    "currency": "GBP",
+    "title": "GfK Consumer Confidence",
+    "scheduled_time": "2026-11-19T00:01:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
