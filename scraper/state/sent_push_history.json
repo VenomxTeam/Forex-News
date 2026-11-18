@@ -3137,5 +3137,14 @@
     "actual": "",
     "scheduled_time": "2026-11-18T17:15:00Z",
     "type": "POST_NEWS_WRAP"
+  },
+  "30m_jpy_core_machinery_orders_mm_20261118": {
+    "sent_at": "2026-11-18T23:19:02.049885+00:00",
+    "event_id": "jpy_core_machinery_orders_mm_20261118",
+    "currency": "JPY",
+    "title": "Core Machinery Orders m/m",
+    "scheduled_time": "2026-11-18T23:50:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
