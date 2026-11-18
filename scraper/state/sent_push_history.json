@@ -3023,5 +3023,29 @@
     "india_title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep \ud83d\udc7b\ud83d\udc94",
     "global_title": "Seen at 11:42 PM: Ghosted by them, swept by FX \ud83d\udc7b\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "0m_aud_employment_change_20261118": {
+    "sent_at": "2026-11-18T00:25:38.389837+00:00",
+    "event_id": "aud_employment_change_20261118",
+    "currency": "AUD",
+    "title": "Employment Change",
+    "scheduled_time": "2026-11-18T00:30:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "0m_aud_unemployment_rate_20261118": {
+    "sent_at": "2026-11-18T00:25:38.389837+00:00",
+    "event_id": "aud_unemployment_rate_20261118",
+    "currency": "AUD",
+    "title": "Unemployment Rate",
+    "scheduled_time": "2026-11-18T00:30:00Z",
+    "window": "0m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "session_tokyo_2026-11-18": {
+    "sent_at": "2026-11-18T00:25:38.389837+00:00",
+    "session": "TOKYO",
+    "date": "2026-11-18",
+    "high_impact_count": 5
   }
 }
