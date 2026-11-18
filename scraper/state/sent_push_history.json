@@ -3053,5 +3053,19 @@
     "date": "2026-11-18",
     "high_impact_count": 5,
     "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
+  },
+  "session_london_2026-11-18": {
+    "sent_at": "2026-11-18T07:53:12.547938+00:00",
+    "session": "LONDON",
+    "date": "2026-11-18",
+    "high_impact_count": 4
+  },
+  "retention_weekday_slot_12pm_2026-11-18": {
+    "sent_at": "2026-11-18T07:53:12.547938+00:00",
+    "slot": "slot_12pm",
+    "date": "2026-11-18",
+    "india_title": "1 pizza se bhi sasta hai VIP access \ud83c\udf55\ud83d\udcb8",
+    "global_title": "Cheaper than a single lunch: PRO Trading Edge \ud83e\udd57\ud83d\udca1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
