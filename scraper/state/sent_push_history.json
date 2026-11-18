@@ -3047,5 +3047,11 @@
     "session": "TOKYO",
     "date": "2026-11-18",
     "high_impact_count": 5
+  },
+  "daily_morning_red_2026-11-18": {
+    "sent_at": "2026-11-18T01:11:47.630728+00:00",
+    "date": "2026-11-18",
+    "high_impact_count": 5,
+    "type": "DAILY_MORNING_HIGH_IMPACT_DIGEST"
   }
 }
