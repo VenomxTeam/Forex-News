@@ -3084,5 +3084,31 @@
     "india_title": "'Bhai, market yahan se pakka reverse hoga!' \ud83e\udd21",
     "global_title": "'Trust me bro, it HAS to bounce here!' \ud83e\udd21",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "15m_usd_fomc_member_daly_speaks_20261118": {
+    "sent_at": "2026-11-18T16:56:16.635549+00:00",
+    "event_id": "usd_fomc_member_daly_speaks_20261118",
+    "currency": "USD",
+    "title": "FOMC Member Daly Speaks",
+    "scheduled_time": "2026-11-18T17:15:00Z",
+    "window": "15m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "30m_cad_gov_council_member_gravelle_speaks_20261118": {
+    "sent_at": "2026-11-18T16:56:16.635549+00:00",
+    "event_id": "cad_gov_council_member_gravelle_speaks_20261118",
+    "currency": "CAD",
+    "title": "Gov Council Member Gravelle Speaks",
+    "scheduled_time": "2026-11-18T17:30:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_10pm_2026-11-18": {
+    "sent_at": "2026-11-18T16:56:16.635549+00:00",
+    "slot": "slot_10pm",
+    "date": "2026-11-18",
+    "india_title": "Kal subah market me kya blast hone wala hai? \ud83d\udd2e\u26a1",
+    "global_title": "What is the market cooking for tomorrow? \ud83d\udd2e\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
