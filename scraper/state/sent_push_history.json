@@ -3067,5 +3067,22 @@
     "india_title": "1 pizza se bhi sasta hai VIP access \ud83c\udf55\ud83d\udcb8",
     "global_title": "Cheaper than a single lunch: PRO Trading Edge \ud83e\udd57\ud83d\udca1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_eur_ecb_financial_stability_review_20261118": {
+    "sent_at": "2026-11-18T08:31:44.349459+00:00",
+    "event_id": "eur_ecb_financial_stability_review_20261118",
+    "currency": "EUR",
+    "title": "ECB Financial Stability Review",
+    "scheduled_time": "2026-11-18T09:00:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_02pm_2026-11-18": {
+    "sent_at": "2026-11-18T08:31:44.349459+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-18",
+    "india_title": "'Bhai, market yahan se pakka reverse hoga!' \ud83e\udd21",
+    "global_title": "'Trust me bro, it HAS to bounce here!' \ud83e\udd21",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
