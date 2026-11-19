@@ -3249,5 +3249,11 @@
     "scheduled_time": "2026-11-19T14:15:00Z",
     "window": "30m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "session_sydney_2026-11-19": {
+    "sent_at": "2026-11-19T21:47:56.949858+00:00",
+    "session": "SYDNEY",
+    "date": "2026-11-19",
+    "high_impact_count": 0
   }
 }
