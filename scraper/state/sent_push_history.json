@@ -3240,5 +3240,14 @@
     "india_title": "Wall Street ka dhol bajne wala hai! \ud83d\udd14\ud83c\uddfa\ud83c\uddf8",
     "global_title": "Wall Street Opening Bell in 10 mins! \ud83d\udd14\ud83c\uddfa\ud83c\uddf8",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_gbp_mpc_member_dhingra_speaks_20261119": {
+    "sent_at": "2026-11-19T13:45:59.746202+00:00",
+    "event_id": "gbp_mpc_member_dhingra_speaks_20261119",
+    "currency": "GBP",
+    "title": "MPC Member Dhingra Speaks",
+    "scheduled_time": "2026-11-19T14:15:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
   }
 }
