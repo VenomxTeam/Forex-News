@@ -3164,5 +3164,13 @@
     "scheduled_time": "2026-11-19T00:01:00Z",
     "window": "30m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_08am_2026-11-19": {
+    "sent_at": "2026-11-19T04:24:37.874484+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-19",
+    "india_title": "Retail so rahi hai, Whales orders bhar rahe hain \ud83d\udc0b\ud83d\udcca",
+    "global_title": "Retail is asleep, Institutions are placing orders \ud83d\udc0b\ud83d\udcca",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
