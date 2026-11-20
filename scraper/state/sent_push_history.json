@@ -3255,5 +3255,13 @@
     "session": "SYDNEY",
     "date": "2026-11-19",
     "high_impact_count": 0
+  },
+  "retention_weekday_slot_08am_2026-11-20": {
+    "sent_at": "2026-11-20T02:39:50.494886+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-20",
+    "india_title": "Neend khulte hi portfolio dekh kar heart attack? \ud83d\udd34\ud83d\udc80",
+    "global_title": "Waking up to a red screen reality check? \ud83d\udd34\ud83d\udc80",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
