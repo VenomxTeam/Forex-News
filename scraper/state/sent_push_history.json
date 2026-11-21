@@ -3279,5 +3279,11 @@
     "india_title": "Margin call aane se pehle sambhal jao \ud83d\udea8\ud83d\udcca",
     "global_title": "Don't let a margin call end your week \ud83d\udea8\ud83d\udcca",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_sat_sat_1130am_2026-11-21": {
+    "sent_at": "2026-11-21T07:19:03.304744+00:00",
+    "slot": "sat_1130am",
+    "date": "2026-11-21",
+    "type": "SATURDAY_RETENTION"
   }
 }
