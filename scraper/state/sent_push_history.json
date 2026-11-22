@@ -3297,5 +3297,17 @@
     "slot": "sun_1200pm",
     "date": "2026-11-22",
     "type": "SUNDAY_RETENTION"
+  },
+  "sunday_digest_2026_w47": {
+    "sent_at": "2026-11-22T15:42:55.656774+00:00",
+    "year": 2026,
+    "week_num": 47,
+    "upcoming_count": 5
+  },
+  "retention_sun_sun_0930pm_2026-11-22": {
+    "sent_at": "2026-11-22T15:42:55.656774+00:00",
+    "slot": "sun_0930pm",
+    "date": "2026-11-22",
+    "type": "SUNDAY_RETENTION"
   }
 }
