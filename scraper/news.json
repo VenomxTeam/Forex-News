@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T16:53:41Z",
+  "updated_at": "2026-11-22T22:20:45Z",
   "events": [
     {
       "id": "aud_mi_inflation_gauge_mm_20261101",
@@ -4868,8 +4868,8 @@
       "impact": "yellow",
       "time": "2026-11-22T21:45:00Z",
       "forecast": "0.8%",
-      "previous": "0.7%",
-      "actual": "",
+      "previous": "0.8%",
+      "actual": "1.4%",
       "description": "",
       "category": "Economic"
     },
@@ -4882,8 +4882,8 @@
       "impact": "yellow",
       "time": "2026-11-22T21:45:00Z",
       "forecast": "0.5%",
-      "previous": "-0.5%",
-      "actual": "",
+      "previous": "-0.4%",
+      "actual": "2.2%",
       "description": "",
       "category": "Economic"
     },
@@ -4897,7 +4897,7 @@
       "time": "2026-11-22T22:00:00Z",
       "forecast": "",
       "previous": "49.6",
-      "actual": "",
+      "actual": "48.7",
       "description": "",
       "category": "Economic"
     },
@@ -4911,7 +4911,7 @@
       "time": "2026-11-22T22:00:00Z",
       "forecast": "",
       "previous": "48.5",
-      "actual": "",
+      "actual": "46.2",
       "description": "",
       "category": "Economic"
     },
@@ -5064,7 +5064,7 @@
       "impact": "yellow",
       "time": "2026-11-23T13:30:00Z",
       "forecast": "",
-      "previous": "",
+      "previous": "8.7%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -9222,7 +9222,7 @@
       "impact": "yellow",
       "time": "2026-12-15T22:00:00Z",
       "forecast": "",
-      "previous": "49.6",
+      "previous": "48.7",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -9236,7 +9236,7 @@
       "impact": "yellow",
       "time": "2026-12-15T22:00:00Z",
       "forecast": "",
-      "previous": "48.5",
+      "previous": "46.2",
       "actual": "",
       "description": "",
       "category": "Economic"
