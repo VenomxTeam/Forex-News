@@ -3351,5 +3351,20 @@
     "india_title": "Breakup ke baad gym, loss ke baad kahan? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
     "global_title": "Gym after a breakup, but where after a loss? \ud83c\udfcb\ufe0f\u200d\u2642\ufe0f\ud83d\udc94",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "wrap_usd_api_weekly_statistical_bulletin_20261123": {
+    "sent_at": "2026-11-23T21:44:20.757153+00:00",
+    "event_id": "usd_api_weekly_statistical_bulletin_20261123",
+    "currency": "USD",
+    "title": "API Weekly Statistical Bulletin",
+    "actual": "",
+    "scheduled_time": "2026-11-23T21:30:00Z",
+    "type": "POST_NEWS_WRAP"
+  },
+  "session_sydney_2026-11-23": {
+    "sent_at": "2026-11-23T21:44:20.757153+00:00",
+    "session": "SYDNEY",
+    "date": "2026-11-23",
+    "high_impact_count": 0
   }
 }
