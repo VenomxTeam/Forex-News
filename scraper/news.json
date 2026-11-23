@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T22:20:45Z",
+  "updated_at": "2026-11-23T03:00:43Z",
   "events": [
     {
       "id": "aud_mi_inflation_gauge_mm_20261101",
@@ -702,20 +702,6 @@
       "category": "Economic"
     },
     {
-      "id": "aud_rba_deputy_gov_hauser_speaks_20261104",
-      "currency": "AUD",
-      "country": "Australia",
-      "flag": "au",
-      "title": "RBA Deputy Gov Hauser Speaks",
-      "impact": "yellow",
-      "time": "2026-11-04T06:45:00Z",
-      "forecast": "",
-      "previous": "",
-      "actual": "",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "eur_spanish_unemployment_change_20261104",
       "currency": "EUR",
       "country": "Eurozone",
@@ -933,6 +919,20 @@
       "title": "Monetary Policy Meeting Minutes",
       "impact": "yellow",
       "time": "2026-11-04T23:50:00Z",
+      "forecast": "",
+      "previous": "",
+      "actual": "",
+      "description": "",
+      "category": "Economic"
+    },
+    {
+      "id": "aud_rba_deputy_gov_hauser_speaks_20261105",
+      "currency": "AUD",
+      "country": "Australia",
+      "flag": "au",
+      "title": "RBA Deputy Gov Hauser Speaks",
+      "impact": "yellow",
+      "time": "2026-11-05T06:45:00Z",
       "forecast": "",
       "previous": "",
       "actual": "",
@@ -1990,20 +1990,6 @@
       "category": "Economic"
     },
     {
-      "id": "jpy_prelim_machine_tool_orders_yy_20261110",
-      "currency": "JPY",
-      "country": "Japan",
-      "flag": "jp",
-      "title": "Prelim Machine Tool Orders y/y",
-      "impact": "yellow",
-      "time": "2026-11-10T06:00:00Z",
-      "forecast": "",
-      "previous": "60.4%",
-      "actual": "42.5%",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "gbp_mpc_member_breeden_speaks_20261110",
       "currency": "GBP",
       "country": "United Kingdom",
@@ -2308,6 +2294,20 @@
       "forecast": "-33%",
       "previous": "-34%",
       "actual": "-36%",
+      "description": "",
+      "category": "Economic"
+    },
+    {
+      "id": "jpy_prelim_machine_tool_orders_yy_20261111",
+      "currency": "JPY",
+      "country": "Japan",
+      "flag": "jp",
+      "title": "Prelim Machine Tool Orders y/y",
+      "impact": "yellow",
+      "time": "2026-11-11T06:00:00Z",
+      "forecast": "",
+      "previous": "60.4%",
+      "actual": "42.5%",
       "description": "",
       "category": "Economic"
     },
@@ -7296,20 +7296,6 @@
       "category": "Economic"
     },
     {
-      "id": "jpy_prelim_machine_tool_orders_yy_20261206",
-      "currency": "JPY",
-      "country": "Japan",
-      "flag": "jp",
-      "title": "Prelim Machine Tool Orders y/y",
-      "impact": "yellow",
-      "time": "2026-12-06T00:00:00Z",
-      "forecast": "",
-      "previous": "42.5%",
-      "actual": "",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "aud_anz_job_advertisements_mm_20261206",
       "currency": "AUD",
       "country": "Australia",
@@ -7333,6 +7319,20 @@
       "time": "2026-12-06T05:00:00Z",
       "forecast": "",
       "previous": "116.4%",
+      "actual": "",
+      "description": "",
+      "category": "Economic"
+    },
+    {
+      "id": "jpy_prelim_machine_tool_orders_yy_20261207",
+      "currency": "JPY",
+      "country": "Japan",
+      "flag": "jp",
+      "title": "Prelim Machine Tool Orders y/y",
+      "impact": "yellow",
+      "time": "2026-12-07T00:00:00Z",
+      "forecast": "",
+      "previous": "42.5%",
       "actual": "",
       "description": "",
       "category": "Economic"
@@ -9788,20 +9788,6 @@
       "category": "Economic"
     },
     {
-      "id": "jpy_boj_press_conference_20261217",
-      "currency": "JPY",
-      "country": "Japan",
-      "flag": "jp",
-      "title": "BOJ Press Conference",
-      "impact": "red",
-      "time": "2026-12-17T00:00:00Z",
-      "forecast": "",
-      "previous": "",
-      "actual": "",
-      "description": "",
-      "category": "Economic"
-    },
-    {
       "id": "gbp_gfk_consumer_confidence_20261217",
       "currency": "GBP",
       "country": "United Kingdom",
@@ -10133,6 +10119,20 @@
       "time": "2026-12-17T23:30:00Z",
       "forecast": "",
       "previous": "2.2%",
+      "actual": "",
+      "description": "",
+      "category": "Economic"
+    },
+    {
+      "id": "jpy_boj_press_conference_20261218",
+      "currency": "JPY",
+      "country": "Japan",
+      "flag": "jp",
+      "title": "BOJ Press Conference",
+      "impact": "red",
+      "time": "2026-12-18T00:00:00Z",
+      "forecast": "",
+      "previous": "",
       "actual": "",
       "description": "",
       "category": "Economic"

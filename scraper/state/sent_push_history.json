@@ -3327,5 +3327,13 @@
     "scheduled_time": "2026-11-22T21:45:00Z",
     "window": "30m",
     "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_08am_2026-11-23": {
+    "sent_at": "2026-11-23T03:00:51.143764+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-23",
+    "india_title": "Alarm baja ya open trades ne neend uda di? \u23f0\ud83d\udc40",
+    "global_title": "Woke up checking open trades at 6 AM? \u23f0\ud83d\udc40",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
