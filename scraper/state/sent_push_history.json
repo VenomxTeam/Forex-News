@@ -3366,5 +3366,13 @@
     "session": "SYDNEY",
     "date": "2026-11-23",
     "high_impact_count": 0
+  },
+  "retention_weekday_slot_10am_2026-11-24": {
+    "sent_at": "2026-11-24T05:34:11.872887+00:00",
+    "slot": "slot_10am",
+    "date": "2026-11-24",
+    "india_title": "Whales ne chupke se EUR me trap lagaya hai \ud83e\udea4\u26a1",
+    "global_title": "Whales just set a massive retail trap on EUR \ud83e\udea4\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
