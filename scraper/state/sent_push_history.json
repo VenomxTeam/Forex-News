@@ -3396,5 +3396,13 @@
     "india_title": "Account blow hone se 1 trade door ho? \ud83d\udca3\ud83d\udcc9",
     "global_title": "One bad trade away from blowing up? \ud83d\udca3\ud83d\udcc9",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_12am_2026-11-25": {
+    "sent_at": "2026-11-24T18:51:38.541997+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-25",
+    "india_title": "Overnight swap charges account kha jayenge \ud83d\udcb8\ud83c\udf19",
+    "global_title": "Overnight swap fees eating your profits? \ud83d\udcb8\ud83c\udf19",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
