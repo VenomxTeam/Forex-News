@@ -3388,5 +3388,13 @@
     "india_title": "London session open hone me 15 min! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
     "global_title": "London Open in 15 mins! \ud83d\udd14\ud83c\uddec\ud83c\udde7",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_08pm_2026-11-24": {
+    "sent_at": "2026-11-24T16:18:03.616788+00:00",
+    "slot": "slot_08pm",
+    "date": "2026-11-24",
+    "india_title": "Account blow hone se 1 trade door ho? \ud83d\udca3\ud83d\udcc9",
+    "global_title": "One bad trade away from blowing up? \ud83d\udca3\ud83d\udcc9",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
