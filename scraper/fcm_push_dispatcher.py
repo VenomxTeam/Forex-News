@@ -27,6 +27,7 @@ import sys
 import json
 import logging
 import re
+import zoneinfo
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -469,22 +470,32 @@ def check_post_news_wrap(events, now_utc, local_history, messaging_client, db_cl
 def check_session_open_alerts(events, now_utc, local_history, messaging_client, db_client):
     """
     Dispatches alerts for ALL 4 Major Market Session Opens:
-    1. Tokyo (Asian) Session Open: 00:00 UTC (05:30 AM IST) - Weekdays
-    2. London (European) Session Open: 07:00 UTC (12:30 PM IST) - Weekdays
-    3. New York (US / Wall Street) Open: 12:30 UTC / 13:00 UTC (06:00 PM / 06:30 PM IST) - Weekdays
-    4. Sydney Session Open: 21:00 UTC (02:30 AM IST next day weekdays & Sunday weekly market open)
+    1. Tokyo (Asian) Session Open: 09:00 JST (00:00 UTC / 05:30 AM IST) - Weekdays
+    2. London (European) Session Open: 08:00 London Time (Europe/London: 08:00 UTC Winter / 07:00 UTC Summer) - Weekdays
+    3. New York (US) Session Open: 08:00 NY Time (America/New_York: 13:00 UTC Winter / 12:00 UTC Summer) - Weekdays
+    4. Sydney (Pacific) Session Open: 08:00 Sydney Time (Australia/Sydney: 21:00 UTC Summer AEDT / 22:00 UTC Winter AEST) - Weekday mornings & Sunday weekly open
 
     Zero-Fake & Anti-Spam:
+    - Automatically accounts for Daylight Saving Time (DST) across global exchanges.
     - Strictly deduplicated once per session per calendar day.
-    - Sends targeted Hinglish to 'india_traders' and high-converting English to 'global_traders'.
+    - Factual, professional, emojified alerts with real session status and key active currency pairs.
+    - Zero fake claims, zero hype, zero spam.
     """
     logger.info("Checking Trigger 3: All 4 Market Session Open Alerts (Tokyo, London, NY, Sydney)...")
     dispatched = 0
 
-    weekday = now_utc.weekday() # 0 = Mon, 1 = Tue, ..., 5 = Sat, 6 = Sun
-    utc_hour = now_utc.hour
-    utc_minute = now_utc.minute
     date_str = now_utc.strftime("%Y-%m-%d")
+
+    # Load exchange timezones to accurately handle Daylight Saving Time (DST)
+    tz_tokyo = zoneinfo.ZoneInfo("Asia/Tokyo")
+    tz_london = zoneinfo.ZoneInfo("Europe/London")
+    tz_ny = zoneinfo.ZoneInfo("America/New_York")
+    tz_sydney = zoneinfo.ZoneInfo("Australia/Sydney")
+
+    now_tokyo = now_utc.astimezone(tz_tokyo)
+    now_london = now_utc.astimezone(tz_london)
+    now_ny = now_utc.astimezone(tz_ny)
+    now_sydney = now_utc.astimezone(tz_sydney)
 
     # Filter today's real high-impact events for dynamic context
     today_red = [
@@ -500,7 +511,7 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
             return 0
 
         ch_id = "fcm_daily_briefing_channel"
-        # 1. Send India (Hinglish viral copy)
+        # 1. Send India (Hinglish copy)
         send_fcm_message(
             messaging_client=messaging_client,
             topic="india_traders",
@@ -510,7 +521,7 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
             channel_id=ch_id,
             priority="high"
         )
-        # 2. Send Global (Universal English high-CTR copy)
+        # 2. Send Global (English copy)
         send_fcm_message(
             messaging_client=messaging_client,
             topic="global_traders",
@@ -546,37 +557,29 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
         return 1
 
     # ═════════════════════════════════════════════════════════════════════════
-    # 1. TOKYO (ASIAN) SESSION OPEN (00:00 UTC / 05:30 AM IST) - Mon to Fri
+    # 1. TOKYO (ASIAN) SESSION OPEN (09:00 JST / 00:00 UTC / 05:30 AM IST) - Mon to Fri
     # ═════════════════════════════════════════════════════════════════════════
-    if weekday in (0, 1, 2, 3, 4) and utc_hour == 0:
+    if now_tokyo.weekday() in (0, 1, 2, 3, 4) and now_tokyo.hour == 9:
         dedup_key = f"session_tokyo_{date_str}"
         tokyo_in_titles = [
-            "🚨 Tokyo Market Khul Gaya! 🇯🇵 Yen & Gold Me Blast",
-            "Chai baad me, Tokyo breakout pehle! ☕🇯🇵 40 pips live",
-            "Asian Whales active! 🐋 USD/JPY me institutional orders",
-            "Subah-subah Gold ne move shuru kiya! 🌅 Tokyo is live",
-            "Good morning! Tokyo market open ho chuka hai 🇯🇵⚡"
+            "🇯🇵 Tokyo Market Open: Asian Session Shuru",
+            "🇯🇵 Tokyo Session Live: USD/JPY & Asian Pairs Active",
+            "🇯🇵 Asian Market Open: Tokyo Trading Session Shuru"
         ]
         tokyo_in_bodies = [
-            "Asian session live hai! USD/JPY, AUD aur Gold ke early breakout levels abhi check karo.",
-            "Neend khulne se pehle Tokyo 40 pips de gaya! Check currency strength heatmap.",
-            "Bank of Japan aur Asian liquidity sweeps start ho gaye hain. Tap for live chart.",
-            "Retail abhi so rahi hai, Asian institutions orders bhar rahe hain. Aaj ka bias dekho!",
-            f"Aaj {red_count} high-impact news queue me hain! Asian open momentum check karo." if red_count > 0 else "Fresh Asian session momentum is live. Check USD/JPY & Nikkei bias!"
+            "Tokyo market open ho chuka hai (09:00 JST). USD/JPY, AUD/USD aur JPY pairs ka live status check karo.",
+            "Asian session live hai. Live Currency Heatmap par dominant pairs aur session rankings track karo.",
+            f"Tokyo session open hai. Aaj {red_count} high-impact economic releases scheduled hain. Calendar check karo." if red_count > 0 else "Tokyo session live hai. Live market radar par currency strength aur rates check karo."
         ]
         tokyo_gl_titles = [
-            "🚨 Tokyo Session is LIVE! 🇯🇵 Asian Whales are Moving",
-            "Tokyo Opening Bell! ☕🇯🇵 40+ pips active on USD/JPY",
-            "Asian Liquidity Influx! 🐋 Watch JPY, AUD & Gold",
-            "Wake up to market volatility: Asian Session Open 🌅",
-            "Tokyo Session Open: Early Breakout underway! 🇯🇵⚡"
+            "🇯🇵 Tokyo Market Open: Asian Session is Now Live",
+            "🇯🇵 Tokyo Session Open: USD/JPY & Asian Crosses Active",
+            "🇯🇵 Asian Market Open: Tokyo Trading Active"
         ]
         tokyo_gl_bodies = [
-            "Asian markets are trading! Early momentum building on USD/JPY, AUD/USD & Gold.",
-            "Asian liquidity sweeps underway before Europe wakes up. Check live sessions radar!",
-            "Smart money is positioning early on Asian crosses. Tap to see institutional bias.",
-            "Don't trade the morning blind. Spot dominant currency flows on the Live Heatmap!",
-            f"{red_count} Red-Folder events scheduled today. Catch the Tokyo opening moves now!" if red_count > 0 else "Tokyo liquidity sweeps active on JPY crosses. Check live levels!"
+            "The Tokyo trading session is now active (09:00 JST). Primary pairs in focus: USD/JPY, AUD/USD, and JPY crosses.",
+            "Asian markets are trading. Monitor live currency strength and opening session momentum on the Live Heatmap.",
+            f"Tokyo session is open. {red_count} high-impact releases scheduled today. Review the economic calendar." if red_count > 0 else "Tokyo session is open. Track active currency strength rankings and live forex rates."
         ]
         idx = day_of_year % len(tokyo_in_titles)
         dispatched += dispatch_session_notification(
@@ -590,37 +593,29 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
         )
 
     # ═════════════════════════════════════════════════════════════════════════
-    # 2. LONDON (EUROPEAN) SESSION OPEN (07:00 UTC / 12:30 PM IST) - Mon to Fri
+    # 2. LONDON (EUROPEAN) SESSION OPEN (08:00 London Time: 08:00 UTC Winter / 07:00 UTC Summer) - Mon to Fri
     # ═════════════════════════════════════════════════════════════════════════
-    if weekday in (0, 1, 2, 3, 4) and utc_hour == 7:
+    if now_london.weekday() in (0, 1, 2, 3, 4) and now_london.hour == 8:
         dedup_key = f"session_london_{date_str}"
         london_in_titles = [
-            "🇬🇧 London Open! EUR & GBP Me Liquidity Ka Tsunami 🌊",
-            "London market khul gaya! 60 pips breakout live hai 🇬🇧⚡",
-            "Swiggy se pehle London delivers! 🍔 GBP/USD explodes",
-            "Whales entering Europe! 🐋 Frankfurt & London Open",
-            "London session shuru! EUR/USD breakout levels dekho 🎯"
+            "🇬🇧 London Market Open: European Session Shuru",
+            "🇬🇧 London Session Live: EUR/USD & GBP/USD In Focus",
+            "🇬🇧 European Market Open: London Trading Active"
         ]
         london_in_bodies = [
-            f"Europe open ho chuka hai! {red_count} major releases scheduled hain. Breakout levels check karo.",
-            "European volume market me enter ho chuka hai! EUR/USD, GBP/USD aur Gold live chart dekho.",
-            "Lunchtime breakout 50 pips de chuka hai! Stop loss verify karo aur trap se bacho.",
-            "Smart money retail stop losses hunt karne aayi hai. Live Currency Heatmap abhi dekho!",
-            "Highest volume trading session live hai. Live AI Macro Bias check karke position lo!"
+            "London trading session open ho chuka hai. EUR/USD, GBP/USD aur European crosses ka live status check karo.",
+            "European session live hai. Live Currency Heatmap par currency strength aur session volume track karo.",
+            f"London market open ho chuka hai. Aaj {red_count} high-impact economic events scheduled hain. Calendar dekho." if red_count > 0 else "London session open hai. European market status aur live currency rates check karo."
         ]
         london_gl_titles = [
-            "🇬🇧 London Open: European Liquidity Flood Has Begun! 🌊",
-            "London Session is LIVE! 🇬🇧 60-pip breakouts active",
-            "Europe Wakes Up: Massive Order Blocks on EUR & GBP ⚡",
-            "London Opening Bell: Highest Volume Session is Live! 🔔",
-            "London Open: EUR/USD & GBP/USD Volatility Exploding 💥"
+            "🇬🇧 London Market Open: European Session is Now Live",
+            "🇬🇧 London Session Open: EUR/USD & GBP/USD in Focus",
+            "🇬🇧 European Market Open: London Trading is Live"
         ]
         london_gl_bodies = [
-            f"European traders are hitting their desks. {red_count} Red-Folder catalysts in play today!",
-            "Heavy liquidity sweeps entering EUR/USD, GBP/USD & Gold right now. Don't miss the move!",
-            "Smart money is testing key breakout levels across European pairs. See live heatmap!",
-            "Over 35% of daily global forex volume trades here. Check AI Quant market bias now!",
-            "Volatility is peaking! Check the strongest currency before placing London entries."
+            "The London trading session is now active (08:00 London Time). Major pairs: EUR/USD, GBP/USD, EUR/GBP.",
+            "European trading session is officially underway. Check the Live Heatmap for dynamic currency strength rankings.",
+            f"London session is open. {red_count} Red-Folder economic releases scheduled today. Review upcoming releases." if red_count > 0 else "London session is active. Over 35% of global forex volume trades during European hours. Check live rates!"
         ]
         idx = day_of_year % len(london_in_titles)
         dispatched += dispatch_session_notification(
@@ -634,40 +629,32 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
         )
 
     # ═════════════════════════════════════════════════════════════════════════
-    # 3. NEW YORK (US / WALL STREET) OPEN (12:30-13:30 UTC / 06:00-07:00 PM IST)
+    # 3. NEW YORK (US) SESSION OPEN (08:00 Eastern: 13:00 UTC Winter / 12:00 UTC Summer) - Mon to Fri
     # ═════════════════════════════════════════════════════════════════════════
-    if weekday in (0, 1, 2, 3, 4) and (utc_hour == 13 or (utc_hour == 12 and utc_minute >= 30)):
+    if now_ny.weekday() in (0, 1, 2, 3, 4) and now_ny.hour == 8:
         dedup_key = f"session_ny_{date_str}"
         us_red = [e for e in today_red if e.get("currency") == "USD"]
         us_titles = ", ".join(e.get("title", "") for e in us_red[:2]) if us_red else "US Economic News"
 
         ny_in_titles = [
-            "🇺🇸 Wall Street Open! 🔔 US Dollar & Gold Me Wild Swings",
-            "New York session live! 💀 Stop Loss check kiya ya bhool gaye?",
-            "Wall Street ka dhol baj gaya! 🔔 US Data dropping now",
-            "Gold & US Dollar me 100+ pip frenzy shuru! 🚀🇺🇸",
-            "US Market Open! 🇺🇸 Revenge trade mat lena, bias dekho"
+            "🇺🇸 New York Market Open: US Session Shuru",
+            "🇺🇸 New York Session Live: USD & Gold In Focus",
+            "🇺🇸 US Market Open: New York Trading Active"
         ]
         ny_in_bodies = [
-            f"NYSE equities bell just rang! {us_titles} in focus. High institutional volume is live.",
-            "Red-Folder US data aane wali hai! Stop loss tight rakho ya risk calculator se lot verify karo.",
-            "Wall Street opening volume hitting USD, Gold & NASDAQ right now. Live breaking news & market bias dekho!",
-            "London aur New York overlap me massive liquidity aa rahi hai. Live chart open karo!",
-            "Overleveraging se account blow mat karna! Live Currency Heatmap par strongest asset check karo."
+            f"New York session open ho chuka hai (08:00 EST). {us_titles} in focus. Live market status check karo." if us_red else "New York trading session open ho chuka hai (08:00 EST). USD, Gold (XAU/USD) aur major pairs ka status dekho.",
+            "US trading session shuru ho chuka hai. Live Currency Heatmap par USD strength aur major crosses track karo.",
+            "New York market open hai. US economic data releases aur Gold (XAU/USD) price action check karo."
         ]
         ny_gl_titles = [
-            "🇺🇸 New York Open: Wall Street Opening Bell Just Rang! 🔔",
-            "New York Session is LIVE! 💀 Did you set that Stop Loss?",
-            "US Dollar & Gold Frenzy! 🚀 100+ pip swings live",
-            "Wall Street Opening Volume: NASDAQ & Gold Exploding 💥",
-            "New York Session Open: High-Stakes US Data Incoming 🇺🇸"
+            "🇺🇸 New York Market Open: US Session is Now Live",
+            "🇺🇸 New York Session Open: USD & Gold in Focus",
+            "🇺🇸 US Market Open: New York Trading is Live"
         ]
         ny_gl_bodies = [
-            f"Massive volume hitting USD, Gold & US Indices. {us_titles} in play today. Check levels!",
-            "High-impact US session open. Don't trade into news blind—check live breaking news & economic events!",
-            "London & NY overlap creates peak daily volatility. Track live institutional order flow now!",
-            "Institutional orders hitting the book. Protect your capital from the opening sweep!",
-            "Over 100 pips of volatility expected on XAU/USD & EUR/USD. Check live economic countdown!"
+            f"The New York trading session is now active (08:00 EST). {us_titles} in play today. Monitor live rates and releases." if us_red else "The New York trading session is now active (08:00 EST). Primary pairs: USD, Gold (XAU/USD), EUR/USD.",
+            "US trading session is open. Active market participation underway across USD pairs and commodities. Check live status.",
+            "New York session has begun. Check the Live Currency Heatmap for USD strength and breaking news updates."
         ]
         idx = day_of_year % len(ny_in_titles)
         dispatched += dispatch_session_notification(
@@ -681,39 +668,30 @@ def check_session_open_alerts(events, now_utc, local_history, messaging_client, 
         )
 
     # ═════════════════════════════════════════════════════════════════════════
-    # 4. SYDNEY SESSION OPEN (21:00 UTC / 02:30 AM IST & Sunday Weekly Kickoff)
+    # 4. SYDNEY (PACIFIC) SESSION OPEN (08:00 Sydney Time: 21:00 UTC Summer / 22:00 UTC Winter)
     # ═════════════════════════════════════════════════════════════════════════
-    # Weekday nights: 21:00 UTC (02:30 AM IST) Mon-Thu (which is Tue-Fri morning in Sydney)
-    # Sunday evening: 21:00 UTC (or Sunday weekly kickoff opening all forex markets)
-    if (weekday in (0, 1, 2, 3)) and utc_hour == 21:
-        dedup_key = f"session_sydney_{date_str}"
+    # Sydney local time Monday-Friday mornings (includes Sunday evening UTC weekly market open)
+    if now_sydney.weekday() in (0, 1, 2, 3, 4) and now_sydney.hour == 8:
+        dedup_key = f"session_sydney_{now_sydney.strftime('%Y-%m-%d')}"
         sydney_in_titles = [
-            "🌏 Sydney Session Open! Naye Trading Day Ki Shuruat 🚀",
-            "Sydney market khul gaya! 🇦🇺 AUD & NZD me early momentum",
-            "Neend nahi aa rahi? Sydney market dekh lo! 🌙🌏",
-            "Bhai market chalu ho gaya! 🚀 Sydney opening moves live",
-            "Sydney Session Live: Early price gaps track karo 🎯🌏"
+            "🇦🇺 Sydney Market Open: Pacific Session Shuru",
+            "🇦🇺 Sydney Session Live: AUD & NZD In Focus",
+            "🇦🇺 Pacific Market Open: Sydney Trading Active"
         ]
         sydney_in_bodies = [
-            "AUD aur NZD pairs me pehla momentum shuru ho chuka hai! Early price gaps check karo.",
-            "First market of the cycle is trading! Check currency strength heatmap before Tokyo opens.",
-            "JPY aur Gold me early liquidity enter ho rahi hai. Live opening candle abhi dekho!",
-            "New session is live. Overleveraging mat karna, apna trading plan follow karo!",
-            "Opening price gaps active hain. Live sessions radar par strongest currency check karo."
+            "Sydney trading session open ho chuka hai (08:00 Sydney Time). AUD/USD aur NZD/USD pairs ka live status check karo.",
+            "Pacific trading session live hai. Live Currency Heatmap par early currency movements track karo.",
+            "Sydney session shuru ho chuka hai. AUD, NZD aur Asian-Pacific crosses ka live status check karo."
         ]
         sydney_gl_titles = [
-            "🌏 Sydney Session Open: First Moves of the Day are LIVE! 🚀",
-            "Sydney Market is Open! 🇦🇺 Early momentum on AUD & NZD",
-            "Can't sleep? The Sydney Market just opened! 🌙🌏",
-            "Sydney Session Live: Catch the early Asian liquidity 🎯",
-            "Sydney Opening Moves: Fresh liquidity entering FX pairs 🚀"
+            "🇦🇺 Sydney Market Open: Pacific Session is Now Live",
+            "🇦🇺 Sydney Session Open: AUD & NZD in Focus",
+            "🇦🇺 Pacific Market Open: Sydney Trading is Live"
         ]
         sydney_gl_bodies = [
-            "Fresh liquidity entering AUD, NZD & JPY pairs. Spot the early momentum before Tokyo opens!",
-            "The trading day is officially underway. Check the early breakout heatmaps now!",
-            "Early liquidity entering Gold and JPY crosses. Check the live opening candles right now!",
-            "Stick strictly to your risk rules—track the live currency rankings on the Sessions Radar.",
-            "Opening gaps are active across Gold and FX pairs. See how smart money is positioning!"
+            "The Sydney trading session is now active (08:00 Sydney Time). Major pairs: AUD/USD, NZD/USD, and Pacific crosses.",
+            "Pacific trading session is underway. Monitor opening market rates and currency rankings on the Live Heatmap.",
+            "Sydney session has begun. Check early market momentum across AUD, NZD, and Pacific currencies."
         ]
         idx = day_of_year % len(sydney_in_titles)
         dispatched += dispatch_session_notification(

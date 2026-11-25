@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Retention and engagement push notification scheduler.
-
-Schedules and dispatches targeted push notifications to regional trader topics
-based on market hours, weekend reviews, and scheduled calendar slots with deduplication.
+Professional Trader Retention and Engagement Notification Engine.
+==================================================================
+Zero awkward/meme notifications. 100% real trader notifications:
+- Global Market Sessions (Tokyo, London, New York, Sydney, Overlap)
+- Daily Market Briefings & Live Breaking News Updates
+- Weekly Macro Economic Minefield & Weekend Reviews
+- Risk Management & Disciplined Trade Journaling
+- Emojified, bug-free, and deduplicated per slot per calendar day.
 """
 
 from datetime import datetime, timezone, timedelta
@@ -25,6 +29,7 @@ TOPIC_GLOBAL = "global_traders"
 # 1. 2-HOUR INTERVAL WEEKDAY SLOTS (MON - FRI)
 # ─────────────────────────────────────────────────────────────────────────────
 WEEKDAY_2HOUR_SLOTS = [
+    # ── 08:00 AM IST: Pre-European Session & Asian Wrap ──────────────────────
     {
         "slot_id": "slot_08am",
         "ist_hour": 8,
@@ -32,66 +37,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Bhai ne kaha tha pakka profit hoga... 🤡",
-                    "body": "Aur bhai ka khud ka margin call aa gaya! Group chat tips chhod, live institutional order flow dekh.",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Your buddy said 'It's a guaranteed win'... 🤡",
-                    "body": "Now his account is on life support. Stop copying group chats—check live institutional order flow.",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Chai peeli? Par portfolio abhi bhi laal hai? ☕📉",
-                    "body": "Tokyo session wrap ho chuka hai aur smart money trap set kar rahi hai. London open se pehle bias check karo!",
+                    "title": "🌅 Asian Session Wrap: Key Levels Active",
+                    "body": "Tokyo session wrap ho chuka hai! Frankfurt & London open se pehle EUR & JPY ka currency status check karo.",
                     "route": "market"
                 },
                 "global": {
-                    "title": "Coffee first, or stop the bleeding? ☕📉",
-                    "body": "Tokyo session just wrapped and smart money is stacking order blocks. Check the live European bias now!",
+                    "title": "🌅 Asian Session Wrap: Key Levels In Play",
+                    "body": "Tokyo volume settled. Check early currency rankings and European opening outlook now!",
                     "route": "market"
                 }
             },
             {
                 "india": {
-                    "title": "Alarm baja ya open trades ne neend uda di? ⏰👀",
-                    "body": "Good morning trader! Aaj 3 high-impact Red Bombs drop hone wale hain. Blind trade mat lena, calendar dekh!",
+                    "title": "☕ Good Morning Trader! Aaj Ka Gameplan Ready?",
+                    "body": "Aaj high-impact Red-Folder releases aane wale hain! Blind trade mat lo, economic calendar dekho.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "Woke up checking open trades at 6 AM? ⏰👀",
-                    "body": "3 Red-Folder market shockers dropping today. Check the forecast before London sweeps the lows!",
+                    "title": "☕ Morning Market Prep: Today's High-Impact Releases",
+                    "body": "Major central bank catalysts dropping today. Review the economic release calendar before London opens!",
                     "route": "calendar"
                 }
             },
             {
                 "india": {
-                    "title": "Retail so rahi hai, Whales orders bhar rahe hain 🐋📊",
-                    "body": "Frankfurt open se pehle EUR aur GBP me $1.8B volume detect hua. Breakout ya trap? Breaking News aur market bias dekho.",
-                    "route": "news_feed"
+                    "title": "📊 Currency Strength Heatmap Update",
+                    "body": "Asian session ke baad kaunsi currency sabse strong hai? Live Currency Heatmap par dominant pairs dekho.",
+                    "route": "market"
                 },
                 "global": {
-                    "title": "Retail is asleep, Institutions are placing orders 🐋📊",
-                    "body": "$1.8B institutional volume detected on EUR/USD before Frankfurt. Check breaking news and market reactions now!",
-                    "route": "news_feed"
+                    "title": "📊 Live Currency Heatmap: Morning Momentum",
+                    "body": "Spot the strongest and weakest currencies before the European session opens. Check the live heatmap!",
+                    "route": "market"
                 }
             },
             {
                 "india": {
-                    "title": "Neend khulte hi portfolio dekh kar heart attack? 🔴💀",
-                    "body": "Panic me close mat karo! London breakout session me trend reverse ho sakta hai. Key reversal levels dekho.",
+                    "title": "⚡ Institutional Pre-Market Focus",
+                    "body": "EUR/USD aur GBP/USD me overnight volume active hai. London open se pehle key pivot levels note karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Waking up to a red screen reality check? 🔴💀",
-                    "body": "Don't panic close at the bottom. London open often sweeps liquidity for the real move. Check key levels.",
+                    "title": "⚡ Pre-Europe Order Flow Alert",
+                    "body": "Early volume accumulating across EUR/USD and GBP/USD. Check key liquidity zones before the opening bell.",
                     "route": "home"
                 }
             }
         ]
     },
+
+    # ── 10:00 AM IST: Pre-London Liquidity Positioning ────────────────────────
     {
         "slot_id": "slot_10am",
         "ist_hour": 10,
@@ -99,66 +94,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Usne dil toda tha, Gold ne account tod diya 💔🕯️",
-                    "body": "Jitna time uski chat scroll karne me lagaya, utna London breakout par lagate toh funded trader hote!",
+                    "title": "🏛️ Central Bank Sentiment & Macro Bias",
+                    "body": "Institutions macro fundamentals par trade karte hain. Aaj ka AI Macro Sentiment breakdown check karo!",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Your ex broke your heart. Gold broke your account 💔🕯️",
-                    "body": "Missing a 60-pip London breakout hurts more than a breakup text. Check live EUR & GBP setups now!",
+                    "title": "🏛️ Central Bank Sentiment & Macro Outlook",
+                    "body": "Smart money tracks central bank policy differentials. Check today's AI Macro Sentiment breakdown.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Charts jhooth bolte hain, Central Banks nahi 🏦⚡",
-                    "body": "Institutions fundamentals par trade karte hain, retail patterns par nahi. Aaj ka AI Macro Sentiment check karo!",
+                    "title": "🎯 London Pre-Open: Market Preparation",
+                    "body": "European trading session ki taiyari! EUR/USD aur GBP/USD ke key support & resistance zones check karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Charts lie. Central Banks don't 🏦⚡",
-                    "body": "Smart money trades macro data, not retail trendlines. Check today's AI Macro Sentiment breakdown.",
+                    "title": "🎯 London Pre-Open: Market Preparation",
+                    "body": "European session approaching. Identify key session highs, lows, and today's economic schedule before the open.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Breaking News aate hi chart par candles kyu bhaagi? 📰⚡",
-                    "body": "Central Bank statements aur high-impact catalysts market hila dete hain. Live Breaking News feed check karo!",
+                    "title": "📰 Breaking Market News & Catalyst Radar",
+                    "body": "European bond yields aur macro headlines live hain. Real-time Breaking News feed abhi check karo!",
                     "route": "news_feed"
                 },
                 "global": {
-                    "title": "Why did charts go wild after that release? 📰⚡",
-                    "body": "Central bank speeches and macro events move the market. Check the real-time Breaking News feed now!",
+                    "title": "📰 Real-Time Macro News & Breaking Catalysts",
+                    "body": "European sovereign yields and policy commentary moving FX crosses. Check real-time Breaking News!",
                     "route": "news_feed"
                 }
             },
             {
                 "india": {
-                    "title": "Whales ne chupke se EUR me trap lagaya hai 🪤⚡",
-                    "body": "Fake breakout detect hua hai! Exit liquidity mat bano—live Currency Heatmap par strongest currency dekho.",
-                    "route": "market"
-                },
-                "global": {
-                    "title": "Whales just set a massive retail trap on EUR 🪤⚡",
-                    "body": "Liquidity grab forming right now. Don't be the exit liquidity—spot the real momentum on the Live Heatmap!",
-                    "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Aadha din nikal gaya, discipline kahan hai? ⏳🧭",
-                    "body": "Overtrading se bacho! Sirf A+ quality setups trade karo. Economic calendar ka countdown timer on karo.",
+                    "title": "🛡️ Risk Rule: Plan Your Trades, Trade Your Plan",
+                    "body": "Overtrading se bacho! Aaj sirf high-probability A+ setups execute karo. Calendar me countdown timers set karo.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "Half the day gone. Where's your trading plan? ⏳🧭",
-                    "body": "Quality over quantity. Wait for high-probability setups only. Check today's Red-Folder countdown timer!",
+                    "title": "🛡️ Discipline Check: Wait For Confirmed Setups",
+                    "body": "Quality over quantity. Review your risk rules and check today's Red-Folder event countdown timers.",
                     "route": "calendar"
                 }
             }
         ]
     },
+
+    # ── 12:00 PM IST: Mid-Day European Market Radar ───────────────────────────
     {
         "slot_id": "slot_12pm",
         "ist_hour": 12,
@@ -166,66 +151,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Swiggy se pehle 50 pips deliver! 🍔⚡",
-                    "body": "10 minute me burger aaye na aaye, London breakout 50 pips de gaya! Stop loss check kiya?",
+                    "title": "📊 Mid-Day Market Check: European Outlook",
+                    "body": "European trading hours ke liye taiyar raho! EUR/USD aur GBP/USD pairs ka live status aur rates dekho.",
+                    "route": "market"
+                },
+                "global": {
+                    "title": "📊 Mid-Day Market Check: European Outlook",
+                    "body": "European trading window approaching. Monitor currency strength rankings and key levels on the Live Heatmap.",
+                    "route": "market"
+                }
+            },
+            {
+                "india": {
+                    "title": "⚡ European Crosses & Gold Radar",
+                    "body": "Gold (XAU/USD) aur GBP crosses me active trading volume. Trailing stop loss aur risk manage karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "DoorDash won't deliver pips to your account 🍔⚡",
-                    "body": "London lunchtime surge just printed 50 pips in 15 mins. Did you lock in profits before the sweep?",
+                    "title": "⚡ European Crosses & Gold Radar",
+                    "body": "Active market participation across Gold (XAU/USD) and Sterling pairs. Review key technical levels and risk limits.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Zomato se Biryani aayi nahi, aur XAU 90 pips udd gaya 🍗💸",
-                    "body": "Bhookh pet me nahi pips ki honi chahiye! London open par Gold blast ho chuka hai, chart dekho.",
+                    "title": "📈 Mid-Day Technical Radar",
+                    "body": "Key currency support aur resistance levels track karo. Live chart aur trend status abhi dekho.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Uber Eats just arrived. Your trades just bled out 🥪📉",
-                    "body": "Stepped away for lunch and London swept 70 pips? Adjust your trailing stops before walking away!",
+                    "title": "📈 Mid-Day Technical Radar",
+                    "body": "Monitor primary currency support and resistance levels. Track live charts and technical indicators now.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "1 pizza se bhi sasta hai VIP access 🍕💸",
-                    "body": "Blind trade karke $200 ka loss mat karo. Real-time news alerts aur economic event breakdown unlock karo sirf ₹99 me!",
+                    "title": "💎 Unlock PRO Trading Edge: Live Institutional Feed",
+                    "body": "Real-time economic event breakdowns aur AI macro sentiment unlock karo with 3-Day Free Trial!",
                     "route": "premium?reason=smart_pricing"
                 },
                 "global": {
-                    "title": "Cheaper than a single lunch: PRO Trading Edge 🥗💡",
-                    "body": "Stop donating $300 to institutional sweeps. Unlock live economic catalysts & real-time market news with a 3-Day Free Trial!",
+                    "title": "💎 Unlock Institutional PRO Edge: Ad-Free Real-Time Feed",
+                    "body": "Access unfiltered economic intelligence, real-time shock alerts, and live currency radar with 3-Day Free Trial!",
                     "route": "premium?reason=smart_pricing"
-                }
-            },
-            {
-                "india": {
-                    "title": "London session open hone me 15 min! 🔔🇬🇧",
-                    "body": "Market me heavy liquidity flood aane wala hai! EUR/USD aur GBP/USD ke key breakout levels dekh lo.",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "London Open in 15 mins! 🔔🇬🇧",
-                    "body": "Massive liquidity flood incoming. Check EUR/USD & GBP/USD breakout and liquidity zones now!",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Thali me biryani, chart pe breakdown? 🍛📉",
-                    "body": "GBP/USD support tod chuka hai! Lunch se pehle trailing stop loss zaroor adjust kar lo.",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Eating lunch while your open trade breaks support? 🍕📉",
-                    "body": "GBP/USD just sliced through weekly support. Check live heatmap bias before taking another bite!",
-                    "route": "home"
                 }
             }
         ]
     },
+
+    # ── 02:00 PM IST: Mid-Day European Momentum & Order Flow ──────────────────
     {
         "slot_id": "slot_02pm",
         "ist_hour": 14,
@@ -233,66 +208,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Whales ne chupke se Gold me $2.4B daale hain 🐋📊",
-                    "body": "Retail sell kar rahi thi aur smart money ne pump shuru kar diya! Live economic calendar aur breaking news dekho.",
-                    "route": "calendar"
+                    "title": "📊 Mid-Day Market Pulse: Gold & Major Crosses",
+                    "body": "London mid-session volumes steady hain. XAU/USD aur EUR/USD ke institutional liquidity zones check karo.",
+                    "route": "home"
                 },
                 "global": {
-                    "title": "Hedge funds just poured $2.4B into Gold 🐋📊",
-                    "body": "Retail is aggressively shorting while institutions accumulate. Track high-impact economic releases & breaking news!",
-                    "route": "calendar"
+                    "title": "📊 Mid-Day Market Pulse: Gold & Major Crosses",
+                    "body": "Mid-session institutional positioning across Gold and major currencies. Review active support/resistance!",
+                    "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Ex bolti thi 'Tum change ho gaye ho...' 🥀💔",
-                    "body": "Haan change ho gaya hu, ab loss me trade hold nahi karta! Ex ki yaadein chhod, PRO trading edge unlock karo.",
-                    "route": "premium?reason=breakup_upgrade"
+                    "title": "🌐 Currency Flow Alert: Strongest vs Weakest",
+                    "body": "GBP aur EUR me divergence detect hua hai. Live Currency Strength Heatmap par dominant pairs dekho.",
+                    "route": "market"
                 },
                 "global": {
-                    "title": "My ex said 'You've changed...' 🥀💔",
-                    "body": "Yes, I don't hold losing trades anymore! Stop crying over past texts—unlock PRO trader edge with a 3-Day Free Trial.",
-                    "route": "premium?reason=breakup_upgrade"
+                    "title": "🌐 Currency Strength Divergence Detected",
+                    "body": "Diverging trends across European majors. Check the Currency Strength Heatmap to trade with the trend!",
+                    "route": "market"
                 }
             },
             {
                 "india": {
-                    "title": "'Bhai, market yahan se pakka reverse hoga!' 🤡",
-                    "body": "Ye bolke kitne accounts uda chuke ho? Stop guessing, check hedge-fund live market positioning!",
+                    "title": "📰 European Breaking Headlines",
+                    "body": "Central Bank statements aur bond auction results live hain. Breaking News feed par market updates dekho.",
                     "route": "news_feed"
                 },
                 "global": {
-                    "title": "'Trust me bro, it HAS to bounce here!' 🤡",
-                    "body": "How many accounts have been blown on that exact thought? Check live macro positioning first.",
+                    "title": "📰 European Mid-Day Macro Wire",
+                    "body": "Central bank remarks and fixed income auctions moving currency crosses. Track live breaking headlines!",
                     "route": "news_feed"
                 }
             },
             {
                 "india": {
-                    "title": "Salary aayi: 10:00 AM | Margin call: 02:00 PM 💀",
-                    "body": "Mahine ki kamai 4 ghante me khatam mat karo bhai! Risk calculator use karke lot size fix karo.",
-                    "route": "tools"
-                },
-                "global": {
-                    "title": "Paycheck lifespan: Under 4 hours? 💸💀",
-                    "body": "Don't donate your hard-earned wages to market makers. Calculate your lot size before clicking buy!",
-                    "route": "tools"
-                }
-            },
-            {
-                "india": {
-                    "title": "Retail trap alert: EUR pairs par fakeout! 🪤⚡",
-                    "body": "Stop hunting shuru ho chuki hai. Trap se bachna hai toh live Breaking News aur high-impact events check karo!",
+                    "title": "🎯 US Session Pre-Market Setup",
+                    "body": "US market open hone me kuch ghante bache hain. Upcoming high-impact Red news schedule verify karo.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "Retail liquidity trap forming right now! 🪤⚡",
-                    "body": "Liquidity grab spotted across major European pairs. Check upcoming high-impact economic releases before entering!",
+                    "title": "🎯 US Session Pre-Market Watch",
+                    "body": "New York session approaching. Review scheduled US economic releases to prepare your risk parameters.",
                     "route": "calendar"
                 }
             }
         ]
     },
+
+    # ── 04:00 PM IST: Pre-New York & US Macro Release Watch ───────────────────
     {
         "slot_id": "slot_04pm",
         "ist_hour": 16,
@@ -300,66 +265,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Overleveraging se account 30 sec me udd jayega 🧮⚠️",
-                    "body": "US session se pehle risk calculate karo. 1-Tap Lot Size Calculator se apna stop loss aur lots check karo!",
+                    "title": "🧮 Risk Management Check: 1-Tap Lot Calculator",
+                    "body": "High-impact US session se pehle risk calculate karo! Lot Size Calculator se stop-loss aur margin verify karo.",
                     "route": "tools"
                 },
                 "global": {
-                    "title": "Wrong lot size will blow your account in 30s 🧮⚠️",
-                    "body": "Pre-US news volatility can wipe out accounts in seconds. Calculate your pip risk with 1-Tap Calculator!",
-                    "route": "tools"
-                }
-            },
-            {
-                "india": {
-                    "title": "Chai-sutta ka kharcha nikal gaya? ☕🚬",
-                    "body": "Ya wo bhi market sweep kar gaya? Blind trades mat lo, Red-Folder Economic Event alerts on karo!",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "Did you just donate your coffee money to the market? ☕💸",
-                    "body": "Market swept your premature entry? Check the economic calendar before clicking buy into the news spike.",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Breakup ke baad gym, loss ke baad kahan? 🏋️‍♂️💔",
-                    "body": "Emotional damage se bachna hai toh 1-Tap Lot Size Calculator use karo aur apna stop loss fix karo!",
-                    "route": "tools"
-                },
-                "global": {
-                    "title": "Gym after a breakup, but where after a loss? 🏋️‍♂️💔",
-                    "body": "Don't revenge trade through the pain. Calculate your position size with the 1-Tap Risk Calculator!",
+                    "title": "🧮 Position Size Check: 1-Tap Lot Calculator",
+                    "body": "Pre-US news volatility can spike spreads. Calculate exact pip risk with the 1-Tap Calculator before entering!",
                     "route": "tools"
                 }
             },
             {
                 "india": {
-                    "title": "'Bhai trade le lu?' 🛑 Ruuk jao!",
-                    "body": "Agle 30 minute me high-impact US economic data drop hone wala hai. Spike aane do, tab entry lo!",
+                    "title": "🚨 High-Impact US News Countdown",
+                    "body": "Agle session me major US economic data aane wala hai. Calendar countdown timers verify karo!",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "'Should I take this trade?' 🛑 Hold on!",
-                    "body": "High-impact US economic data dropping in 30 mins. Never trade into the news spike blind!",
+                    "title": "🚨 High-Impact US Economic Data Incoming",
+                    "body": "Red-Folder US economic catalysts release soon. Verify release times and forecasts on the Calendar!",
                     "route": "calendar"
                 }
             },
             {
                 "india": {
-                    "title": "Margin call aane se pehle sambhal jao 🚨📊",
-                    "body": "Agar drawdown 5% se zyada hai toh revenge trade mat lo! AI Risk Manager check karo aur capital bachao.",
+                    "title": "💼 Capital Protection Rule: Never Trade Blind",
+                    "body": "News spike se pehle market orders place mat karo. Actual release aane do aur pip reaction dekho.",
+                    "route": "calendar"
+                },
+                "global": {
+                    "title": "💼 Capital Preservation Rule: News Discipline",
+                    "body": "Avoid placing premature orders before the data print. Wait for the actual release and confirm direction.",
+                    "route": "calendar"
+                }
+            },
+            {
+                "india": {
+                    "title": "📈 US Dollar Index (DXY) Testing Key Levels",
+                    "body": "DXY major resistance test kar raha hai. USD pairs aur Gold me high volatility expected hai.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Don't let a margin call end your week 🚨📊",
-                    "body": "Over 5% drawdown on your prop account? Review your open exposures with AI Quant tools right now.",
+                    "title": "📈 US Dollar Index (DXY) at Key Technical Pivot",
+                    "body": "DXY approaching critical technical levels. Expect heightened volatility across USD pairs and Gold.",
                     "route": "home"
                 }
             }
         ]
     },
+
+    # ── 06:00 PM IST: New York Open & Wall Street Opening Bell ────────────────
     {
         "slot_id": "slot_06pm",
         "ist_hour": 18,
@@ -367,66 +322,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Bhai sach bata... Stop Loss lagaya tha? 💀🇺🇸",
-                    "body": "New York session open + Red-Folder US economic news live hai! Apna SL verify karo turant.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "Be honest... Did you set that Stop Loss? 💀🇺🇸",
-                    "body": "New York session opening now + Red-Folder US data dropping. Protect your capital from the sweep!",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "'We need to talk...' 💀🥀",
-                    "body": "Ex ke is text se bhi zyada khatarnak Jerome Powell ki speech hai aaj! Positions protect karo.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "'We need to talk...' 💀🥀",
-                    "body": "Scarier than a text from your ex: Powell about to speak during high-impact US session!",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Usne ghost kar diya? 👻💔",
-                    "body": "At least Gold ka 100-pip spike ghost nahi karega! Real-time economic forecast abhi dekho.",
+                    "title": "🇺🇸 US Market Hours: Evening Trading Active 🔔",
+                    "body": "US market session active hai. US Dollar aur Gold (XAU/USD) ka live status aur upcoming economic news dekho.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "She ghosted you? 👻💔",
-                    "body": "People disappear, but Gold's 100-pip CPI spike never flakes on you. Check live macro bias now!",
+                    "title": "🇺🇸 US Market Hours: Trading Active 🔔",
+                    "body": "US trading session is active. Monitor USD currency strength, Gold (XAU/USD), and scheduled economic news.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Wall Street ka dhol bajne wala hai! 🔔🇺🇸",
-                    "body": "NYSE open hone me 10 minute! NASDAQ aur Dollar pairs me massive swings aane wale hain.",
+                    "title": "🛡️ Stop Loss Verification Alert",
+                    "body": "New York session me sudden price shifts ho sakte hain! Apni open positions par Stop Loss zaroor check karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Wall Street Opening Bell in 10 mins! 🔔🇺🇸",
-                    "body": "Massive institutional order flow hitting NASDAQ, Dow & USD pairs right now. Are you ready?",
+                    "title": "🛡️ Protect Capital: Verify Your Stop Loss",
+                    "body": "New York session brings active price action. Ensure all open positions have active stop-loss protection!",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Revenge trade lene ja rahe ho? 🛑👊",
-                    "body": "Market badla nahi maang raha, tum galat entry le rahe ho! Deep breath lo aur breaking news & session bias check karo.",
-                    "route": "home"
+                    "title": "⚡ US Economic Catalysts Releasing Now",
+                    "body": "High-impact US figures release ho rahe hain! Live Actual vs Forecast prints aur reaction check karo.",
+                    "route": "calendar"
                 },
                 "global": {
-                    "title": "Thinking about a revenge trade? 🛑👊",
-                    "body": "The market has no feelings. Revenge trading only burns capital. Step back and check breaking news & session bias!",
-                    "route": "home"
+                    "title": "⚡ US Economic Catalysts Releasing Live",
+                    "body": "Red-Folder US macro data is printing. Check live actual vs forecast numbers and market reactions!",
+                    "route": "calendar"
+                }
+            },
+            {
+                "india": {
+                    "title": "🌐 Currency Heatmap: US Session Shift",
+                    "body": "US session me kaunsi currency dominate kar rahi hai? Live Heatmap ranking abhi dekho.",
+                    "route": "market"
+                },
+                "global": {
+                    "title": "🌐 Currency Heatmap: New York Session Shift",
+                    "body": "Track dynamic shifts in currency dominance as US trading hours proceed.",
+                    "route": "market"
                 }
             }
         ]
     },
+
+    # ── 08:00 PM IST: London & New York Overlap Session ────────────────────────
     {
         "slot_id": "slot_08pm",
         "ist_hour": 20,
@@ -434,66 +379,56 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "⚡ Market ka sabse bada move abhi ho raha hai!",
-                    "body": "London aur New York dono open hain! Gold aur USD me 100+ pips volatility live hai, chart dekho.",
+                    "title": "🌐 London & New York Overlap Session Active",
+                    "body": "London aur New York dono financial centers active hain! EUR/USD, GBP/USD aur USD pairs ka live status dekho.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "⚡ Overlap Frenzy: 100+ pip swings live!",
-                    "body": "London & New York are both trading right now. Gold (XAU/USD) & US Dollar are exploding!",
+                    "title": "🌐 London & New York Overlap Session Active",
+                    "body": "London and New York markets are actively trading. Monitor live rates and currency rankings on the Live Heatmap.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Ex ka message aaye na aaye, SL zaroor hit hoga 💔💀",
-                    "body": "Kat gaya na dil bhi aur stop loss bhi? Revenge trade karke bacha balance mat uda, high-impact economic news padh le.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "No text from your ex, but that Stop Loss hit 💔💀",
-                    "body": "Heartbroken and liquidated? Don't revenge trade on tilt—check upcoming Red-Folder high-impact news first!",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Ex ki shaadi ki photo dekh li? 💍😭",
-                    "body": "Revenge lene ka best tareeqa: Green PnL screenshot. Chart pe dhyan do, story par nahi!",
+                    "title": "🏆 Gold (XAU/USD) & Major Pairs Update",
+                    "body": "Gold (XAU/USD) aur US Dollar pairs me steady trading volume active hai. Live support aur resistance levels check karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Saw your ex's wedding announcement? 💍😭",
-                    "body": "Best revenge in life: A consistent green P&L. Focus on your charts, not on Instagram!",
+                    "title": "🏆 Gold (XAU/USD) & Major Pairs Update",
+                    "body": "Active trading volume across Gold (XAU/USD) and US Dollar pairs. Track live price action and technical levels.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Account blow hone se 1 trade door ho? 💣📉",
-                    "body": "Screen band karo! Aaj ka session wrap karo, Trade Journal me mistake note karo aur kal aao.",
-                    "route": "trade_journal"
+                    "title": "🎯 Overlap Trading Rule: Lock In Profits",
+                    "body": "Jab move aapke favor me ho, trailing stop loss move karo aur profits secure karo. Live chart dekho.",
+                    "route": "home"
                 },
                 "global": {
-                    "title": "One bad trade away from blowing up? 💣📉",
-                    "body": "Stop trading for today. Step away from the screen, log your mistakes in Trade Journal, reset!",
-                    "route": "trade_journal"
+                    "title": "🎯 Overlap Strategy: Secure Your Profits",
+                    "body": "High session liquidity means active price movements. Protect unrealized gains by trailing your stops!",
+                    "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Gold ne 15 minute me 120 pips uda diye! 🏆🚀",
-                    "body": "Kya aapne rally pakdi ya side me baith ke dekhte rahe? Live shock chart aur reaction dekho!",
-                    "route": "home"
+                    "title": "📰 Breaking News & Fed Commentary",
+                    "body": "Federal Reserve officials aur market sentiment headlines live hain. Real-time news feed check karo.",
+                    "route": "news_feed"
                 },
                 "global": {
-                    "title": "Gold just ripped 120 pips in 15 mins! 🏆🚀",
-                    "body": "Did you catch the move or watch from the sidelines? Check the live breakout breakdown now!",
-                    "route": "home"
+                    "title": "📰 Breaking Macro Wire & Fed Commentary",
+                    "body": "Late-session central bank remarks and rate outlook updates active. Check real-time breaking news!",
+                    "route": "news_feed"
                 }
             }
         ]
     },
+
+    # ── 10:00 PM IST: Post-US Session Wrap & Trade Journal ────────────────────
     {
         "slot_id": "slot_10pm",
         "ist_hour": 22,
@@ -501,129 +436,95 @@ WEEKDAY_2HOUR_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Aaj kitna profit ya loss hua? 📓✏️",
-                    "body": "Bina journal banaye trader nahi banoge! Sone se pehle aaj ke wins aur mistakes journal me add karo.",
+                    "title": "📓 Daily Trade Audit: Sone Se Pehle Log Karo",
+                    "body": "Disciplined trader banna hai toh daily journal maintain karo! Aaj ke wins aur lessons Trade Journal me add karo.",
                     "route": "trade_journal"
                 },
                 "global": {
-                    "title": "How did you trade today? 📓✏️",
-                    "body": "Don't sleep without logging today's trades. Top traders audit their journal every single night!",
+                    "title": "📓 Daily Trade Audit: Review Today's Execution",
+                    "body": "Top traders audit their setups daily. Log your wins, losses, and psychological takeaways in Trade Journal!",
                     "route": "trade_journal"
                 }
             },
             {
                 "india": {
-                    "title": "Seen at 11:42 PM: Usne ghost kiya, market ne sweep 👻💔",
-                    "body": "Uski chat scroll karne se dard badhega! Sone se pehle Trade Journal me aaj ke trades log karo.",
-                    "route": "trade_journal"
-                },
-                "global": {
-                    "title": "Seen at 11:42 PM: Ghosted by them, swept by FX 👻💔",
-                    "body": "Scrolling old texts won't fix your mood. Spend 5 mins logging today's setups in Trade Journal!",
-                    "route": "trade_journal"
-                }
-            },
-            {
-                "india": {
-                    "title": "Kal subah market me kya blast hone wala hai? 🔮⚡",
-                    "body": "Asian session ke top catalysts ready hain. Sone se pehle kal ka gameplan check kar lo!",
+                    "title": "🔮 Tomorrow's Macro Minefield Preview",
+                    "body": "Kal subah Asian aur London session me kya release hone wala hai? Sone se pehle economic calendar check karo.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "What is the market cooking for tomorrow? 🔮⚡",
-                    "body": "Tomorrow's high-impact releases are queued. Review the economic minefield before you sleep!",
+                    "title": "🔮 Tomorrow's Economic Minefield Preview",
+                    "body": "Tomorrow's high-impact releases are queued. Review the upcoming economic calendar before you rest!",
                     "route": "calendar"
                 }
             },
             {
                 "india": {
-                    "title": "PnL laal hai par sabak bada mila? 🧠💡",
-                    "body": "Loss ko market university ki fees samjho. Par wahi galti dohrana gunah hai. Log it in Journal!",
+                    "title": "💡 Trader Mindset: Continuous Improvement",
+                    "body": "Har trading session ek naya lesson hota hai. Apni mistakes analyze karo aur kal ke liye fresh gameplan banao.",
                     "route": "trade_journal"
                 },
                 "global": {
-                    "title": "Red day? Treat it as tuition, not defeat 🧠💡",
-                    "body": "Losses are tuition fees. Repeating the same mistake is on you. Log your setups in Journal!",
+                    "title": "💡 Trader Growth: Consistency Over Speed",
+                    "body": "Every session offers valuable data. Review your execution metrics and prepare for tomorrow's market open.",
                     "route": "trade_journal"
                 }
             },
             {
                 "india": {
-                    "title": "Ex ne bola tha 'Tumse na ho payega' 🥀🚀",
-                    "body": "Unhe PRO upgrade ka screenshot bhej do! VIP institutional heatmaps aur ad-free live alerts unlock karo.",
-                    "route": "premium?reason=ex_upgrade"
+                    "title": "🚀 Level Up to PRO: Advanced AI Market Analysis",
+                    "body": "VIP institutional heatmaps, real-time ad-free economic alerts aur AI insights unlock karo!",
+                    "route": "premium?reason=night_upgrade"
                 },
                 "global": {
-                    "title": "Ex said 'You could never do it' 🥀🚀",
-                    "body": "Send them a PRO upgrade screenshot instead! Unlock VIP institutional heatmaps & ad-free alerts.",
-                    "route": "premium?reason=ex_upgrade"
+                    "title": "🚀 Trade with Institutional PRO Edge",
+                    "body": "Upgrade to PRO for unfiltered real-time catalyst alerts, AI market analysis, and live session tools.",
+                    "route": "premium?reason=night_upgrade"
                 }
             }
         ]
     },
+
+    # ── 12:00 AM Midnight IST: Daily Candle Close & Capital Protection ────────
     {
         "slot_id": "slot_12am",
-        "ist_hour": 0, # Midnight
+        "ist_hour": 0,
         "channel_id": CHANNEL_DAILY_BRIEFING,
         "pool": [
             {
                 "india": {
-                    "title": "Raat ke 12 baje bhi trade open hai? 🌙🕯️",
-                    "body": "Daily candle close ho chuki hai! Open trades me Stop Loss lock karo ya profit book karke so jao.",
+                    "title": "🌙 Daily Candle Close: Overnight Risk Management",
+                    "body": "Daily candle close ho chuki hai! Open positions me Stop Loss verify karo ya profits book karke rest karo.",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Late-night trading? Don't leave trades unhedged 🌙🕯️",
-                    "body": "Daily candle close is in! Protect open trades from overnight swap rates or secure your profits.",
+                    "title": "🌙 Daily Candle Close: Manage Overnight Exposure",
+                    "body": "Daily close is finalized. Ensure open positions are properly hedged against overnight rollover swaps.",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Mummy: 'Mera beta raat bhar padhta hai' 📚🥺",
-                    "body": "Beta raat ke 1 baje Gold ke 1-min chart par drawdown ginke ro raha hai. Charts band karke so jao!",
-                    "route": "trade_journal"
-                },
-                "global": {
-                    "title": "Mom thinks you're studying late at night 📚🥺",
-                    "body": "You staring at a 1-minute Gold candle calculating drawdown at midnight: Take a break and sleep!",
-                    "route": "trade_journal"
-                }
-            },
-            {
-                "india": {
-                    "title": "Raat ke 12 baje uski DP dekh kar ro rahe ho? 📱💔",
-                    "body": "Uski DP dekhna chhod, Gold ka 4-Hour breakout chart dekh! Clean candles kabhi dhokha nahi dete. So jao!",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Staring at your ex's profile at midnight? 📱💔",
-                    "body": "Close Instagram. Check Gold's 4-Hour breakout instead—clean trendlines don't break hearts. Sleep now!",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Screen ki neeli roshni me aankhein jali? 📱🥱",
-                    "body": "Charts se door hato bhai. Market kal bhi yahi rahegi. Sleep tight and trade fresh tomorrow!",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Blue light burning your eyes at 1 AM? 📱🥱",
-                    "body": "Step away from the screens. The market will be here tomorrow. Rest up for the London open!",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Overnight swap charges account kha jayenge 💸🌙",
-                    "body": "Negative swap pairs hold kar rahe ho? Swap calculator check karo aur positions manage karo!",
+                    "title": "💸 Overnight Rollover & Swap Rate Check",
+                    "body": "Overnight pairs hold kar rahe ho? Swap Calculator se apne broker rollover charges verify karo.",
                     "route": "tools"
                 },
                 "global": {
-                    "title": "Overnight swap fees eating your profits? 💸🌙",
-                    "body": "Holding high-interest pairs overnight? Check your swap exposure before broker rollover!",
+                    "title": "💸 Overnight Swap Rate Verification",
+                    "body": "Holding currency positions past 5 PM NY? Check your broker rollover and swap fees with the Calculator.",
                     "route": "tools"
+                }
+            },
+            {
+                "india": {
+                    "title": "😴 Clear Mindset: Rest Before Asian Open",
+                    "body": "Screen band karo aur proper rest lo. Market kal subah bhi yahi rahegi. Trade fresh tomorrow!",
+                    "route": "home"
+                },
+                "global": {
+                    "title": "😴 Rest & Recharge: Prepare for Tomorrow",
+                    "body": "A disciplined mind requires quality rest. Step away from the screens and be ready for tomorrow's open!",
+                    "route": "home"
                 }
             }
         ]
@@ -632,9 +533,10 @@ WEEKDAY_2HOUR_SLOTS = [
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 2. SPECIAL WEEKEND SLOTS (SATURDAY & SUNDAY - ZERO LIVE ALERT SPAM)
+# 2. SPECIAL WEEKEND SLOTS (SATURDAY & SUNDAY - ZERO LIVE SPAM)
 # ─────────────────────────────────────────────────────────────────────────────
 SATURDAY_SLOTS = [
+    # ── Saturday Morning: Weekly Trade Journal Audit ─────────────────────────
     {
         "slot_id": "sat_1130am",
         "ist_hour": 11,
@@ -642,66 +544,32 @@ SATURDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Is hafte ka hisab-kitab kya raha? 📓🏆",
-                    "body": "Forex market band hai! Apne is hafte ke trades ka analysis karo Trade Journal me.",
+                    "title": "📓 Weekly Trade Audit: Haftaa Kaisa Raha?",
+                    "body": "Forex market band hai! Apne is hafte ke trades ka review karo Trade Journal me aur win-rate check karo.",
                     "route": "trade_journal"
                 },
                 "global": {
-                    "title": "Did you beat the market this week? 📓🏆",
-                    "body": "Week is closed! Review your wins, cut recurring mistakes, and analyze your win-rate in Trade Journal.",
+                    "title": "📓 Weekly Trade Audit: Did You Beat the Market?",
+                    "body": "Markets are closed for the weekend. Review your wins, cut recurring mistakes, and analyze your win-rate in Trade Journal.",
                     "route": "trade_journal"
                 }
             },
             {
                 "india": {
-                    "title": "Weekend par overtrading se bache? 🏖️🧘",
-                    "body": "Forex closed hai toh shanti se Trade Journal review karo. Monday ko fresh mind se aao!",
+                    "title": "🧘 Weekend Discipline: Review, Don't Revenge Trade",
+                    "body": "Market band hone par Trade Journal audit karo. Apni top 3 trading mistakes filter karo aur Monday ke liye prepare raho.",
                     "route": "trade_journal"
                 },
                 "global": {
-                    "title": "Protected your capital from weekend itch? 🏖️🧘",
-                    "body": "Markets are closed. Spend 15 minutes reviewing your trade setups, not revenge trading low liquidity!",
-                    "route": "trade_journal"
-                }
-            },
-            {
-                "india": {
-                    "title": "Shaadi me gaye the ya charts par baithe rahe? 🍛😂",
-                    "body": "Weekend par screen band karo! Haftaa bhar ka PnL summary Trade Journal me lock karo.",
-                    "route": "trade_journal"
-                },
-                "global": {
-                    "title": "Did you step outside or stare at frozen charts? ☀️😂",
-                    "body": "Markets are shut for the weekend. Log your weekly performance in Trade Journal and disconnect!",
-                    "route": "trade_journal"
-                }
-            },
-            {
-                "india": {
-                    "title": "Ex ko 'I miss you' text karne wale the? 📱🛑",
-                    "body": "Backspace daba mere bhai! Uske reply se behtar hai apna weekly Trade Journal review karna.",
-                    "route": "trade_journal"
-                },
-                "global": {
-                    "title": "About to text your ex 'I miss you'? 📱🛑",
-                    "body": "Hit backspace. Spending 10 mins auditing your weekly Trade Journal beats another round of heartbreak!",
-                    "route": "trade_journal"
-                }
-            },
-            {
-                "india": {
-                    "title": "Bina plan ke agla hafta bhi loss me jayega 📓⚠️",
-                    "body": "Pro traders weekend par journal review karte hain. Apni top 3 trading mistakes filter karo!",
-                    "route": "trade_journal"
-                },
-                "global": {
-                    "title": "Trading without a weekly audit is just gambling 📓⚠️",
-                    "body": "Pro traders spend Saturdays reviewing setups. Filter your top 3 leakages in Trade Journal!",
+                    "title": "🧘 Weekend Discipline: Audit Your Trading Edge",
+                    "body": "Pro traders spend Saturdays reviewing execution data. Filter your performance in the Trade Journal!",
                     "route": "trade_journal"
                 }
             }
         ]
     },
+
+    # ── Saturday Afternoon: Trader Psychology & Tools ─────────────────────────
     {
         "slot_id": "sat_0330pm",
         "ist_hour": 15,
@@ -709,66 +577,32 @@ SATURDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "90% traders ye galti karke fail hote hain... 🧠💡",
-                    "body": "Revenge trading se bachna hai? Home screen widget lagao aur bina screen dekhe disciplined raho!",
+                    "title": "📲 1-Tap Home Screen Widget Setup Karo",
+                    "body": "Economic event countdown timer seedha home screen par dekho bina app khole! Widget setup karo.",
                     "route": "widget"
                 },
                 "global": {
-                    "title": "90% of traders fail right here... 🧠💡",
-                    "body": "Revenge trading and lack of discipline blow more accounts than bad indicators. Read today's guide.",
-                    "route": "widget"
-                }
-            },
-            {
-                "india": {
-                    "title": "Pips kamaye the ya broker ko donate kiye? 💸🧐",
-                    "body": "Spread aur commission charges review karo. Disciplined trading guide abhi padho!",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Did you trade with an edge or trade for adrenaline? 💸🧐",
-                    "body": "Adrenaline is expensive. Edge is profitable. Master your psychological game this weekend.",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Bhai, market tujhse dushmani nahi nikaal raha 🤡🛑",
-                    "body": "Trading psychology improve karo! Emotions control karne ka 3-step formula abhi padho.",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "The market isn't out to get you personally 🤡🛑",
-                    "body": "Cut the victim mindset. Master emotional discipline with our weekend Trader Psychology guide.",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Screen ghanto dekhne se profits nahi badhte 📲🧘",
-                    "body": "1-Tap Home Screen Widget setup karo. News timer seedha screen par dekho bina app khole!",
-                    "route": "widget"
-                },
-                "global": {
-                    "title": "Glued to your screen all week? 📲🧘",
-                    "body": "Set up the 1-Tap Home Screen Widget! Countdown to high-impact releases right from your home screen.",
+                    "title": "📲 1-Tap Home Screen Countdown Widget",
+                    "body": "Track upcoming high-impact economic releases right from your phone's home screen. Set up the Widget!",
                     "route": "widget"
                 }
             },
             {
                 "india": {
-                    "title": "'Bas ek aakhri trade le leta hu...' 💀💣",
-                    "body": "Isi soch ne account blow kiya tha na? Weekend par trading psychology reset karo!",
+                    "title": "🧠 Trader Psychology: Mastering Emotional Control",
+                    "body": "90% trading mistakes psychology se hoti hain. Disciplined risk management rules abhi padho!",
                     "route": "home"
                 },
                 "global": {
-                    "title": "'Just one last trade before bed...' 💀💣",
-                    "body": "How many times did that wipe out a week's gains? Reset your mindset with our psychology guide!",
+                    "title": "🧠 Trader Psychology: Eliminating Emotional Bias",
+                    "body": "Discipline beats emotion every time. Master risk management and execution consistency this weekend.",
                     "route": "home"
                 }
             }
         ]
     },
+
+    # ── Saturday Evening: 24/7 Digital Assets & Market Wrap ───────────────────
     {
         "slot_id": "sat_0730pm",
         "ist_hour": 19,
@@ -776,61 +610,25 @@ SATURDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Forex band hai, par Crypto live hai! 🪙🔥",
-                    "body": "Weekend me Bitcoin & Ethereum charts par action shuru hai. PRO subscription sirf ₹99 se start karo!",
-                    "route": "premium?reason=weekend_crypto"
-                },
-                "global": {
-                    "title": "Forex sleeps, Crypto doesn't 🪙🔥",
-                    "body": "Bitcoin & Ethereum moving while Forex is closed! Unlock Weekly PRO for AI sentiment insights.",
-                    "route": "premium?reason=weekend_crypto"
-                }
-            },
-            {
-                "india": {
-                    "title": "Saturday night party ya Crypto volatility? 🍕🪙",
-                    "body": "BTC $1,000 swing le raha hai! 24/7 live crypto radar check karo.",
-                    "route": "market"
-                },
-                "global": {
-                    "title": "Saturday Night: Crypto never sleeps 🍕🪙",
-                    "body": "Bitcoin testing key weekend support. Track live 24/7 crypto momentum on the radar!",
-                    "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Weekend par bore ho rahe ho? 🪙📊",
-                    "body": "Crypto market 24/7 khula hai! BTC aur ETH ke key liquidity levels track karo.",
-                    "route": "market"
-                },
-                "global": {
-                    "title": "Missing market volatility on a Saturday? 🪙📊",
-                    "body": "Crypto runs 24/7! Check live Bitcoin & Ethereum order flow and breakout heatmaps.",
-                    "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Saturday Special: Weekly Market Wrap 📰🔥",
-                    "body": "Weekend me trading strategy polish karo. Is hafte ki top economic news aur upcoming high-impact events dekho!",
+                    "title": "📰 Saturday Special: Weekly Market Wrap",
+                    "body": "Is hafte ke top central bank catalysts aur macro news summarize ho chuke hain. Breaking news wrap dekho!",
                     "route": "news_feed"
                 },
                 "global": {
-                    "title": "Saturday Market Wrap: Key Catalysts 📰🔥",
-                    "body": "Refine your trading playbook over the weekend. Catch up on breaking macro news ahead of Monday!",
+                    "title": "📰 Saturday Special: Macro News In Review",
+                    "body": "Catch up on the major economic catalysts and policy statements that moved the markets this week.",
                     "route": "news_feed"
                 }
             },
             {
                 "india": {
-                    "title": "Pizza mangwaya? Chart par Crypto dekho 🍕📈",
-                    "body": "Weekend volatility par scalping karna hai? AI Sentiment aur heatmaps check karo!",
+                    "title": "🪙 24/7 Weekend Market: Crypto Order Flow",
+                    "body": "Forex closed hai par Bitcoin & Ethereum 24/7 live hain. Weekend crypto support & resistance track karo.",
                     "route": "market"
                 },
                 "global": {
-                    "title": "Ordered pizza? Check the weekend crypto charts 🍕📈",
-                    "body": "Weekend scalpers are hunting liquidity sweeps on BTC. Check AI Quant sentiment now!",
+                    "title": "🪙 24/7 Digital Assets: Weekend Momentum",
+                    "body": "Track Bitcoin and Ethereum volatility while traditional markets rest. View live weekend heatmaps!",
                     "route": "market"
                 }
             }
@@ -839,6 +637,7 @@ SATURDAY_SLOTS = [
 ]
 
 SUNDAY_SLOTS = [
+    # ── Sunday Noon: Next Week's Economic Minefield ───────────────────────────
     {
         "slot_id": "sun_1200pm",
         "ist_hour": 12,
@@ -846,66 +645,32 @@ SUNDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "🗓️ Agle hafte ka economic calendar ready hai!",
-                    "body": "Fed interest rate aur US inflation news aane wali hai. Poore hafte ki high-impact list check karo!",
+                    "title": "🗓️ Agle Hafte Ka Economic Calendar Ready Hai!",
+                    "body": "NFP, CPI aur Central Bank rate decisions scheduled hain! Poore hafte ki Red-Folder list abhi check karo.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "🗓️ Next Week's Economic Minefield is Ready!",
-                    "body": "Fed Interest Rate decision, US CPI & ECB rate meet scheduled this week. See dates & forecasts!",
+                    "title": "🗓️ Next Week's Economic Minefield is Live!",
+                    "body": "Fed rate decisions, US CPI, and jobs data scheduled this week. Review exact dates, times, and forecasts!",
                     "route": "calendar"
                 }
             },
             {
                 "india": {
-                    "title": "Naye hafte ka gameplan tayar hai? 🎯🗓️",
-                    "body": "Monday gap-open se pehle high-impact releases mark kar lo. Economic calendar dekho!",
+                    "title": "🎯 Sunday Preparation: Monday Ko Munafa",
+                    "body": "Is hafte kitne high-impact events hain? Reminders set karo taaki koi important move miss na ho.",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "Is your trading battle plan set for Monday? 🎯🗓️",
-                    "body": "Don't get blindsided on Monday morning. Mark the week's Red-Folder catalysts in your calendar!",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Sunday ko tayyari, Monday ko munafa 📊🗓️",
-                    "body": "Is hafte 7 high-impact red news scheduled hain! Calendar me reminders set karo.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "Prepare on Sunday, profit on Monday 📊🗓️",
-                    "body": "7 high-impact Red-Folder events queued this week! Set your calendar reminders now.",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Monday ko blind trade mat lena! 🛑🗓️",
-                    "body": "Central banks ka schedule check kiya? Economic calendar kholo aur high-volatility hours note karo.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "Never trade Monday morning blind! 🛑🗓️",
-                    "body": "Did you check the central bank speeches? Open the Economic Calendar and spot high-risk hours.",
-                    "route": "calendar"
-                }
-            },
-            {
-                "india": {
-                    "title": "Sunday brunch ke saath market calendar ☕🗓️",
-                    "body": "NFP aur CPI aane wale hain! Haftaa shuru hone se pehle key levels plan kar lo.",
-                    "route": "calendar"
-                },
-                "global": {
-                    "title": "Sunday prep: Next week's macro catalysts ☕🗓️",
-                    "body": "NFP, CPI, and central bank minutes incoming! Plan your risk exposure before markets open.",
+                    "title": "🎯 Sunday Preparation: Weekly Battle Plan",
+                    "body": "Major central bank volatility queued for the upcoming week. Set your calendar reminders now!",
                     "route": "calendar"
                 }
             }
         ]
     },
+
+    # ── Sunday Evening: Opening Gaps & Sydney Pre-Market ──────────────────────
     {
         "slot_id": "sun_0500pm",
         "ist_hour": 17,
@@ -913,66 +678,32 @@ SUNDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Sunday night market gap up ya gap down? 📊⚠️",
-                    "body": "Weekend ki major news se Gold aur USD me bada gap expected hai. AI Macro Bias check karo!",
+                    "title": "📊 Sunday Night Gaps: Gold & US Dollar",
+                    "body": "Weekend geopolitical developments se opening gaps expected hain. AI Macro Bias aur currency rankings dekho!",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Sunday Market Opening Gaps incoming? 📊⚠️",
-                    "body": "Geopolitical developments over the weekend may cause big opening gaps on Gold & USD. See AI bias!",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Weekend khatam! Monday ke orders set hain? ⏰📊",
-                    "body": "Sydney market khulne me sirf 4 ghante. Currency strength ranking dekh lo!",
-                    "route": "market"
-                },
-                "global": {
-                    "title": "Weekend wrapping up. Sydney opens in 4 hours! ⏰📊",
-                    "body": "First market opening of the week is hours away. Check global currency strength rankings!",
-                    "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Sunday evening tension: 'Kal market kahan khulega?' 📈👀",
-                    "body": "Gold gap-up hoga ya gap-down? AI Institutional bias pehle hi predict kar chuka hai!",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Sunday evening jitters: Where will markets gap? 📈👀",
-                    "body": "Gold gap-up or gap-down? See how institutional algorithms are positioning before the open!",
+                    "title": "📊 Weekly Opening Gaps: Gold & Major FX",
+                    "body": "Weekend developments can trigger significant Sunday opening price gaps. Check AI Macro Bias now!",
                     "route": "home"
                 }
             },
             {
                 "india": {
-                    "title": "Sydney session me orders lagane ka time aa gaya 🌏⚡",
-                    "body": "New Zealand aur Australian dollar me early momentum aane wala hai. Heatmap dekho!",
+                    "title": "⏰ Sydney Market Khulne Me Kuch Ghante",
+                    "body": "New week shuru hone wala hai! Sydney aur Tokyo session ke liye apni watchlist ready rakho.",
                     "route": "market"
                 },
                 "global": {
-                    "title": "Sydney & Tokyo sessions warming up 🌏⚡",
-                    "body": "Early momentum building on AUD and NZD pairs. Check the live sessions heatmap before open!",
+                    "title": "⏰ Sydney Weekly Kickoff Approaching",
+                    "body": "The first market open of the week is hours away. Check global currency strength rankings before open!",
                     "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Ex ne bola tha 'Tumse na ho payega' 🥀🚀",
-                    "body": "Naye week me unhe PRO upgrade ka screenshot dikhao! Live market heatmaps aur VIP insights unlock karo.",
-                    "route": "premium?reason=ex_upgrade"
-                },
-                "global": {
-                    "title": "Ex said 'You could never do it' 🥀🚀",
-                    "body": "Start the new week with a PRO upgrade screenshot! Unlock institutional heatmaps & VIP insights.",
-                    "route": "premium?reason=ex_upgrade"
                 }
             }
         ]
     },
+
+    # ── Sunday Night: Final Monday Gameplan ────────────────────────────────────
     {
         "slot_id": "sun_0930pm",
         "ist_hour": 21,
@@ -980,61 +711,25 @@ SUNDAY_SLOTS = [
         "pool": [
             {
                 "india": {
-                    "title": "Kal subah market open ki taiyari ho gayi? 🌅📊",
-                    "body": "Monday morning ke liye watchlist ready rakho! Is hafte ke high-impact events check karo.",
+                    "title": "🌅 Kal Subah Market Open Ki Watchlist Ready?",
+                    "body": "Monday gap-open se pehle key support/resistance levels note kar lo. Naye week me disciplined raho!",
                     "route": "calendar"
                 },
                 "global": {
-                    "title": "Ready for Monday's market open? 🌅📊",
-                    "body": "Prepare your trading watchlist tonight! Check this week's scheduled red-folder events.",
+                    "title": "🌅 Ready for Monday's Market Open?",
+                    "body": "Prepare your trading watchlist tonight! Review major technical zones on Gold & EUR/USD ahead of open.",
                     "route": "calendar"
                 }
             },
             {
                 "india": {
-                    "title": "Sunday night: Plan your trades, trade your plan 🎯📈",
-                    "body": "Naye hafte me jaldbazi mat karna. AI Macro Bias aur currency strength abhi analyze karo!",
-                    "route": "market"
-                },
-                "global": {
-                    "title": "Sunday night: Plan your trades, trade your plan 🎯📈",
-                    "body": "Start the week with discipline. Analyze AI macro bias and currency heatmaps before open!",
-                    "route": "market"
-                }
-            },
-            {
-                "india": {
-                    "title": "Kal subah pehla trade lene se pehle ☕🛡️",
-                    "body": "Overleveraging se bacho. Apne stop loss aur risk-per-trade levels pehle se fix karo!",
+                    "title": "🌙 Good Night Trader! Let's Conquer The Week",
+                    "body": "Proper rest lo. Fresh mind ke saath Monday trading sessions me enter karna. Happy Trading!",
                     "route": "home"
                 },
                 "global": {
-                    "title": "Before taking your first trade tomorrow ☕🛡️",
-                    "body": "Protect your capital first. Lock in your stop-loss and risk management rules tonight!",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Gold aur USD ke weekly key levels ready hain? ⚡📊",
-                    "body": "Major support aur resistance zones note kar lo taaki subah koi unexpected move na chhoot jaye.",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Weekly key levels set for Gold & USD? ⚡📊",
-                    "body": "Review major institutional support and resistance zones before tomorrow's action.",
-                    "route": "home"
-                }
-            },
-            {
-                "india": {
-                    "title": "Good night trader! Kal green day banate hain 🌙💚",
-                    "body": "Proper neend lo. Fresh mind ke saath Monday trading sessions me enter karna!",
-                    "route": "home"
-                },
-                "global": {
-                    "title": "Rest well, trader! Let's conquer the week tomorrow 🌙💚",
-                    "body": "A clear mind trades best. Get good rest and be ready for tomorrow's sessions!",
+                    "title": "🌙 Rest Well, Trader! Ready for the New Week",
+                    "body": "A disciplined mind executes best. Get good rest and be ready for tomorrow's market sessions!",
                     "route": "home"
                 }
             }
@@ -1044,135 +739,93 @@ SUNDAY_SLOTS = [
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3. FESTIVAL & SPECIAL CALENDAR HOOKS (STRICT ACTIVE WINDOWS & STOP DATES)
+# 3. SPECIAL CALENDAR MACRO HOOKS (STRICT ACTIVE WINDOWS & DATES)
 # ─────────────────────────────────────────────────────────────────────────────
-def is_valentine_window(now_ist):
-    # Feb 13 to Feb 14 only. Stop strictly after Feb 14 midnight.
-    return now_ist.month == 2 and now_ist.day in (13, 14)
+def is_nfp_week_window(now_ist):
+    # First Friday of month (NFP Week)
+    return now_ist.day in (1, 2, 3, 4, 5, 6, 7) and now_ist.weekday() == 4 and now_ist.hour in (12, 17)
 
-def is_new_year_window(now_ist):
-    # Dec 31 to Jan 3 only. Stop strictly on Jan 4.
-    return (now_ist.month == 12 and now_ist.day == 31) or (now_ist.month == 1 and now_ist.day in (1, 2, 3))
+def is_month_end_rebalance_window(now_ist):
+    # 28th to last day of month (Month-End Institutional Flow)
+    return now_ist.day in (28, 29, 30, 31) and now_ist.hour in (14, 19)
 
-def is_payday_window(now_ist):
-    # 1st, 2nd, 3rd of month (Payday salary credit hours: 11:00 AM IST)
-    return now_ist.day in (1, 2, 3) and now_ist.hour == 11
+def is_quarter_end_window(now_ist):
+    # End of Q1, Q2, Q3, Q4 (March, June, September, December 29-31)
+    return now_ist.month in (3, 6, 9, 12) and now_ist.day in (29, 30, 31) and now_ist.hour in (13, 18)
 
-def is_month_end_window(now_ist):
-    # 25th - 30th of month (Month-end struggle hours: 08:00 PM IST)
-    return now_ist.day in (25, 26, 27, 28, 29, 30) and now_ist.hour == 20
-
-def is_halloween_window(now_ist):
-    # Oct 30 & 31 only. Stop strictly on Nov 1.
-    return now_ist.month == 10 and now_ist.day in (30, 31)
-
-def is_christmas_window(now_ist):
-    # Dec 24, 25, 26 only.
-    return now_ist.month == 12 and now_ist.day in (24, 25, 26)
+def is_year_end_holiday_window(now_ist):
+    # Dec 24 to Jan 2 (Thin Liquidity / Bank Holidays)
+    return (now_ist.month == 12 and now_ist.day >= 24) or (now_ist.month == 1 and now_ist.day <= 2)
 
 def get_special_calendar_hook(now_ist):
     """
-    Evaluates current IST time against strict calendar festival/special date windows.
+    Evaluates current IST time against strict macro calendar events.
     Returns hook dictionary if an active event matches, else None.
     """
-    # 1. Payday (1st - 3rd of month, 11:00 AM IST)
-    if is_payday_window(now_ist):
+    # 1. NFP Super-Friday Alert (First Friday of month)
+    if is_nfp_week_window(now_ist):
         return {
-            "key": f"payday_{now_ist.strftime('%Y_%m')}",
-            "channel_id": CHANNEL_DAILY_BRIEFING,
+            "key": f"nfp_friday_{now_ist.strftime('%Y_%m')}",
+            "channel_id": CHANNEL_CALENDAR_ALERTS,
             "india": {
-                "title": "Salary credited: 10:00 AM 🤑 | Balance: 10:30 AM 😭",
-                "body": "Mahine ki mehnat ko 30 minute me market ko daan mat do bhai! Risk calculator use karo.",
-                "route": "tools"
+                "title": "⚡ NFP Friday Alert: US Jobs Data Today!",
+                "body": "Month ka sabse volatile trading day! Non-Farm Payrolls aane se pehle risk calculator se lot size fix karo.",
+                "route": "calendar"
             },
             "global": {
-                "title": "Paycheck lifespan: 48 hours? 💸📉",
-                "body": "Don't blow your hard-earned paycheck on revenge trading. Calculate your risk before clicking buy!",
-                "route": "tools"
+                "title": "⚡ NFP Friday Alert: US Non-Farm Payrolls Today!",
+                "body": "Major volatility expected on Gold and USD pairs. Check release forecasts and manage your risk exposure!",
+                "route": "calendar"
             }
         }
 
-    # 2. Month-End Maggi Days (25th - 30th of month, 08:00 PM IST)
-    if is_month_end_window(now_ist):
+    # 2. Month-End Institutional Rebalancing
+    if is_month_end_rebalance_window(now_ist):
         return {
-            "key": f"monthend_{now_ist.strftime('%Y_%m')}",
+            "key": f"monthend_flow_{now_ist.strftime('%Y_%m')}",
             "channel_id": CHANNEL_DAILY_BRIEFING,
             "india": {
-                "title": "1st ko Biryani, 25th ko Maggi? 🍲🍜",
-                "body": "Life me consistency chahiye toh emotional revenge trading chhod do. Journal today's trades!",
+                "title": "📊 Month-End Portfolio Flow In Progress",
+                "body": "Institutions aur pension funds portfolio rebalance kar rahe hain. Unexpected currency volatility par nazar rakho!",
+                "route": "market"
+            },
+            "global": {
+                "title": "📊 Month-End Institutional Flow Alert",
+                "body": "Institutional portfolio rebalancing can trigger large fixing flows. Track active currency strength changes!",
+                "route": "market"
+            }
+        }
+
+    # 3. Quarter-End Rebalance
+    if is_quarter_end_window(now_ist):
+        return {
+            "key": f"quarter_end_{now_ist.year}_q{(now_ist.month-1)//3 + 1}",
+            "channel_id": CHANNEL_DAILY_BRIEFING,
+            "india": {
+                "title": "🏛️ Quarter-End Institutional Rebalancing",
+                "body": "Quarter close ho raha hai! Major global banks aur funds apne currency reserves adjust kar rahe hain.",
+                "route": "home"
+            },
+            "global": {
+                "title": "🏛️ Quarter-End Rebalancing & Institutional Flows",
+                "body": "Major institutional flows across currency reserves as the quarter wraps up. Review key support/resistance!",
+                "route": "home"
+            }
+        }
+
+    # 4. Year-End Holiday Thin Liquidity
+    if is_year_end_holiday_window(now_ist) and now_ist.hour in (11, 16):
+        return {
+            "key": f"yearend_holiday_{now_ist.year}",
+            "channel_id": CHANNEL_DAILY_BRIEFING,
+            "india": {
+                "title": "❄️ Year-End Thin Liquidity & Wide Spread Warning",
+                "body": "Major central banks vacation par hain aur liquidity thin hai. Wider spreads se capital protect karo!",
                 "route": "trade_journal"
             },
             "global": {
-                "title": "Steak at start of month, Ramen by the 25th? 🍜🥩",
-                "body": "Lack of consistency kills accounts. Audit your trading habits in the Trade Journal tonight!",
-                "route": "trade_journal"
-            }
-        }
-
-    # 3. Valentine's Day (Feb 13 - 14)
-    if is_valentine_window(now_ist) and now_ist.hour in (13, 20):
-        return {
-            "key": f"val_{now_ist.year}",
-            "channel_id": CHANNEL_DAILY_BRIEFING,
-            "india": {
-                "title": "Valentine pe single ho? 🌹🚫",
-                "body": "Teddy bear aur phoolon ke paise bach gaye! Ab 3-Day Free Trial leke chart study karo.",
-                "route": "premium?reason=valentine_single"
-            },
-            "global": {
-                "title": "Single this Valentine's Day? 🌹🚫",
-                "body": "Saved money on overpriced roses! Invest in your trading discipline with 3-Day Free Trial instead.",
-                "route": "premium?reason=valentine_single"
-            }
-        }
-
-    # 4. New Year Resolution (Dec 31 - Jan 3)
-    if is_new_year_window(now_ist) and now_ist.hour in (10, 18):
-        return {
-            "key": f"newyear_{now_ist.year}",
-            "channel_id": CHANNEL_DAILY_BRIEFING,
-            "india": {
-                "title": "31st Dec: 'Is saal disciplined rahunga' 🥂",
-                "body": "2nd Jan: 100x leverage pe revenge buy! Check economic calendar before blowing another account.",
-                "route": "calendar"
-            },
-            "global": {
-                "title": "Jan 1st: 'I will strictly follow my rules' 🥂",
-                "body": "Jan 3rd: 100x revenge trade into red news! Stay disciplined, check the economic calendar first.",
-                "route": "calendar"
-            }
-        }
-
-    # 5. Halloween (Oct 30 - 31)
-    if is_halloween_window(now_ist) and now_ist.hour in (12, 19):
-        return {
-            "key": f"halloween_{now_ist.year}",
-            "channel_id": CHANNEL_DAILY_BRIEFING,
-            "india": {
-                "title": "Bhoot se darr nahi lagta, red candle se lagta hai 🎃👻",
-                "body": "Halloween par market fakeouts se bacho. Breaking news aur economic calendar dekh ke trade plan banao!",
-                "route": "calendar"
-            },
-            "global": {
-                "title": "Horror movies aren't scary. Red candles are. 🎃👻",
-                "body": "Halloween volatility is live. Don't let market makers ghost your account—set your Stop Loss!",
-                "route": "calendar"
-            }
-        }
-
-    # 6. Christmas / Holiday Thin Liquidity (Dec 24 - 26)
-    if is_christmas_window(now_ist) and now_ist.hour in (11, 16):
-        return {
-            "key": f"christmas_{now_ist.year}",
-            "channel_id": CHANNEL_DAILY_BRIEFING,
-            "india": {
-                "title": "Holiday season: Market me liquidity thin hai 🎄❄️",
-                "body": "Spreads wide ho sakte hain! Aggressive trades lene se bacho aur Journal audit karo.",
-                "route": "trade_journal"
-            },
-            "global": {
-                "title": "Holiday Season: Thin liquidity warning! 🎄❄️",
-                "body": "Banks are on vacation and spreads are wide. Protect your capital and avoid retail traps.",
+                "title": "❄️ Holiday Season: Thin Liquidity Warning",
+                "body": "Bank holidays mean reduced liquidity and wider broker spreads. Trade defensively and audit your journal!",
                 "route": "trade_journal"
             }
         }
@@ -1185,28 +838,26 @@ def get_special_calendar_hook(now_ist):
 # ─────────────────────────────────────────────────────────────────────────────
 def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, db_client, send_message_fn, record_sent_fn, is_sent_fn):
     """
-    Main retention dispatcher called every 5 minutes from fcm_push_dispatcher.py.
+    Main retention dispatcher called periodically from fcm_push_dispatcher.py.
     
     Guarantees:
-    - Silent DND hours (12:00 AM to 08:00 AM IST) are strictly protected.
-    - Sends Hinglish to 'india_traders' and Universal English to 'global_traders'.
+    - Silent DND hours (12:30 AM to 07:59 AM IST) are strictly protected.
+    - Sends professional Hinglish/English to 'india_traders' and Universal English to 'global_traders'.
     - Deduplicated strictly per slot per calendar day.
     """
-    # Convert UTC to IST (+5:30)
     now_ist = now_utc + timedelta(hours=5, minutes=30)
     ist_hour = now_ist.hour
-    ist_minute = now_ist.minute
     date_str = now_ist.strftime("%Y-%m-%d")
-    weekday = now_ist.weekday() # 0 = Monday, ..., 5 = Saturday, 6 = Sunday
+    weekday = now_ist.weekday()  # 0 = Monday, ..., 5 = Saturday, 6 = Sunday
 
-    # DND Window: 12:30 AM to 07:59 AM IST (Do not send marketing alerts while users sleep)
+    # DND Window: 12:30 AM to 07:59 AM IST
     if 1 <= ist_hour < 8:
         logger.debug(f"Current IST time ({now_ist.strftime('%H:%M')}) is in silent night DND. Skipping retention.")
         return 0
 
     dispatched = 0
 
-    # ── CHECK 1: SPECIAL FESTIVAL / CALENDAR DATE HOOKS ──
+    # ── CHECK 1: SPECIAL MACRO CALENDAR DATE HOOKS ──
     special_hook = get_special_calendar_hook(now_ist)
     if special_hook:
         hook_key = special_hook["key"]
@@ -1240,20 +891,19 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
 
             record_sent_fn(
                 dedup_key,
-                {"sent_at": now_utc.isoformat(), "slot": hook_key, "date": date_str, "type": "SPECIAL_FESTIVAL_HOOK"},
+                {"sent_at": now_utc.isoformat(), "slot": hook_key, "date": date_str, "type": "SPECIAL_MACRO_HOOK"},
                 local_history,
                 db_client
             )
-            logger.info(f"✓ Dispatched Special Calendar Hook: {hook_key}")
+            logger.info(f"✓ Dispatched Special Macro Hook: {hook_key}")
             dispatched += 1
             return dispatched
 
     # ── CHECK 2: WEEKENDS (SATURDAY & SUNDAY) ──
     day_of_year = now_ist.timetuple().tm_yday
-    if weekday == 5: # Saturday
+    if weekday == 5:  # Saturday
         for slot in SATURDAY_SLOTS:
             slot_h = slot["ist_hour"]
-            # Active window: allows trigger anytime within a 3-hour window from slot start
             if slot_h <= ist_hour < slot_h + 3:
                 dedup_key = f"retention_sat_{slot['slot_id']}_{date_str}"
                 if is_sent_fn(dedup_key, local_history, db_client):
@@ -1293,10 +943,9 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
 
         return dispatched
 
-    elif weekday == 6: # Sunday
+    elif weekday == 6:  # Sunday
         for slot in SUNDAY_SLOTS:
             slot_h = slot["ist_hour"]
-            # Active window: allows trigger anytime within a 3-hour window from slot start
             if slot_h <= ist_hour < slot_h + 3:
                 dedup_key = f"retention_sun_{slot['slot_id']}_{date_str}"
                 if is_sent_fn(dedup_key, local_history, db_client):
@@ -1338,9 +987,6 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
 
     # ── CHECK 3: WEEKDAY 2-HOUR INTERVAL SLOTS (MON - FRI) ──
     for slot in WEEKDAY_2HOUR_SLOTS:
-        # Match slot's full 2-hour window (e.g. 16:00 to 17:59 IST for slot_04pm, 18:00 to 19:59 for slot_06pm)
-        # Allows cron (which runs every 5 to 60 mins) to dispatch at ANY minute during the window without missing.
-        # Deduplication key strictly prevents any double dispatch for the same day.
         slot_h = slot["ist_hour"]
         if slot_h <= ist_hour < slot_h + 2:
             dedup_key = f"retention_weekday_{slot['slot_id']}_{date_str}"
@@ -1349,13 +995,12 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                 continue
 
             pool = slot["pool"]
-            # Rotate daily based on day of year so message is never boring or repetitive
             day_of_year = now_ist.timetuple().tm_yday
             chosen = pool[day_of_year % len(pool)]
 
-            ch_id = CHANNEL_BREAKING_NEWS
+            ch_id = slot.get("channel_id", CHANNEL_BREAKING_NEWS)
 
-            # 1. Send India (Hinglish)
+            # 1. Send India (Clear Hinglish / Professional copy)
             send_message_fn(
                 messaging_client=messaging_client,
                 topic=TOPIC_INDIA,
@@ -1366,7 +1011,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                 priority="high"
             )
 
-            # 2. Send Global (Universal English)
+            # 2. Send Global (Universal English high-converting copy)
             send_message_fn(
                 messaging_client=messaging_client,
                 topic=TOPIC_GLOBAL,
@@ -1390,7 +1035,7 @@ def check_retention_campaign_dispatch(now_utc, local_history, messaging_client, 
                 local_history,
                 db_client
             )
-            logger.info(f"✓ Dispatched Weekday 2-Hour Retention Slot: {slot['slot_id']} ({chosen['india']['title']})")
+            logger.info(f"✓ Dispatched Weekday Retention Slot: {slot['slot_id']} ({chosen['india']['title']})")
             dispatched += 1
 
     return dispatched

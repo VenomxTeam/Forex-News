@@ -75,6 +75,82 @@ def parse_to_utc_iso(date_str, time_str, tz_str):
         print(f"Error parsing date-time ({date_str} {time_str}): {e}")
         return ""
 
+def _merge_with_existing_news(target_file: Path, scraped_events: list[dict]) -> list[dict]:
+    """Preserve non-scraped months (historical + 2027) and live actuals across incremental scrapes."""
+    if not target_file.exists():
+        return scraped_events
+
+    try:
+        with open(target_file, "r", encoding="utf-8-sig") as f:
+            existing_payload = json.load(f)
+        existing_events = existing_payload.get("events", [])
+    except Exception as e:
+        print(f"Warning: could not read existing {target_file.name} for merge: {e}")
+        return scraped_events
+
+    scraped_months = {
+        e["time"][:7]
+        for e in scraped_events
+        if isinstance(e.get("time"), str) and len(e["time"]) >= 7
+    }
+
+    existing_by_id = {e.get("id"): e for e in existing_events if e.get("id")}
+    existing_by_exact_time = {
+        (e.get("currency", "").upper(), e.get("title", "").strip().lower(), e.get("time", "")[:16]): e
+        for e in existing_events
+        if e.get("time")
+    }
+    existing_by_day = {}
+    ambiguous_day_keys = set()
+    for e in existing_events:
+        if not e.get("time"):
+            continue
+        day_key = (e.get("currency", "").upper(), e.get("title", "").strip().lower(), e.get("time", "")[:10])
+        if day_key in existing_by_day:
+            ambiguous_day_keys.add(day_key)
+        else:
+            existing_by_day[day_key] = e
+
+    merged_events = []
+    seen_ids = set()
+
+    # Preserve all events from months not included in the latest scrape (e.g. history + 2027)
+    for ev in existing_events:
+        ev_month = ev.get("time", "")[:7]
+        if ev_month not in scraped_months:
+            ev_id = ev.get("id")
+            if ev_id:
+                seen_ids.add(ev_id)
+            merged_events.append(ev)
+
+    # Refresh scraped months while retaining already-synced live actuals/forecasts if FF scrape left them blank
+    for ev in scraped_events:
+        day_key = (ev.get("currency", "").upper(), ev.get("title", "").strip().lower(), ev.get("time", "")[:10])
+        match = (
+            existing_by_id.get(ev.get("id"))
+            or existing_by_exact_time.get(
+                (ev.get("currency", "").upper(), ev.get("title", "").strip().lower(), ev.get("time", "")[:16])
+            )
+            or (existing_by_day.get(day_key) if day_key not in ambiguous_day_keys else None)
+        )
+        if match:
+            for field in ("actual", "forecast", "previous"):
+                if not ev.get(field) and match.get(field):
+                    ev[field] = match[field]
+
+        candidate_id = ev.get("id") or "event"
+        final_id = candidate_id
+        idx = 1
+        while final_id in seen_ids:
+            final_id = f"{candidate_id}_{idx}"
+            idx += 1
+        ev["id"] = final_id
+        seen_ids.add(final_id)
+        merged_events.append(ev)
+
+    return merged_events
+
+
 def main():
     script_dir = Path(__file__).resolve().parent
     print(f"Processing scraped data from {script_dir / 'news' / 'monthly'}...")
@@ -180,17 +256,22 @@ def main():
         }
         all_impact_events.append(mapped_event)
         
-    all_impact_events.sort(key=lambda x: x.get("time", ""))
-    print(f"Filtered to {len(all_impact_events)} valid events.")
-    
+    target_file = script_dir / "news.json"
+    if not all_impact_events and target_file.exists():
+        print("No new scraped events parsed; keeping existing news.json intact.")
+        return
+
+    merged_events = _merge_with_existing_news(target_file, all_impact_events)
+    merged_events.sort(key=lambda x: x.get("time", ""))
+    print(f"Filtered to {len(all_impact_events)} newly scraped events ({len(merged_events)} total after merge).")
+
     # Prepare the news.json payload
     news_payload = {
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "events": all_impact_events
+        "events": merged_events
     }
-    
+
     # Write updated news.json
-    target_file = script_dir / "news.json"
     print(f"Writing updated news.json to {target_file}...")
     with open(target_file, "w", encoding="utf-8") as f:
         json.dump(news_payload, f, indent=2)
