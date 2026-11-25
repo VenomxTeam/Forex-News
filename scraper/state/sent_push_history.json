@@ -3449,5 +3449,13 @@
     "india_title": "Margin call aane se pehle sambhal jao \ud83d\udea8\ud83d\udcca",
     "global_title": "Don't let a margin call end your week \ud83d\udea8\ud83d\udcca",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_12am_2026-11-26": {
+    "sent_at": "2026-11-25T19:22:51.945947+00:00",
+    "slot": "slot_12am",
+    "date": "2026-11-26",
+    "india_title": "\ud83c\udf19 Daily Candle Close: Overnight Risk Management",
+    "global_title": "\ud83c\udf19 Daily Candle Close: Manage Overnight Exposure",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
