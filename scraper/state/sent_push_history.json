@@ -3432,5 +3432,22 @@
     "india_title": "Retail trap alert: EUR pairs par fakeout! \ud83e\udea4\u26a1",
     "global_title": "Retail liquidity trap forming right now! \ud83e\udea4\u26a1",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "30m_usd_fomc_member_bowman_speaks_20261125": {
+    "sent_at": "2026-11-25T12:02:25.295476+00:00",
+    "event_id": "usd_fomc_member_bowman_speaks_20261125",
+    "currency": "USD",
+    "title": "FOMC Member Bowman Speaks",
+    "scheduled_time": "2026-11-25T12:25:00Z",
+    "window": "30m",
+    "type": "EVENT_COUNTDOWN"
+  },
+  "retention_weekday_slot_04pm_2026-11-25": {
+    "sent_at": "2026-11-25T12:02:25.295476+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-25",
+    "india_title": "Margin call aane se pehle sambhal jao \ud83d\udea8\ud83d\udcca",
+    "global_title": "Don't let a margin call end your week \ud83d\udea8\ud83d\udcca",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
