@@ -3457,5 +3457,11 @@
     "india_title": "\ud83c\udf19 Daily Candle Close: Overnight Risk Management",
     "global_title": "\ud83c\udf19 Daily Candle Close: Manage Overnight Exposure",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "session_sydney_2026-11-26": {
+    "sent_at": "2026-11-25T21:19:27.712192+00:00",
+    "session": "SYDNEY",
+    "date": "2026-11-25",
+    "high_impact_count": 2
   }
 }
