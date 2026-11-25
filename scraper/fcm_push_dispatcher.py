@@ -919,6 +919,92 @@ def check_daily_morning_high_impact_digest(events, now_utc, local_history, messa
     return 0
 
 
+def check_telegram_community_alerts(now_utc, local_history, messaging_client, db_client):
+    """
+    Dispatches 2 daily English notifications (Morning 10:00 AM IST & Evening 07:00 PM IST windows)
+    inviting users to join the Forex News Telegram community (https://t.me/ForexBrief),
+    strictly deduplicated once per window per calendar day.
+    """
+    logger.info("Checking Trigger 7: Daily 2x Telegram Community Alerts...")
+    dispatched = 0
+
+    tz_ist = zoneinfo.ZoneInfo("Asia/Kolkata")
+    now_ist = now_utc.astimezone(tz_ist)
+    ist_hour = now_ist.hour
+    date_str = now_ist.strftime("%Y-%m-%d")
+
+    slots = [
+        {
+            "slot_id": "morning",
+            "hours": (10, 11),
+            "title": "Join the Forex News Community",
+            "body": "Connect with traders on our official Forex News Telegram channel. Tap to join free!"
+        },
+        {
+            "slot_id": "evening",
+            "hours": (19, 20),
+            "title": "Stay Connected on Telegram",
+            "body": "Be part of the official Forex News Telegram community with fellow traders. Tap to join!"
+        }
+    ]
+
+    channel_url = "https://t.me/ForexBrief"
+    ch_id = "fcm_daily_briefing_channel"
+
+    for slot in slots:
+        if ist_hour not in slot["hours"]:
+            continue
+
+        dedup_key = f"telegram_forexbrief_{slot['slot_id']}_{date_str}"
+        if is_already_sent(dedup_key, local_history, db_client):
+            logger.debug(f"Telegram community {slot['slot_id']} alert already sent for {date_str}.")
+            continue
+
+        payload_data = {
+            "type": "COMMUNITY_TELEGRAM",
+            "route": channel_url,
+            "url": channel_url,
+            "channelId": ch_id
+        }
+
+        s1 = send_fcm_message(
+            messaging_client=messaging_client,
+            topic="india_traders",
+            title=slot["title"],
+            body=slot["body"],
+            data=payload_data,
+            channel_id=ch_id,
+            priority="high"
+        )
+        s2 = send_fcm_message(
+            messaging_client=messaging_client,
+            topic="global_traders",
+            title=slot["title"],
+            body=slot["body"],
+            data=payload_data,
+            channel_id=ch_id,
+            priority="high"
+        )
+
+        if s1 or s2:
+            record_sent(
+                dedup_key,
+                {
+                    "sent_at": now_utc.isoformat(),
+                    "slot": slot["slot_id"],
+                    "date": date_str,
+                    "channel": channel_url,
+                    "type": "COMMUNITY_TELEGRAM"
+                },
+                local_history,
+                db_client
+            )
+            logger.info(f"✓ Dispatched Telegram Community {slot['slot_id']} alert for {date_str}")
+            dispatched += 1
+
+    return dispatched
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # MAIN EXECUTION ORCHESTRATOR
 # ─────────────────────────────────────────────────────────────────────────────
@@ -970,6 +1056,9 @@ def run_push_dispatcher(test_time_iso=None):
         logger.info(f"Trigger 6 completed: {retention_count} retention notification(s) dispatched.")
     except Exception as e:
         logger.error(f"Error in Retention Campaign Dispatcher: {e}")
+
+    # 7. Daily 2x Telegram Community Alerts (Morning & Evening)
+    total_dispatched += check_telegram_community_alerts(now_utc, local_history, messaging_client, db_client)
 
     logger.info(f"Cycle completed. Total notifications dispatched: {total_dispatched}")
     return total_dispatched
