@@ -3404,5 +3404,11 @@
     "india_title": "Overnight swap charges account kha jayenge \ud83d\udcb8\ud83c\udf19",
     "global_title": "Overnight swap fees eating your profits? \ud83d\udcb8\ud83c\udf19",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "session_tokyo_2026-11-25": {
+    "sent_at": "2026-11-25T00:51:19.167199+00:00",
+    "session": "TOKYO",
+    "date": "2026-11-25",
+    "high_impact_count": 2
   }
 }
