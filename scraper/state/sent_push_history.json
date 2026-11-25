@@ -3424,5 +3424,13 @@
     "india_title": "Neend khulte hi portfolio dekh kar heart attack? \ud83d\udd34\ud83d\udc80",
     "global_title": "Waking up to a red screen reality check? \ud83d\udd34\ud83d\udc80",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_02pm_2026-11-25": {
+    "sent_at": "2026-11-25T09:17:06.876060+00:00",
+    "slot": "slot_02pm",
+    "date": "2026-11-25",
+    "india_title": "Retail trap alert: EUR pairs par fakeout! \ud83e\udea4\u26a1",
+    "global_title": "Retail liquidity trap forming right now! \ud83e\udea4\u26a1",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
