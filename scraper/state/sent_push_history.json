@@ -3471,5 +3471,13 @@
     "india_title": "\ud83d\udcca Currency Strength Heatmap Update",
     "global_title": "\ud83d\udcca Live Currency Heatmap: Morning Momentum",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_04pm_2026-11-26": {
+    "sent_at": "2026-11-26T11:02:20.539885+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-26",
+    "india_title": "\ud83d\udcbc Capital Protection Rule: Never Trade Blind",
+    "global_title": "\ud83d\udcbc Capital Preservation Rule: News Discipline",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
