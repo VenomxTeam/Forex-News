@@ -3479,5 +3479,26 @@
     "india_title": "\ud83d\udcbc Capital Protection Rule: Never Trade Blind",
     "global_title": "\ud83d\udcbc Capital Preservation Rule: News Discipline",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "session_ny_2026-11-26": {
+    "sent_at": "2026-11-26T13:31:20.522858+00:00",
+    "session": "NEW_YORK",
+    "date": "2026-11-26",
+    "high_impact_count": 0
+  },
+  "retention_weekday_slot_06pm_2026-11-26": {
+    "sent_at": "2026-11-26T13:31:20.522858+00:00",
+    "slot": "slot_06pm",
+    "date": "2026-11-26",
+    "india_title": "\u26a1 US Economic Catalysts Releasing Now",
+    "global_title": "\u26a1 US Economic Catalysts Releasing Live",
+    "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "telegram_forexbrief_evening_2026-11-26": {
+    "sent_at": "2026-11-26T13:31:20.522858+00:00",
+    "slot": "evening",
+    "date": "2026-11-26",
+    "channel": "https://t.me/ForexBrief",
+    "type": "COMMUNITY_TELEGRAM"
   }
 }
