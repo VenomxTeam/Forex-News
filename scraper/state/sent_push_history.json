@@ -3463,5 +3463,13 @@
     "session": "SYDNEY",
     "date": "2026-11-25",
     "high_impact_count": 2
+  },
+  "retention_weekday_slot_08am_2026-11-26": {
+    "sent_at": "2026-11-26T03:45:32.553190+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-26",
+    "india_title": "\ud83d\udcca Currency Strength Heatmap Update",
+    "global_title": "\ud83d\udcca Live Currency Heatmap: Morning Momentum",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
