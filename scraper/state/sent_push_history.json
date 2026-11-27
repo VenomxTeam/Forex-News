@@ -3508,5 +3508,20 @@
     "india_title": "\u26a1 Institutional Pre-Market Focus",
     "global_title": "\u26a1 Pre-Europe Order Flow Alert",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_10am_2026-11-27": {
+    "sent_at": "2026-11-27T04:32:05.506975+00:00",
+    "slot": "slot_10am",
+    "date": "2026-11-27",
+    "india_title": "\ud83d\udee1\ufe0f Risk Rule: Plan Your Trades, Trade Your Plan",
+    "global_title": "\ud83d\udee1\ufe0f Discipline Check: Wait For Confirmed Setups",
+    "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "telegram_forexbrief_morning_2026-11-27": {
+    "sent_at": "2026-11-27T04:32:05.506975+00:00",
+    "slot": "morning",
+    "date": "2026-11-27",
+    "channel": "https://t.me/ForexBrief",
+    "type": "COMMUNITY_TELEGRAM"
   }
 }
