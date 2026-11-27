@@ -3531,5 +3531,20 @@
     "india_title": "\ud83d\udcc8 US Dollar Index (DXY) Testing Key Levels",
     "global_title": "\ud83d\udcc8 US Dollar Index (DXY) at Key Technical Pivot",
     "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "retention_weekday_slot_06pm_2026-11-27": {
+    "sent_at": "2026-11-27T14:14:52.523607+00:00",
+    "slot": "slot_06pm",
+    "date": "2026-11-27",
+    "india_title": "\ud83c\udf10 Currency Heatmap: US Session Shift",
+    "global_title": "\ud83c\udf10 Currency Heatmap: New York Session Shift",
+    "type": "WEEKDAY_2HOUR_RETENTION"
+  },
+  "telegram_forexbrief_evening_2026-11-27": {
+    "sent_at": "2026-11-27T14:14:52.523607+00:00",
+    "slot": "evening",
+    "date": "2026-11-27",
+    "channel": "https://t.me/ForexBrief",
+    "type": "COMMUNITY_TELEGRAM"
   }
 }
