@@ -3523,5 +3523,13 @@
     "date": "2026-11-27",
     "channel": "https://t.me/ForexBrief",
     "type": "COMMUNITY_TELEGRAM"
+  },
+  "retention_weekday_slot_04pm_2026-11-27": {
+    "sent_at": "2026-11-27T11:26:57.959582+00:00",
+    "slot": "slot_04pm",
+    "date": "2026-11-27",
+    "india_title": "\ud83d\udcc8 US Dollar Index (DXY) Testing Key Levels",
+    "global_title": "\ud83d\udcc8 US Dollar Index (DXY) at Key Technical Pivot",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
