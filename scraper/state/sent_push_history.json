@@ -3500,5 +3500,13 @@
     "date": "2026-11-26",
     "channel": "https://t.me/ForexBrief",
     "type": "COMMUNITY_TELEGRAM"
+  },
+  "retention_weekday_slot_08am_2026-11-27": {
+    "sent_at": "2026-11-27T02:46:08.943349+00:00",
+    "slot": "slot_08am",
+    "date": "2026-11-27",
+    "india_title": "\u26a1 Institutional Pre-Market Focus",
+    "global_title": "\u26a1 Pre-Europe Order Flow Alert",
+    "type": "WEEKDAY_2HOUR_RETENTION"
   }
 }
