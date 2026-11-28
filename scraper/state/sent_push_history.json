@@ -3553,5 +3553,11 @@
     "date": "2026-11-28",
     "channel": "https://t.me/ForexBrief",
     "type": "COMMUNITY_TELEGRAM"
+  },
+  "retention_sat_sat_0330pm_2026-11-28": {
+    "sent_at": "2026-11-28T10:51:46.166623+00:00",
+    "slot": "sat_0330pm",
+    "date": "2026-11-28",
+    "type": "SATURDAY_RETENTION"
   }
 }
