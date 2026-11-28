@@ -3559,5 +3559,18 @@
     "slot": "sat_0330pm",
     "date": "2026-11-28",
     "type": "SATURDAY_RETENTION"
+  },
+  "retention_special_monthend_flow_2026_11_2026-11-28_19": {
+    "sent_at": "2026-11-28T13:30:48.694038+00:00",
+    "slot": "monthend_flow_2026_11",
+    "date": "2026-11-28",
+    "type": "SPECIAL_MACRO_HOOK"
+  },
+  "telegram_forexbrief_evening_2026-11-28": {
+    "sent_at": "2026-11-28T13:30:48.694038+00:00",
+    "slot": "evening",
+    "date": "2026-11-28",
+    "channel": "https://t.me/ForexBrief",
+    "type": "COMMUNITY_TELEGRAM"
   }
 }
